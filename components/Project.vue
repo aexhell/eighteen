@@ -1,5 +1,5 @@
 <template>
-   <div class="__EIGHTEEN-PROJECT z-10 py-24 rounded-lg relative bg-black/50 hover:bg-white transition">
+   <div class="__EIGHTEEN-PROJECT z-10 py-24 mx-12 rounded-lg relative bg-black/50 hover:bg-white transition">
       <img :alt="`${data.title} Image`" class="pointer-events-none rounded-lg select-none opacity-75 hover:opacity-0 absolute transition-all top-0 left-0 object-cover w-full h-full" :src="`/projects/${data.code}.webp`" />
       <div class="__EIGHTEEN-PROJECT-DETAILS transition-all duration-500 absolute bottom-5 text-white left-6">
          <span class="text-xs border-t border-white md:border-solid border-x-0 border-b-0 pt-2 my-0 font-medium uppercase" v-text="data.position || 'Contributor'" />
