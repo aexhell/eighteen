@@ -1,14 +1,22 @@
 <template>
    <div id="__EIGHTEEN-CURSOR" class="top-0 left-0 z-50 pointer-events-none md:block hidden select-none absolute">
-      <div class="p-2 rounded-full border-white border border-solid" />
+      <div class="cursor-container rounded-full border-black border border-solid transition-all" :class="{ 'p-2': !mousePressed, 'p-1': mousePressed }">
+         <div class="p-[3px] rounded-full" :class="{ 'bg-white border-black border-solid border mix-blend-difference': mousePressed, 'opacity-0': !mousePressed}"></div>
+      </div>
    </div>
 </template>
 
 <script>
 export default {
+   data () {
+      return {
+         mousePressed: false,
+      }
+   },
    mounted () {
       const cursor = document.querySelector('#__EIGHTEEN-CURSOR');
-      const cursorCircle = cursor.querySelector('#__EIGHTEEN-CURSOR div');
+      const cursorCircle = cursor.querySelector('#__EIGHTEEN-CURSOR div.cursor-container');
+      const button = document.querySelectorAll('button,.__EIGHTEEN-PROJECT');
 
       const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
       const pos = { x: 0, y: 0 }; // cursor's coordinates
@@ -20,6 +28,12 @@ export default {
       }
 
       window.addEventListener('mousemove', updateCoordinates);
+
+      for (var i = 0; i < button.length; i++) {
+         console.log(button)
+         button[i].addEventListener('mouseover', () => this.mousePressed = true)
+         button[i].addEventListener('mouseleave', () => this.mousePressed = false)
+      }
 
       function getAngle(diffX, diffY) {
       return Math.atan2(diffY, diffX) * 180 / Math.PI;

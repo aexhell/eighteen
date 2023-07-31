@@ -1,5 +1,5 @@
 html, body {
-   @apply m-0 bg-black text-white cursor-none overflow-hidden;
+   @apply m-0 bg-black text-white overflow-hidden;
 }
 
 html, body, #__EIGHTEEN {
@@ -10,10 +10,18 @@ canvas:hover ~ #__EIGHTEEN-CURSOR {
    @apply p-4
 }
 
-#__EIGHTEEN-CURSOR div {
-   box-shadow: 0px 0 0px 2px black, 0px 0 0px 3px #fcfcfc, 0px 0 0px 5px #000000;
+#__EIGHTEEN-CURSOR div.cursor-container {
+   box-shadow: 0px 0 0px 1px white, 0px 0 0px 3px #000000, 0px 0 0px 4px #ffffff
 }
 
 canvas {
    @apply absolute top-0 right-0
+}
+
+button {
+   @apply outline-none border-none
+}
+
+* {
+   cursor: none !important
 }

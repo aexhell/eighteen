@@ -1,5 +1,5 @@
 <template>
-   <div id="__LAPLACE-INDICATOR" class="pointer-events-none select-none w-full" >
+   <div id="__EIGHTEEN-INDICATOR" class="pointer-events-none select-none w-full" >
       <div class="md:hidden flex flex-col items-center justify-center">
          <p class="font-semibold uppercase">Slide down</p>
          <img alt="Slide Down" class="animate-bounce text-white w-8 h-8" src="/slidedown.svg">

@@ -8,6 +8,14 @@
             <div class="w-full">
                <SlideDown />
             </div>
+            <div class="w-full mt-8 gap-4 flex flex-col">
+               <button class="border bg-black transition-all border-gray border-solid w-full text-white rounded-md px-4 py-4 text-lg uppercase font-medium">
+                  <span class="transition-all ">About Me</span>
+               </button>
+               <button class="border bg-black transition-all border-gray border-solid w-full text-white rounded-md px-4 py-4 text-lg uppercase font-medium">
+                  <span class="transition-all ">My Works</span>
+               </button>
+            </div>
          </div>
       </div>
       <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth z-20 md:w-2/5 w-full justify-center h-full md:my-auto my-8 flex flex-col gap-4">
@@ -15,6 +23,21 @@
       </div>
    </div>
 </template>
+
+<style scoped>
+button {
+   box-shadow: inset 0px 0px 1px white
+}
+
+button:hover {
+   box-shadow: inset 350px 0px 1px white
+}
+
+button:hover span {
+   color: black
+}
+
+</style>
 
 <script>
 export default {
