@@ -1,6 +1,6 @@
 <template>
    <div id="__EIGHTEEN-CURSOR" class="top-0 left-0 z-50 pointer-events-none md:block hidden select-none absolute">
-      <div class="cursor-container rounded-full border-black border border-solid transition-all" :class="{ 'p-2': !mousePressed, 'p-1': mousePressed }">
+      <div class="cursor-container rounded-full border-black border border-solid transition-all" :class="{ 'p-[2px]': !mousePressed, 'p-1': mousePressed }">
          <div class="p-[3px] rounded-full" :class="{ 'bg-white border-black border-solid border mix-blend-difference': mousePressed, 'opacity-0': !mousePressed}"></div>
       </div>
    </div>
