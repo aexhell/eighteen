@@ -1,5 +1,5 @@
 html, body {
-   @apply m-0 bg-black text-white overflow-hidden;
+   @apply m-0 bg-black text-white font-sans overflow-hidden;
 }
 
 html, body, #__EIGHTEEN {

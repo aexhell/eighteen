@@ -1,7 +1,7 @@
 <template>
    <div class="w-full h-full flex md:flex-row flex-col overflow-y-auto py-auto md:px-24">
       <div class="flex md:w-1/2 w-full h-full flex-col md:items-start items-center justify-center">
-         <div class="w-fit">
+         <div class="md:w-fit">
             <h1 class="lg:text-8xl md:text-6xl text-4xl font-bold w-full relative">
                <span>Aex<span class="text-fill-stroke">hell</span></span>
             </h1>

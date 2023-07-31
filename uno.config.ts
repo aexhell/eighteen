@@ -27,7 +27,7 @@ export default defineConfig({
       presetWebFonts({
          provider: 'fontshare',
          fonts: {
-            sans: 'Satoshi',
+            sans: 'Inter',
             mono: ['Fira Code', 'Fira Mono:400,700'],
          },
       }),
