@@ -1,0 +1,19 @@
+html, body {
+   @apply m-0 bg-black text-white cursor-none overflow-hidden;
+}
+
+html, body, #__EIGHTEEN {
+   @apply w-full h-full
+}
+
+canvas:hover ~ #__EIGHTEEN-CURSOR {
+   @apply p-4
+}
+
+#__EIGHTEEN-CURSOR div {
+   box-shadow: 0px 0 0px 2px black, 0px 0 0px 3px #fcfcfc, 0px 0 0px 5px #000000;
+}
+
+canvas {
+   @apply absolute top-0 right-0
+}
