@@ -54,9 +54,6 @@ export default {
 
     const geometry = new THREE.OctahedronGeometry( 10, 3, 100, 2 ); 
     const wireframe = new THREE.EdgesGeometry( geometry );
-    const material = new THREE.PointsMaterial({ color: 0xffffff, size: Math.floor(Math.random() * 0.5) } );
-    const points = new THREE.Points(geometry, material);
-    // scene.add( points );
 
     const line = new THREE.LineSegments( wireframe );
     line.material.depthTest = true;

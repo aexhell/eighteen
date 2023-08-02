@@ -1,6 +1,6 @@
 <template>
    <div id="__EIGHTEEN-CURSOR" class="top-0 left-0 z-50 pointer-events-none md:block hidden select-none absolute">
-      <div class="cursor-container rounded-full border-black border border-solid transition-all" :class="{ 'p-[2px]': !mousePressed, 'p-1': mousePressed }">
+      <div class="cursor-container border-black border border-solid transition-all" :class="{ 'p-[2px] rounded-full': !mousePressed, 'p-1 rounded-br-full rounded-tr-full rounded-bl-full': mousePressed }">
          <div class="p-[3px] rounded-full" :class="{ 'bg-white border-black border-solid border mix-blend-difference': mousePressed, 'opacity-0': !mousePressed}"></div>
       </div>
    </div>
@@ -20,7 +20,7 @@ export default {
 
       const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
       const pos = { x: 0, y: 0 }; // cursor's coordinates
-      const speed = 0.25; // between 0 and 1
+      const speed = 0.3; // between 0 and 1
 
       const updateCoordinates = e => {
          mouse.x = e.clientX;
@@ -30,7 +30,6 @@ export default {
       window.addEventListener('mousemove', updateCoordinates);
 
       for (var i = 0; i < button.length; i++) {
-         console.log(button)
          button[i].addEventListener('mouseover', () => this.mousePressed = true)
          button[i].addEventListener('mouseleave', () => this.mousePressed = false)
       }
@@ -75,16 +74,16 @@ export default {
 
       const cursorModifiers = document.querySelectorAll('[cursor-class]');
 
-      cursorModifiers.forEach(curosrModifier => {
-      curosrModifier.addEventListener('mouseenter', function() {
-         const className = this.getAttribute('cursor-class');
-         cursor.classList.add(className);
-      });
-      
-      curosrModifier.addEventListener('mouseleave', function() {
-         const className = this.getAttribute('cursor-class');
-         cursor.classList.remove(className);
-      });
+      cursorModifiers.forEach(cursorModifier => {
+         cursorModifier.addEventListener('mouseenter', function() {
+            const className = this.getAttribute('cursor-class');
+            cursor.classList.add(className);
+         });
+         
+         cursorModifier.addEventListener('mouseleave', function() {
+            const className = this.getAttribute('cursor-class');
+            cursor.classList.remove(className);
+         });
       });
    }
 }
