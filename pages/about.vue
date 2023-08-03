@@ -1,6 +1,6 @@
 <template>
    <div id="__EIGHTEEN_ABOUT" class="md:w-2/5 flex overflow-y-auto w-full h-full">
-      <div class="my-auto">
+      <div class="my-auto md:px-0 px-12">
          <h2 class="md:text-5xl text-black dark:text-white text-2xl font-bold w-full">Good evening.</h2>
          <div id="__EIGHTEEN_ABOUT_CONTAINER" class="text-black dark:text-white">
             <p class="xl:text-lg">

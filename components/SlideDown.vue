@@ -2,7 +2,7 @@
    <div id="__EIGHTEEN-INDICATOR" class="pointer-events-none text-black dark:text-white select-none w-full" >
       <div class="md:hidden flex flex-col items-center text-black dark:text-white justify-center">
          <p class="font-semibold uppercase my-4">Slide down</p>
-         <svg class="animate-bounce w-8 h-8" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <svg class="animate-bounce w-8 h-8 text-black dark:text-white" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_44_26)">
                <mask id="path-1-inside-1_44_26" fill="currentColor">
                   <path d="M4.99998 20C4.99998 11.7158 11.7157 4.99999 20 4.99999C28.2843 4.99999 35 11.7158 35 20C35 28.2843 28.2843 35.0001 20 35.0001C11.7157 35.0001 4.99998 28.2843 4.99998 20Z"/>
