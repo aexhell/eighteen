@@ -9,8 +9,7 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: {
-        lang: 'en',
-        class: 'cursor-enabled'
+        lang: 'en'
       },
       title: 'Aexhell',
       meta: [

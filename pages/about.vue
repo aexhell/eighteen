@@ -1,8 +1,8 @@
 <template>
    <div id="__EIGHTEEN_ABOUT" class="md:w-2/5 flex overflow-y-auto w-full h-full">
       <div class="my-auto">
-         <h2 class="md:text-4xl text-black dark:text-white text-2xl font-bold w-full">Good evening.</h2>
-         <div id="__EIGHTEEN_ABOUT_CONTAINER" class="text-black dark:text-whites">
+         <h2 class="md:text-5xl text-black dark:text-white text-2xl font-bold w-full">Good evening.</h2>
+         <div id="__EIGHTEEN_ABOUT_CONTAINER" class="text-black dark:text-white">
             <p class="xl:text-lg">
                I am <code>aexhell</code>, a web developer creating new experiences for you. My pronouns are he/them but you can refer to me as a development team.
                Around 2014, I discovered GameMaker and started using it as a playground for coding. 

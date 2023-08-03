@@ -27,7 +27,7 @@ export default {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 5, 100);
     const renderer = new THREE.WebGLRenderer( { alpha: true } );
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(600, window.innerHeight);
 
     const controls = new OrbitControls( camera, renderer.domElement );
     camera.position.set( 1, 5, 25 );
@@ -36,7 +36,7 @@ export default {
     const listener = new THREE.AudioListener();
     camera.add( listener );
 
-    const w = 1920;
+    const w = 600;
     const h = 1080;
     const fullWidth = w * 3;
     const fullHeight = h * 2;
@@ -64,8 +64,11 @@ export default {
     document.body.appendChild(renderer.domElement);
     renderer.domElement.classList.add('select-none');
     renderer.domElement.classList.add('pointer-events-none');
-    renderer.domElement.classList.add('dark:opacity-30');
+    renderer.domElement.classList.add('dark:opacity-[0.1]');
     renderer.domElement.classList.add('opacity-70');
+
+    var htmlElement = document.querySelector("html");
+    htmlElement.classList.add('cursor-enabled');
 
     if (WebGL.isWebGLAvailable() ) {
       animate();
@@ -78,8 +81,6 @@ export default {
 </script>
 
 <script setup>
-console.log(useNuxtApp())
-
 useServerSeoMeta({
   ogTitle: 'Aexhell',
   description: 'Web Developer / UX Artist',

@@ -9,18 +9,26 @@
                      Aexhell <span class="dark:text-fill-stroke">Collective</span>
                   </nuxt-link>
                </div>
-               <div class="w-full mt-18 md:mt-0 gap-4 flex flex-col">
-                  <nuxt-link to="/about" class="no-underline border text-center bg-black transition-all border-gray hover:bg-white border-solid w-full text-white hover:text-black rounded-md px-8 py-4 text-lg uppercase font-medium">
+               <div class="md:w-full mt-18 md:mt-0 gap-4 flex flex-col">
+                  <nuxt-link to="/about" class="no-underline border text-center md:w-full bg-black dark:bg-black/50 transition-all border-gray hover:bg-white border-solid text-white hover:text-black rounded-md px-8 py-4 text-lg uppercase font-medium">
                      About Me
                   </nuxt-link>
-                  <nuxt-link to="/works" class="no-underline border text-center bg-black transition-all border-gray hover:bg-white border-solid w-full text-white hover:text-black rounded-md px-8 py-4 text-lg uppercase font-medium">
+                  <nuxt-link to="/works" class="no-underline border text-center md:w-full bg-black dark:bg-black/50 transition-all border-gray hover:bg-white border-solid text-white hover:text-black rounded-md px-8 py-4 text-lg uppercase font-medium">
                      My Works
                   </nuxt-link>
                </div>
-               <div class="md:block hidden">
-                  <button class="bg-transparent p-2 w-12 h-12 border-black dark:border-white border-solid border rounded-full mt-8 cursor-pointer" @click="enableCursor">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+               <div class="md:w-full border-t border-t-solid mt-8 border-gray md:px-0 md:justify-start justify-end flex gap-2">
+                  <button class="bg-transparent p-1 md:w-12 md:h-12 w-8 h-8 border-black md:flex hidden dark:border-white border-solid border dark:text-white rounded-full mt-8 cursor-pointer" @click="enableCursor">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 m-auto">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
+                     </svg>
+                  </button>
+                  <button class="bg-transparent p-1 md:w-12 md:h-12 w-8 h-8 border-black dark:border-white flex border-solid border dark:text-white rounded-full mt-8 cursor-pointer" @click="darkModeChange">
+                     <svg v-if="!darkMode" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="md:w-6 md:h-6 w-full h-full m-auto">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                     </svg>
+                     <svg v-else xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="md:w-6 md:h-6 w-full h-full m-auto">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                      </svg>
                   </button>
                </div>
@@ -31,6 +39,16 @@
       <Cursor v-if="cursorEnabled" />
    </div>
 </template>
+
+<style>
+html.dark span.dark\:text-fill-stroke, span.text-fill-stroke {
+   background: url("/gradient.svg");
+   background-size: 200%;
+   background-position: right;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+</style>
 
 <script>
 export default {
@@ -43,11 +61,23 @@ export default {
          } else htmlElement.classList.add('cursor-enabled');
 
          this.cursorEnabled = !this.cursorEnabled;
+      },
+      darkModeChange () {
+         var htmlElement = document.querySelector("html");
+   
+         if (htmlElement.classList.contains('dark')) {
+            htmlElement.classList.remove('dark');
+            this.darkMode = false;
+         } else {
+            htmlElement.classList.add('dark');
+            this.darkMode = true;
+         }
       }
    },
    data () {
       return {
-         cursorEnabled: true
+         cursorEnabled: true,
+         darkMode: false
       }
    }
 }
