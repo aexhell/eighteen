@@ -57,14 +57,15 @@ export default {
 
     const line = new THREE.LineSegments( wireframe );
     line.material.depthTest = true;
-    line.material.opacity = 0.2;
+    line.material.opacity = 1;
     line.material.transparent = true;
     scene.add(line);
 
     document.body.appendChild(renderer.domElement);
     renderer.domElement.classList.add('select-none');
     renderer.domElement.classList.add('pointer-events-none');
-    renderer.domElement.classList.add('z-10');
+    renderer.domElement.classList.add('dark:opacity-30');
+    renderer.domElement.classList.add('opacity-70');
 
     if (WebGL.isWebGLAvailable() ) {
       animate();
@@ -77,6 +78,8 @@ export default {
 </script>
 
 <script setup>
+console.log(useNuxtApp())
+
 useServerSeoMeta({
   ogTitle: 'Aexhell',
   description: 'Web Developer / UX Artist',

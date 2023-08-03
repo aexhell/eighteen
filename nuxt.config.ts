@@ -6,9 +6,11 @@ export default defineNuxtConfig({
   ],
   app: {
     rootId: '__EIGHTEEN',
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: {
-        lang: 'en'
+        lang: 'en',
+        class: 'cursor-enabled'
       },
       title: 'Aexhell',
       meta: [

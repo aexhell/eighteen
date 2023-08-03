@@ -1,9 +1,14 @@
 html, body {
-   @apply m-0 bg-black text-white font-sans overflow-hidden;
+   @apply m-0 bg-white dark:bg-black text-white font-sans overflow-hidden;
 }
 
 html, body, #__EIGHTEEN {
    @apply w-full h-full
+}
+
+a {
+   @apply underline;
+   color: currentColor
 }
 
 canvas:hover ~ #__EIGHTEEN-CURSOR {
@@ -22,6 +27,6 @@ button {
    @apply outline-none border-none
 }
 
-* {
+html.cursor-enabled * {
    cursor: none !important
 }
