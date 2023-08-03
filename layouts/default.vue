@@ -5,19 +5,19 @@
          <div class="flex md:w-1/2 w-full h-full flex-col md:items-start items-center justify-center">
             <div class="md:w-2/5">
                <div class="w-full my-12">
-                  <nuxt-link to="/" class="no-underline lg:text-8xl md:text-6xl text-black dark:text-white text-4xl font-bold w-full">
+                  <nuxt-link to="/" class="no-underline lg:text-7xl md:text-6xl text-black dark:text-white text-4xl font-bold w-full">
                      Aexhell <span class="dark:text-fill-stroke">Collective</span>
                   </nuxt-link>
                </div>
                <div class="md:w-full mt-18 md:mt-0 gap-4 flex flex-col">
-                  <nuxt-link to="/about" class="no-underline border text-center md:w-full bg-black dark:bg-black/50 transition-all border-gray hover:bg-white border-solid text-white hover:text-black rounded-md px-8 py-4 text-lg uppercase font-medium">
+                  <nuxt-link to="/about" class="no-underline md:border text-center md:w-full transition-all border-gray border-solid text-black dark:text-white dark:hover:text-black dark:hover:bg-white rounded-md px-8 py-4 text-lg uppercase font-medium">
                      About Me
                   </nuxt-link>
-                  <nuxt-link to="/works" class="no-underline border text-center md:w-full bg-black dark:bg-black/50 transition-all border-gray hover:bg-white border-solid text-white hover:text-black rounded-md px-8 py-4 text-lg uppercase font-medium">
+                  <nuxt-link to="/works" class="no-underline md:border text-center md:w-full transition-all border-gray border-solid text-black dark:text-white dark:hover:text-black dark:hover:bg-white rounded-md px-8 py-4 text-lg uppercase font-medium">
                      My Works
                   </nuxt-link>
                </div>
-               <div class="md:w-full border-t border-t-solid mt-8 border-gray md:px-0 md:justify-start justify-end flex gap-2">
+               <div class="md:w-full md:border-none border-t border-t-solid mt-8 border-gray md:px-0 md:justify-start justify-end flex gap-2">
                   <button class="bg-transparent p-1 md:w-12 md:h-12 w-8 h-8 border-black md:flex hidden dark:border-white border-solid border dark:text-white rounded-full mt-8 cursor-pointer" @click="enableCursor">
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 m-auto">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />

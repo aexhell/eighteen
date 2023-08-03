@@ -27,7 +27,7 @@ export default defineConfig({
       presetIcons(),
       presetTypography(),
       presetWebFonts({
-         provider: 'fontshare',
+         provider: 'bunny',
          fonts: {
             sans: 'Inter',
             mono: ['Fira Code', 'Fira Mono:400,700'],
