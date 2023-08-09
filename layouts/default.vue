@@ -10,10 +10,10 @@
                   </nuxt-link>
                </div>
                <div class="md:w-full mt-18 md:mt-0 gap-4 flex flex-col">
-                  <nuxt-link to="/about" class="no-underline md:border text-center md:w-full transition-all border-gray border-solid text-black dark:text-white dark:hover:text-black hover:bg-black dark:hover:bg-white rounded-md px-8 py-4 text-lg uppercase font-medium">
+                  <nuxt-link to="/about" class="no-underline md:border text-center md:w-full transition-all border-gray border-solid text-black dark:text-white dark:hover:text-black hover:bg-black hover:text-white dark:hover:bg-white rounded-md px-8 py-4 text-lg uppercase font-medium">
                      About Me
                   </nuxt-link>
-                  <nuxt-link to="/works" class="no-underline md:border text-center md:w-full transition-all border-gray border-solid text-black dark:text-white dark:hover:text-black hover:bg-black dark:hover:bg-white rounded-md px-8 py-4 text-lg uppercase font-medium">
+                  <nuxt-link to="/works" class="no-underline md:border text-center md:w-full transition-all border-gray border-solid text-black dark:text-white dark:hover:text-black hover:bg-black hover:text-white dark:hover:bg-white rounded-md px-8 py-4 text-lg uppercase font-medium">
                      My Works
                   </nuxt-link>
                </div>
