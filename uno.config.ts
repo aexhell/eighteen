@@ -9,8 +9,10 @@ export default defineConfig({
    rules: [
       ['shadow-light', { filter: 'drop-shadow(0 0 35px #ffffff99)'}],
       ['transform-matrix', { transform: 'matrix3d(0.9, 0.1, 0.5, 0, 0, 1, -0.1, 0, 0, 0, 0.1, 0, 0, 0, 0, 1.2)' }],
+      ['bg-dot', {background-image: 'linear-gradient(45deg, #00000033 .1em, transparent .1em)'}],
+      ['bg-dot-dark', {background-image: 'linear-gradient(45deg, #e7e7e733 .1em, transparent .1em)'}],
       ['bg-gradient', { background: 'linear-gradient(45deg, #193747, #fcfcfc, #fcfcfc, #fcfcfc, #442149)'}],
-      ['bg-gradient-dark', { background: 'linear-gradient(45deg, #193747, black, black, black, #442149)'}]
+      ['bg-gradient-dark', { background: 'linear-gradient(45deg, #193747, black, black, black, #442149)'}],
     ],
    shortcuts: [
       // ...

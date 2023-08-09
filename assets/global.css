@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 html, body {
-   @apply m-0 bg-white dark:bg-black text-white font-sans overflow-hidden;
+   @apply m-0 bg-white dark:bg-black bg-dot dark:bg-dot-dark text-white font-sans overflow-hidden;
+   background-size: 3em 3em;
 }
 
 html, body, #__EIGHTEEN {
