@@ -23,7 +23,24 @@ canvas:hover ~ #__EIGHTEEN-CURSOR {
 }
 
 canvas {
-   @apply absolute top-0 right-0
+   @apply absolute top-0 right-0 select-none pointer-events-none dark:opacity-[0.1] opacity-70 md:block hidden
+}
+
+.__EIGHTEEN-PROJECT-IMAGE {
+   clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%)
+}
+
+.__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-IMAGE {
+   opacity: 100;
+   clip-path: polygon(0 0, 75% 0%, 50% 100%, 0% 100%)
+}
+
+.__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-DETAILS {
+   @apply opacity-100 right-5 duration-200
+}
+
+a:active, button:active {
+   @apply translate-y-px
 }
 
 button {

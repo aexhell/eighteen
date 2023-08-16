@@ -1,36 +1,36 @@
 <template>
-   <div class="__EIGHTEEN-PROJECT z-20 py-24 mx-12 rounded-lg relative shadow-xl bg-black/50 hover:bg-white transition">
-      <img :alt="`${data.title} Image`" class="pointer-events-none rounded-lg select-none opacity-75 hover:opacity-0 absolute transition-all top-0 left-0 object-cover w-full h-full" :src="`/projects/${data.code}.webp`" />
-      <div class="__EIGHTEEN-PROJECT-DETAILS transition-all duration-500 absolute text-white left-6" :class="{ '__EIGHTEEN-PROJECT-NODESCR bottom-5': !data.description, 'bottom-0': data.description }">
-         <span class="text-xs border-t dark:border-white md:border-solid border-x-0 border-b-0 pt-2 my-0 font-medium uppercase" v-text="data.position || 'Contributor'" />
-         <h2 class="mt-0 mb-4" v-text="data.title" />
-         <p v-if="data.description" class="text-sm opacity-0 my-0" v-text="data.description || 'Description'" />
+   <div class="__EIGHTEEN-PROJECT z-20 py-20 md:mx-24 mx-8 rounded-lg relative shadow-xl bg-black/50 dark:bg-black/50 hover:backdrop-blur-sm hover:bg-black/75 dark:hover:bg-white/5 transition-all">
+      <img :alt="`${data.title} Image`" class="__EIGHTEEN-PROJECT-IMAGE pointer-events-none rounded-lg select-none opacity-60 absolute transition-all top-0 left-0 object-cover w-full h-full" :src="`/projects/${data.code}.webp`" />
+      <div class="__EIGHTEEN-PROJECT-TITLE absolute transition-all bottom-4 left-4 text-white">
+         <h2 class="mt-0 mb-4 text-4xl transition-all" v-text="data.title" />
+      </div>
+      <div class="__EIGHTEEN-PROJECT-DETAILS absolute z-[-1] opacity-0 my-auto bottom-5 right-0 text-white">
+         <div class="text-sm text-right">
+            <div>
+               <h3 class="my-0 text-sm uppercase font-bold">
+                  Position
+               </h3>
+               {{ data.position || 'Contributor' }}
+            </div>
+            <div class="mt-4">
+               <h3 class="my-0 text-sm uppercase font-bold">
+                  Date
+               </h3>
+               {{ data.date }}
+            </div>
+         </div>
       </div>
    </div>
 </template>
 
 <style>
-.__EIGHTEEN-PROJECT-DETAILS span {
-   transition: 0.25s border ease-in-out
+.__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-TITLE {
+   @apply left-[40px]
 }
-
-.__EIGHTEEN-PROJECT:hover img {
-   opacity: 0.2
-}
-
-.__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-DETAILS {
-   @apply opacity-100 text-black dark:md:text-white dark:md:mix-blend-exclusion bottom-10
-}
-
-.__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-NODESCR {
-   @apply md:left-[-40px] bottom-5
-}
-
-.__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-DETAILS p {
-   @apply opacity-100
+.__EIGHTEEN-PROJECT:hover h2 {
+   filter: drop-shadow(0px 0px 8px black)
 }
 </style>
-
 
 <script>
 export default {

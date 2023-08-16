@@ -1,13 +1,38 @@
 <template>
-   <div id="__EIGHTEEN_LANDING" class="md:w-2/5 flex overflow-y-auto w-full h-full">
-      <svg class="m-auto dark:text-white md:w-auto md:h-auto w-24 h-24 md:shadow-light text-black"  width="180" height="208" viewBox="0 0 180 208" fill="none" xmlns="http://www.w3.org/2000/svg">
-         <path d="M0 0H53L89 58.24L127 0H180L164 24.96H127L91 83.2H89L53 24.96H16L0 0Z" fill="currentColor"/>
-         <path d="M16 49.92H54L89 108.16H91L127 49.92H164L129 104L180 183.04H164L129 128.96L121 141.44L164 208H127L91 149.76H89L52 208H16L59 141.44L51 128.96L16 183.04H0L51 104L16 49.92Z" fill="currentColor"/>
-      </svg>
+   <div id="__EIGHTEEN-HOME" class="flex overflow-y-auto w-full h-full">
+      <div class="md:w-1/2 md:px-24 w-full px-8">
+         <h2 class="md:text-5xl text-black dark:text-white text-3xl font-bold w-fit">Reach for the <span class="text-fill-stroke">moon</span>.</h2>
+         <div id="__EIGHTEEN-HOME-CONTAINER" class="text-black dark:text-white">
+            <p class="xl:text-lg w-fit">
+               I am <code>aexhell</code>, a web developer creating new experiences for you. My pronouns are he/them but you can refer to me as a development team.
+               Around 2014, I discovered GameMaker and started using it as a playground for coding. 
+            </p>
+            <p class="xl:text-lg w-fit">
+               In 2018 I joined the <a href="https://fandom.com">Fandom</a> wiki platform, learning basic web stack (HTML, JS, CSS). By 2019-2020, I started using the <a href="https://vuejs.org">Vue.js</a> framework.
+               In 2021 I started using <a href="https://nuxt.com">Nuxt.js</a>. In 2021 I updated my tech stack, using technologies as React, Svelte and PHP.
+            </p>
+            <p class="xl:text-lg w-fit">
+               <nuxt-link to="/works">Wanna see my works?</nuxt-link>
+            </p>
+         </div>
+      </div>
    </div>
 </template>
 
 <style>
+html.dark span.dark\:text-stroke, .text-stroke {
+   -webkit-text-stroke: 1px white;
+   background: none
+}
+
+html.dark .dark\:text-fill-stroke, .text-fill-stroke {
+   background: url("/gradient.svg");
+   background-size: 300%;
+   background-position: right;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
 .page-enter-active,
 .page-leave-active {
   transition: all 0.3s ease-in-out

@@ -62,13 +62,9 @@ export default {
     scene.add(line);
 
     document.body.appendChild(renderer.domElement);
-    renderer.domElement.classList.add('select-none');
-    renderer.domElement.classList.add('pointer-events-none');
-    renderer.domElement.classList.add('dark:opacity-[0.1]');
-    renderer.domElement.classList.add('opacity-70');
 
-    var htmlElement = document.querySelector("html");
-    htmlElement.classList.add('cursor-enabled');
+    /*var htmlElement = document.querySelector("html");
+    htmlElement.classList.add('cursor-enabled');*/
 
     if (WebGL.isWebGLAvailable() ) {
       animate();
