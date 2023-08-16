@@ -1,7 +1,7 @@
 <template>
    <div id="__EIGHTEEN-CONTACT" class="flex overflow-y-auto w-full h-full">
       <div class="md:w-1/2 md:px-24 w-full px-8">
-         <h2 class="md:text-5xl text-black dark:text-white text-2xl font-bold w-full">Contact us.</h2>
+         <h2 class="xl:text-7xl xl:my-0 lg:text-7xl md:text-5xl text-black dark:text-white text-3xl font-bold w-fit">Contact us.</h2>
          <div id="__EIGHTEEN-CONTACT-CONTAINER" class="text-black dark:text-white">
             <p class="xl:text-lg">
                You may contact me using the following methods:

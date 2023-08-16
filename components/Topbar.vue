@@ -1,6 +1,6 @@
 <template>
    <header class="w-full" id="__EIGHTEEN-TOPBAR">
-      <nav class="md:py-12 md:px-24 px-8 border-black/10 dark:border-white/10 py-8 flex items-center dark:text-white text-black justify-between">
+      <nav class="md:py-12 md:px-24 px-8 md:border-none border-b border-b-solid border-black/10 dark:border-white/10 py-8 flex items-center dark:text-white text-black justify-between">
          <nuxt-link to="/" class="font-bold no-underline uppercase">
             <svg class="w-10 h-10" width="180" height="208" viewBox="0 0 180 208" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path d="M0 0H53L89 58.24L127 0H180L164 24.96H127L91 83.2H89L53 24.96H16L0 0Z" fill="currentColor"/>

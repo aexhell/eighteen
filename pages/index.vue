@@ -1,7 +1,7 @@
 <template>
    <div id="__EIGHTEEN-HOME" class="flex overflow-y-auto w-full h-full">
       <div class="md:w-1/2 md:px-24 w-full px-8">
-         <h2 class="md:text-5xl text-black dark:text-white text-3xl font-bold w-fit">Reach for the <span class="text-fill-stroke">moon</span>.</h2>
+         <h2 class="xl:text-6xl lg:my-0 lg:mb-8 lg:text-6xl md:text-5xl text-black dark:text-white text-3xl font-bold w-fit">Reach for the <span class="text-fill-stroke">moon</span>.</h2>
          <div id="__EIGHTEEN-HOME-CONTAINER" class="text-black dark:text-white">
             <p class="xl:text-lg w-fit">
                I am <code>aexhell</code>, a web developer creating new experiences for you. My pronouns are he/them but you can refer to me as a development team.

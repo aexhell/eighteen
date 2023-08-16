@@ -1,6 +1,6 @@
 <template>
    <div id="__EIGHTEEN_PROJECTS_CONTAINER" class="w-full flex justify-center items-start overflow-y-auto">
-      <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth z-20 w-full pt-8 md:justify-center lg:w-3/4 w-full h-auto flex flex-col gap-4">
+      <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth z-20 w-full md:pt-0 pt-8 md:justify-center overflow-y-auto lg:w-3/4 w-full h-auto flex flex-col gap-2 md:pb-0 pb-32">
          <div class="w-full hidden">
             <SlideDown />
          </div>
@@ -16,23 +16,26 @@ export default {
          projects: [
             {
                code: 'puroto',
+               stack: 'Nuxt/Go',
                title: 'Puroto',
                position: 'Front-end',
                description: 'Social media for furries.',
-               date: 'August 2022'
+               date: 'Aug 2022 / Dic 2022'
             },
             {
                code: 'mylium',
+               stack: 'Nuxt/PHP',
                title: 'Mylium',
                position: 'Founder',
                description: 'Connecting people with you.',
-               date: 'February 2023'
+               date: 'Feb 2023 / ----'
             },
             {
                code: 'nc',
+               stack: 'Nuxt',
                position: '----',
                title: '[REDACTED]',
-               date: '----'
+               date: 'TBR'
             }
          ]
       }
