@@ -1,8 +1,8 @@
 <template>
    <header class="w-full relative z-20" id="__EIGHTEEN-TOPBAR">
-      <nav class="md:py-12 md:px-24 px-16 md:border-none border-b border-b-solid border-black/10 dark:border-white/10 py-8 flex items-center dark:text-white text-black justify-between">
+      <nav class="md:py-12 md:px-24 px-8 md:border-none border-b border-b-solid border-black/10 dark:border-white/10 py-8 flex items-center dark:text-white text-black justify-between">
          <nuxt-link to="/" class="font-bold no-underline uppercase">
-            <svg class="w-10 h-10" width="180" height="208" viewBox="0 0 180 208" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-10 h-10 text-black dark:text-white" width="180" height="208" viewBox="0 0 180 208" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path d="M0 0H53L89 58.24L127 0H180L164 24.96H127L91 83.2H89L53 24.96H16L0 0Z" fill="currentColor"/>
                <path d="M16 49.92H54L89 108.16H91L127 49.92H164L129 104L180 183.04H164L129 128.96L121 141.44L164 208H127L91 149.76H89L52 208H16L59 141.44L51 128.96L16 183.04H0L51 104L16 49.92Z" fill="currentColor"/>
             </svg>
