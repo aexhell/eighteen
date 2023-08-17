@@ -1,10 +1,7 @@
 <template>
-   <div id="__EIGHTEEN_PROJECTS_CONTAINER" class="w-full flex justify-center items-start">
-      <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth z-20 w-full md:pt-0 pt-8 md:justify-center transition-width lg:w-3/4 w-full h-auto flex flex-col gap-2 md:pb-8">
-         <div class="w-full hidden">
-            <SlideDown />
-         </div>
-         <Project v-for="proj of projects" :key="proj.code" :data="proj" />
+   <div id="__EIGHTEEN-PROJECTS-CONTAINER" class="w-full flex justify-center items-start">
+      <div id="__EIGHTEEN-PROJECTS-CAROUSEL" class="scroll-smooth z-20 md:pt-0 pt-8 transition-width md:px-24 px-8 w-full h-full flex md:pb-8">
+         <Carousel :data="projects" />
       </div>
    </div>
 </template>
@@ -32,7 +29,6 @@ export default {
                date: 'Feb 2023 / ----',
                link: '/works/mylium'
             },
-            /*
             {
                code: 'nc',
                stack: 'Nuxt',
@@ -41,7 +37,6 @@ export default {
                date: 'TBR',
                link: '#'
             }
-            */
          ]
       }
    }

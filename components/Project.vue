@@ -1,5 +1,5 @@
 <template>
-   <div class="__EIGHTEEN-PROJECT z-20 lg:py-24 py-18 md:mx-24 mx-8 rounded-lg relative shadow-xl bg-black/50 dark:bg-black/50 hover:backdrop-blur-sm hover:bg-black/40 dark:hover:bg-white/5 transition-all">
+   <div class="__EIGHTEEN-PROJECT z-50 lg:py-32 py-18 w-full rounded-lg relative shadow-xl bg-black/50 dark:bg-black/50 hover:backdrop-blur-sm hover:bg-black/40 dark:hover:bg-white/5 transition-all">
       <img :alt="`${data.title} Image`" class="__EIGHTEEN-PROJECT-IMAGE pointer-events-none rounded-lg select-none opacity-60 absolute transition-all top-0 left-0 object-cover w-full h-full" :src="`/projects/${data.code}.webp`" />
       <div class="__EIGHTEEN-PROJECT-TITLE absolute transition-all bottom-4 left-4 text-white">
          <h2 class="mt-0 mb-4 text-4xl transition-all" v-text="data.title" />

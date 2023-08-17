@@ -17,6 +17,15 @@ export default {
       }
    },
    mounted () {
+      class ExpandingList extends HTMLDivElement {
+         constructor() {
+            super();
+         }
+      }
+
+      // Define the new element
+      customElements.define("axhl-carousel", ExpandingList, { extends: "div" });
+
       var e = document.querySelector('html');
       var observer = new MutationObserver(event => {
          this.htmlElement = document.querySelector("html").classList.contains('cursor-enabled');
