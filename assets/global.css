@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+:root.dark {
+   color-scheme: dark
+}
+
 html, body {
-   @apply m-0 bg-white dark:bg-black bg-dot dark:bg-dot-dark text-white font-sans overflow-hidden;
+   @apply m-0 bg-white dark:bg-black bg-dot dark:bg-dot-dark text-white font-sans overflow-x-hidden overflow-y-auto;
    background-size: 3em 3em;
 }
 
@@ -31,8 +35,8 @@ canvas {
 }
 
 .__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-IMAGE {
+   @apply md:clippy sm:clippy-large clippy-xl;
    opacity: 100;
-   clip-path: polygon(0 0, 75% 0%, 50% 100%, 0% 100%)
 }
 
 .__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-DETAILS {

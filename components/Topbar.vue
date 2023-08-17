@@ -1,5 +1,5 @@
 <template>
-   <header class="w-full" id="__EIGHTEEN-TOPBAR">
+   <header class="w-full relative z-20" id="__EIGHTEEN-TOPBAR">
       <nav class="md:py-12 md:px-24 px-8 md:border-none border-b border-b-solid border-black/10 dark:border-white/10 py-8 flex items-center dark:text-white text-black justify-between">
          <nuxt-link to="/" class="font-bold no-underline uppercase">
             <svg class="w-10 h-10" width="180" height="208" viewBox="0 0 180 208" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,6 +22,9 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                </svg>
             </button>
+            <div class="rounded-lg hidden md:block bg-black/40 dark:bg-white/10 md:px-4 px-2 py-1 border border-solid dark:border-white/20 backdrop-blur-[2px] relative z-10 uppercase text-xs border-black/30 text-white">
+               {{ date }}
+            </div>
          </ul>
       </nav>
    </header>
@@ -50,10 +53,16 @@ export default {
          }
       }
    },
+   created() {
+      setInterval(() => {
+         this.date = new Date().toLocaleTimeString("en-US", {timeStyle: 'short', timeZone: "Europe/Madrid"});
+      }, 1000);
+   },
    data () {
       return {
          // activa esto en devtools si te apetece, a mí el mouse personalmente no me gusta
          mouseButton: false,
+         date: new Date().toLocaleTimeString("en-US", {timeStyle: 'short', timeZone: "Europe/Madrid"}),
          darkMode: false,
          lis: [
             {

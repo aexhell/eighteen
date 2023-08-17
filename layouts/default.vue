@@ -2,7 +2,7 @@
    <div class="w-full h-full">
       <Topbar />
       <img src="/gradient.svg" class="absolute opacity-40 top-0 right-0 h-full pointer-events-none select-none">
-      <div class="w-full flex h-full relative z-10">
+      <div class="w-full flex h-auto relative z-10">
          <slot />
       </div>
       <Cursor v-if="htmlElement" />

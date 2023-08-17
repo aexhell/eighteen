@@ -9,7 +9,7 @@
             </p>
             <p class="xl:text-lg w-fit">
                In 2018 I joined the <a href="https://fandom.com">Fandom</a> wiki platform, learning basic web stack (HTML, JS, CSS). By 2019-2020, I started using the <a href="https://vuejs.org">Vue.js</a> framework.
-               In 2021 I started using <a href="https://nuxt.com">Nuxt.js</a>. In 2021 I updated my tech stack, using technologies as React, Svelte and PHP.
+               In 2021 I started using <a href="https://nuxt.com">Nuxt</a>. In 2022-2023 I updated my tech stack, using technologies as React, Svelte and PHP.
             </p>
             <p class="xl:text-lg w-fit">
                <nuxt-link to="/works">Wanna see my works?</nuxt-link>

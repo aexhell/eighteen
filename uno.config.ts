@@ -9,6 +9,9 @@ export default defineConfig({
    rules: [
       ['shadow-light', { filter: 'drop-shadow(0 0 3px #ffffff99)' }],
       ['transform-matrix', { transform: 'matrix3d(0.9, 0.1, 0.5, 0, 0, 1, -0.1, 0, 0, 0, 0.1, 0, 0, 0, 0, 1.2)' }],
+      ['clippy-xl', { 'clip-path': 'polygon(0 0, 35% 0%, 50% 100%, 0% 100%)'}],
+      ['clippy-large', { 'clip-path': 'polygon(0 0, 65% 0%, 50% 100%, 0% 100%)'}],
+      ['clippy', { 'clip-path': 'polygon(0 0, 75% 0%, 50% 100%, 0% 100%)'}],
       ['bg-dot', { 'background-image': 'linear-gradient(45deg, #0000003b .1em, transparent .1em)' }],
       ['bg-dot-dark', { 'background-image': 'linear-gradient(45deg, #ffffff17 .1em, transparent .1em)' }],
       ['bg-gradient', { background: 'linear-gradient(45deg, #193747, #fcfcfc, #fcfcfc, #fcfcfc, #442149)' }],
