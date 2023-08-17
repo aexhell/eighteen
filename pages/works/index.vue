@@ -1,6 +1,6 @@
 <template>
-   <div id="__EIGHTEEN-PROJECTS-CONTAINER" class="w-full flex justify-center items-start">
-      <div id="__EIGHTEEN-PROJECTS-CAROUSEL" class="scroll-smooth z-20 md:pt-0 pt-8 transition-width md:px-24 px-8 w-full h-full flex md:pb-8">
+   <div id="__EIGHTEEN-PROJECTS-CONTAINER" class="w-full flex h-auto justify-center items-start">
+      <div id="__EIGHTEEN-PROJECTS-CAROUSEL" class="scroll-smooth z-20 md:pt-0 pt-8 transition-width md:px-24 px-16 w-full h-full flex md:pb-8">
          <Carousel :data="projects" />
       </div>
    </div>

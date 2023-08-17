@@ -1,12 +1,9 @@
 <template>
    <div id="__EIGHTEEN-HOME" class="flex overflow-y-auto w-full h-full">
-      <div class="md:w-1/2 md:px-24 w-full px-8">
-         <div class="relative lg:my-0 lg:mb-24">
+      <div class="lg:w-1/2 md:px-24 w-full px-8">
+         <div class="relative lg:my-0 lg:mb-24 md:mb-28 w-full">
             <Transition>
-               <h2 v-if="lang === 0" class="xl:text-6xl absolute my-0 lg:text-6xl md:text-5xl text-black dark:text-white text-3xl font-bold w-fit" v-html="strs[lang]" />
-               <h2 v-else-if="lang === 1" class="xl:text-6xl absolute my-0 lg:text-6xl md:text-5xl text-black dark:text-white text-3xl font-bold w-fit" v-html="strs[lang]" />
-               <h2 v-else-if="lang === 2" class="xl:text-6xl absolute my-0 lg:text-6xl md:text-5xl text-black dark:text-white text-3xl font-bold w-fit" v-html="strs[lang]" />
-               <h2 v-else-if="lang === 3" class="xl:text-6xl absolute my-0 lg:text-6xl md:text-5xl text-black dark:text-white text-3xl font-bold w-fit" v-html="strs[lang]" />
+               <h2 :key="lang" class="xl:text-6xl absolute my-0 lg:text-6xl md:text-5xl text-black dark:text-white text-3xl font-bold w-auto" v-html="strs[lang]" />
             </Transition>
          </div>
          <div id="__EIGHTEEN-HOME-CONTAINER" class="text-black dark:text-white">
@@ -32,7 +29,7 @@ export default {
       setInterval(() => {
          if (this.lang === this.strs.length-1) this.lang = 0;
          else this.lang += 1;
-      }, 5000);
+      }, 2500);
    },
    data () {
       return {

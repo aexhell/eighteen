@@ -1,14 +1,15 @@
 <template>
-   <div class="__EIGHTEEN-PROJECT z-50 lg:py-32 py-18 w-full rounded-lg relative shadow-xl bg-black/50 dark:bg-black/50 hover:backdrop-blur-sm hover:bg-black/40 dark:hover:bg-white/5 transition-all">
+   <div class="__EIGHTEEN-PROJECT z-50 lg:py-32 py-24 w-full h-auto rounded-lg absolute shadow-xl bg-black/50 dark:bg-black/50 hover:backdrop-blur-[2px] hover:bg-black/40 dark:hover:bg-white/5 transition-all">
       <img :alt="`${data.title} Image`" class="__EIGHTEEN-PROJECT-IMAGE pointer-events-none rounded-lg select-none opacity-60 absolute transition-all top-0 left-0 object-cover w-full h-full" :src="`/projects/${data.code}.webp`" />
       <div class="__EIGHTEEN-PROJECT-TITLE absolute transition-all bottom-4 left-4 text-white">
+         <p class="opacity-0 transition" v-text="data.description" />
          <h2 class="mt-0 mb-4 text-4xl transition-all" v-text="data.title" />
       </div>
       <div class="__EIGHTEEN-PROJECT-DETAILS absolute z-[-1] opacity-0 my-auto bottom-5 right-0 text-white">
-         <div class="text-xs text-right">
+         <div class="md:text-sm text-xs text-right">
             <div class="flex items-center justify-end">
                <div>
-                  <h3 class="my-0 uppercase text-xs font-bold">
+                  <h3 class="my-0 uppercase md:text-sm text-xs font-bold">
                      Tech stack
                   </h3>
                   {{ data.stack }}
@@ -19,7 +20,7 @@
             </div>
             <div class="md:mt-6 mt-2 flex items-center justify-end">
                <div>
-                  <h3 class="my-0 uppercase text-xs font-bold">
+                  <h3 class="my-0 uppercase md:text-sm text-xs font-bold">
                      Position
                   </h3>
                   {{ data.position }}
@@ -30,7 +31,7 @@
             </div>
             <div class="md:mt-6 mt-2 flex items-center justify-end">
                <div>
-                  <h3 class="my-0 uppercase text-xs font-bold">
+                  <h3 class="my-0 uppercase md:text-sm text-xs font-bold">
                      Date
                   </h3>
                   {{ data.date }}
@@ -48,6 +49,11 @@
 .__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-TITLE {
    @apply md:left-[40px] left-[30px]
 }
+
+.__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-TITLE p {
+   opacity: 1
+}
+
 .__EIGHTEEN-PROJECT:hover h2 {
    filter: drop-shadow(0px 0px 8px black)
 }

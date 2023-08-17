@@ -1,40 +1,85 @@
 <template>
-   <axhl-carousel class="w-full relative h-full flex">
-      <div id="__EIGHTEEN-CAROUSEL-CONTROLLER">
-         <button id="__EIGHTEEN-CAROUSEL-RIGHT" class="right-[-40px] bg-transparent absolute h-full flex z-80" @click="forward">
+   <div id="AXHL-CAROUSEL" class="w-full relative h-full">
+      <div id="__EIGHTEEN-CAROUSEL-CONTROLLER" class="h-full absolute w-full">
+         <button id="__EIGHTEEN-CAROUSEL-RIGHT" class="right-[-40px] bottom-0 bg-transparent absolute h-full flex z-80" @click="forward">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 rounded-full flex text-black dark:text-white cursor-pointer m-auto">
                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
          </button>
-         <button id="__EIGHTEEN-CAROUSEL-LEFT" class="left-[-40px] bg-transparent absolute h-full flex my-auto z-80" @click="back">
+         <button id="__EIGHTEEN-CAROUSEL-LEFT" class="left-[-40px] bottom-0 bg-transparent absolute h-full flex my-auto z-80" @click="back">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 rounded-full flex text-black dark:text-white cursor-pointer m-auto">
                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
          </button>
       </div>
-      <Transition>
-         <Project :data="data[current]" />
-      </Transition>
-   </axhl-carousel>
+      <div class="w-full h-full absolute">
+         <Transition :name="`carousel${pressed}`">
+            <Project :key="current" :data="data[current]" />
+         </Transition>
+      </div>
+   </div>
 </template>
+
+<style>
+.carousel-enter-active,
+.carousel-leave-active,
+.carousel-back-enter-active,
+.carousel-back-leave-active {
+   width: 100%;
+   transition: all 0.3s ease-in-out
+}
+
+.carousel-enter-from,
+.carousel-leave-to,
+.carousel-back-enter-from,
+.carousel-back-leave-to {
+   opacity: 1
+}
+
+.carousel-enter-from {
+   transform: translateX(-200%)
+}
+
+.carousel-leave-to {
+   transform: translateX(200%)
+}
+
+.carousel-back-enter-from {
+   transform: translateX(200%)
+}
+
+.carousel-back-leave-to {
+   transform: translateX(-200%)
+}
+</style>
 
 <script>
 export default {
    name: 'Carousel',
    methods: {
       forward () {
+         this.pressed = '-back';
+
          if (this.current === this.data.length-1) this.current = 0;
          else this.current += 1;
       },
       back () {
+         this.pressed = '';
+
          if (this.current === 0) this.current = this.data.length-1;
          else this.current -= 1;
       }
    },
+   mounted () {
+      let size = document.getElementsByClassName('__EIGHTEEN-PROJECT-IMAGE');
+      if (size.length) this.size = size[0].clientHeight;
+   },
    data () {
       return {
+         pressed: '',
          current: 0,
-         prev: 0
+         prev: 0,
+         size: 0
       }
    },
    props: [
