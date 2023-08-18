@@ -9,6 +9,10 @@
    </div>
 </template>
 
+<script setup>
+useSeoMeta({ title: 'Works ~ ' });
+</script>
+
 <script>
 export default {
    data () {

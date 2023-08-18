@@ -18,6 +18,10 @@
    </div>
 </template>
 
+<script setup>
+useSeoMeta({ title: 'Contact ~ ' });
+</script>
+
 <script>
 export default {
    data () {

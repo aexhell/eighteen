@@ -23,6 +23,10 @@
    </div>
 </template>
 
+<script setup>
+useSeoMeta({ title: 'Home ~ ' });
+</script>
+
 <script>
 export default {
    mounted () {
