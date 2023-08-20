@@ -21,9 +21,8 @@ onMounted(() => {
 
    console.log(route)
 
-   route.beforeEach(() => {
-      button = document.querySelectorAll(selectors);
-      console.log(button);
+   route.afterEach(() => {
+      setTimeout(() => button = document.querySelectorAll(selectors), 500);
    });
 
    const updateCoordinates = e => {
@@ -52,6 +51,7 @@ onMounted(() => {
    }
 
    window.addEventListener('mousemove', updateCoordinates);
+   window.addEventListener('mouseup', mouseOnDown);
    window.addEventListener('mousedown', mouseOnDown);
 
    function loop() {

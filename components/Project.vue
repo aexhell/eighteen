@@ -1,6 +1,6 @@
 <template>
    <div :class="{ 'relative mx-8': column, 'absolute': !column }" class="__EIGHTEEN-PROJECT z-50 lg:py-32 py-24 w-full h-auto rounded-lg shadow-xl bg-black/50 dark:bg-black/50 hover:backdrop-blur-[2px] hover:bg-black/40 dark:hover:bg-white/5 transition-all">
-      <img :alt="`${data.title} Image`" class="__EIGHTEEN-PROJECT-IMAGE pointer-events-none rounded-lg select-none opacity-60 absolute transition-all top-0 left-0 object-cover w-full h-full" :src="`/projects/${data.code}.webp`" />
+      <img :alt="`${data.title} Image`" :class="{ 'object-top': data.code === 'moon'}" class="__EIGHTEEN-PROJECT-IMAGE pointer-events-none rounded-lg select-none opacity-60 absolute transition-all top-0 left-0 object-cover w-full h-full" :src="`/projects/${data.code}.webp`" />
       <div class="__EIGHTEEN-PROJECT-TITLE absolute transition-all bottom-4 left-4 text-white">
          <p class="opacity-0 text-xs md:text-base transition" v-text="data.description" />
          <h2 class="mt-0 mb-4 text-2xl transition-all" v-text="data.title" />

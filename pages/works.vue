@@ -19,6 +19,15 @@ export default {
       return {
          projects: [
             {
+               code: 'moon',
+               stack: 'Electron/Socket.io',
+               title: 'Moon',
+               position: 'Founder',
+               description: 'Vue + Electron IRC prototype.',
+               date: 'April 2021 / June 2021',
+               link: '#'
+            },
+            {
                code: 'puroto',
                stack: 'Nuxt/Go',
                title: 'Puroto',
