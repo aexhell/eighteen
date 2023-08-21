@@ -53,7 +53,7 @@ html.dark span.dark\:text-stroke, .text-stroke {
 html.dark .dark\:text-fill-stroke, .text-fill-stroke {
    background: url("/gradient.svg");
    background-size: 300%;
-   background-position: right;
+   background-position: 100% 15%;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 }
