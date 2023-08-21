@@ -50,6 +50,10 @@ html.dark span.dark\:text-stroke, .text-stroke {
    background: none
 }
 
+html.dark .dark\:text-fill-stroke, html.dark .text-fill-stroke {
+   background-position: 100% 50%
+}
+
 html.dark .dark\:text-fill-stroke, .text-fill-stroke {
    background: url("/gradient.svg");
    background-size: 300%;
