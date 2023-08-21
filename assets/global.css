@@ -4,8 +4,26 @@
    color-scheme: dark
 }
 
+@keyframes dotmove {
+   0% {
+      background-size: 3em 3em
+   }
+   25% {
+      background-size: 3em 6em
+   }
+   50% {
+      background-size: 6em 6em
+   }
+   75% {
+      background-size: 6em 3em
+   }
+   100% {
+      background-size: 3em 3em
+   }
+}
+
 html, body {
-   @apply m-0 bg-white dark:bg-black bg-dot dark:bg-dot-dark text-white font-sans overflow-x-hidden overflow-y-auto;
+   @apply m-0 bg-white dark:bg-black bg-dot dark:bg-dot-dark text-white font-sans overflow-x-hidden md:animate-dot overflow-y-auto;
    background-size: 3em 3em;
 }
 
