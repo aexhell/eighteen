@@ -68,7 +68,7 @@ export default {
         const sound = new THREE.Audio(listener);
         const audioLoader = new THREE.AudioLoader();
 
-        audioLoader.load(Math.floor(Math.random() * 1)+1 === 2 ? '/revelation.ogg' : '/letyoudown.ogg', buffer => {
+        audioLoader.load(Math.floor(Math.random() * 2)+1 === 2 ? '/revelation.ogg' : '/letyoudown.ogg', buffer => {
           sound.setBuffer(buffer);
           sound.setLoop(true);
           sound.setVolume(0.5);
