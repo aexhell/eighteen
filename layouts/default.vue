@@ -1,10 +1,10 @@
 <template>
    <div class="w-full h-full">
       <Topbar />
-      <img src="/gradient.svg" class="absolute opacity-40 top-0 right-0 h-full pointer-events-none select-none">
-      <div class="w-full flex h-auto relative z-10">
+      <img alt="Gradient background" src="/gradient.svg" class="absolute opacity-40 top-0 right-0 h-full pointer-events-none select-none">
+      <main role="main" class="w-full flex h-auto relative z-10">
          <slot />
-      </div>
+      </main>
       <Cursor v-if="htmlElement" />
    </div>
 </template>

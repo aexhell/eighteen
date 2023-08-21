@@ -33,7 +33,7 @@ export default {
                title: 'Puroto',
                position: 'Front-end',
                description: 'Social media for furries.',
-               date: 'Aug 2022 / Dic 2022',
+               date: 'Aug 2021 / Dic 2021',
                link: '#',
             },
             {
@@ -49,7 +49,7 @@ export default {
                code: 'nc',
                stack: 'Nuxt',
                position: '----',
-               title: '[REDACTED]',
+               title: 'Coming soon',
                date: 'TBR',
                link: '#'
             }
