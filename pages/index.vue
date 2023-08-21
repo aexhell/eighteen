@@ -38,7 +38,7 @@ export default {
    data () {
       return {
          lang: 0,
-         strs: ['Reach for the <span class="text-fill-stroke">moon</span>.', '伸手去够<span class="text-fill-stroke">月亮</span>。', '<span class="text-fill-stroke">月</span>に手を伸ばして。', '달에 도<span class="text-fill-stroke">달</span>.'],
+         strs: ['Reach for the <span class="text-fill-stroke">moon</span>.', '伸手去够<span class="text-fill-stroke">月亮</span>。', 'Alcanza la <span class="text-fill-stroke">luna</span>.', '<span class="text-fill-stroke">月</span>に手を伸ばして。', '<span class="text-fill-stroke">달</span>에 도달하다.'],
       }
    }
 }
