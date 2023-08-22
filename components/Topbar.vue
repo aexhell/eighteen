@@ -61,7 +61,7 @@ export default {
    data () {
       return {
          // activa esto en devtools si te apetece, a mí el mouse personalmente no me gusta
-         mouseButton: false,
+         mouseButton: true,
          date: new Date().toLocaleTimeString("en-US", {timeStyle: 'short', timeZone: "Europe/Madrid"}),
          darkMode: false,
          lis: [

@@ -66,6 +66,10 @@ button {
    @apply outline-none border-none
 }
 
+html.cursor-enabled {
+   @apply md:overflow-hidden;
+}
+
 html.cursor-enabled * {
    cursor: none !important
 }

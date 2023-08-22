@@ -57,8 +57,8 @@ export default {
 
     document.body.appendChild(renderer.domElement);
 
-    /*var htmlElement = document.querySelector("html");
-    htmlElement.classList.add('cursor-enabled');*/
+    var htmlElement = document.querySelector("html");
+    htmlElement.classList.add('cursor-enabled');
 
     if (WebGL.isWebGLAvailable() ) {
       if (!window.mobileCheck()) {
@@ -68,9 +68,9 @@ export default {
         const sound = new THREE.Audio(listener);
         const audioLoader = new THREE.AudioLoader();
 
-        var rand = Math.floor(Math.random() * 2);
-        var songs = ['revelation', 'ethereal', 'letyoudown'];
-        var songsint = [400, 500, 200];
+        var rand = Math.floor(Math.random() * 3);
+        var songs = ['revelation', 'ethereal', 'letyoudown', 'ariamath'];
+        var songsint = [400, 500, 200, 200];
 
         audioLoader.load(`/${songs[rand]}.ogg`, buffer => {
           sound.setBuffer(buffer);

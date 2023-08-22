@@ -13,7 +13,7 @@
 export default {
    data () {
       return {
-         htmlElement: false
+         htmlElement: true
       }
    },
    mounted () {
