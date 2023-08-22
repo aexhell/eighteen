@@ -2,6 +2,7 @@
   <NuxtLayout name="default">
     <NuxtPage />
   </NuxtLayout>
+  <div v-if="load !== '20%'" :style="`width: ${load}`" id="__EIGHTEEN-LOAD" class="bg-black transition-all dark:bg-white z-10 h-4 absolute top-[50%] right-32"></div>
 </template>
 
 <script>
@@ -10,6 +11,11 @@ import WebGL from 'three/addons/capabilities/WebGL.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 export default {
+  data () {
+    return {
+      load: '0%'
+    }
+  },
   mounted () {
     function animate() {
       requestAnimationFrame( animate );
@@ -76,12 +82,17 @@ export default {
           sound.play();
           animate();
 
+          console.log(this.load)
+
           let int = setInterval(() => {
             line.material.opacity += 0.1;
           }, songsint[rand]);
 
           if (line.material.opacity >= 1) clearInterval(int);
-        });
+        },
+        (xhr) => {
+          this.load = `${xhr.loaded / xhr.total * 20}%`;
+	      });
       }
     } else {
       const warning = WebGL.getWebGLErrorMessage();
