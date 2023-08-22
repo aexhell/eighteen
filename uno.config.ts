@@ -14,7 +14,7 @@ export default defineConfig({
       ['clippy-large', { 'clip-path': 'polygon(0 0, 65% 0%, 50% 100%, 0% 100%)'}],
       ['clippy', { 'clip-path': 'polygon(0 0, 75% 0%, 50% 100%, 0% 100%)'}],
       ['bg-dot', { 'background-image': 'linear-gradient(45deg, #00000045 .1em, transparent .1em)' }],
-      ['bg-dot-dark', { 'background-image': 'linear-gradient(45deg, #ffffff29 .1em, transparent .1em)' }],
+      ['bg-dot-dark', { 'background-image': 'linear-gradient(45deg, #ffffff18 .1em, transparent .1em)' }],
       ['bg-gradient', { background: 'linear-gradient(45deg, #193747, #fcfcfc, #fcfcfc, #fcfcfc, #442149)' }],
       ['bg-gradient-dark', { background: 'linear-gradient(45deg, #193747, black, black, black, #442149)' }]
    ],
