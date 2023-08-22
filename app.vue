@@ -2,7 +2,9 @@
   <NuxtLayout name="default">
     <NuxtPage />
   </NuxtLayout>
-  <div v-if="load !== '20%'" :style="`width: ${load}`" id="__EIGHTEEN-LOAD" class="bg-black transition-all dark:bg-white z-10 h-4 absolute top-[50%] right-32"></div>
+  <div v-if="load !== '100%'" style="width: 20%" id="__EIGHTEEN-LOAD" class="transition-all border-black dark:border-white border border-solid z-10 h-4 absolute lg:top-[50%] lg:right-32 right-4 bottom-4">
+    <div v-if="load !== '100%'" class="bg-white dark:bg-black" :style="`width: ${load}`" />
+  </div>
 </template>
 
 <script>
@@ -91,7 +93,7 @@ export default {
           if (line.material.opacity >= 1) clearInterval(int);
         },
         (xhr) => {
-          this.load = `${xhr.loaded / xhr.total * 20}%`;
+          this.load = `${xhr.loaded / xhr.total * 100}%`;
 	      });
       }
     } else {
