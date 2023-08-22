@@ -68,7 +68,11 @@ export default {
         const sound = new THREE.Audio(listener);
         const audioLoader = new THREE.AudioLoader();
 
-        audioLoader.load(Math.floor(Math.random() * 2)+1 === 2 ? '/revelation.ogg' : '/letyoudown.ogg', buffer => {
+        var rand = Math.floor(Math.random() * 2);
+        var songs = ['revelation', 'ethereal', 'letyoudown'];
+        var songsint = [400, 500, 200];
+
+        audioLoader.load(`/${songs[rand]}.ogg`, buffer => {
           sound.setBuffer(buffer);
           sound.setLoop(true);
           sound.setVolume(0.5);
@@ -77,7 +81,7 @@ export default {
 
           let int = setInterval(() => {
             line.material.opacity += 0.1;
-          }, 200);
+          }, songsint[rand]);
 
           if (line.material.opacity >= 1) clearInterval(int);
         });
