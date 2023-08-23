@@ -23,7 +23,7 @@ export default {
                stack: 'Electron/Socket.io',
                title: 'Moon',
                position: 'Founder',
-               description: 'Vue + Electron IRC prototype.',
+               description: 'IRC prototype.',
                date: 'April 2021 / June 2021',
                link: '#'
             },

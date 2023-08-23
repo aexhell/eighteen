@@ -5,7 +5,7 @@
          <p class="opacity-0 text-xs md:text-base transition" v-text="data.description" />
          <h2 class="mt-0 mb-4 text-2xl transition-all" v-text="data.title" />
       </div>
-      <div class="__EIGHTEEN-PROJECT-DETAILS absolute z-[-1] opacity-0 my-auto bottom-5 right-0 text-white">
+      <div class="__EIGHTEEN-PROJECT-DETAILS absolute z-[-1] opacity-0 my-auto lg:bottom-8 md:bottom-4 bottom-9 right-0 text-white">
          <div class="md:text-sm text-xs text-right">
             <div class="flex items-center justify-end">
                <div>

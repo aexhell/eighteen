@@ -21,9 +21,7 @@ onMounted(() => {
 
    console.log(route)
 
-   route.afterEach(() => {
-      setTimeout(() => button = document.querySelectorAll(selectors), 500);
-   });
+   setInterval(() => button = document.querySelectorAll(selectors), 1000);
 
    const updateCoordinates = e => {
       mouse.x = e.clientX;
