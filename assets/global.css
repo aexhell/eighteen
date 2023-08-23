@@ -73,3 +73,7 @@ html.cursor-enabled {
 html.cursor-enabled * {
    cursor: none !important
 }
+
+button {
+   @apply bg-transparent font-sans text-base m-0 p-0 cursor-pointer
+}

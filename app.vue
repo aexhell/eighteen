@@ -20,7 +20,7 @@ export default {
   },
   mounted () {
     function animate() {
-      requestAnimationFrame( animate );
+      requestAnimationFrame(animate);
 
       line.rotation.x += 0.0015;
       line.rotation.y += 0.0015;
@@ -73,8 +73,8 @@ export default {
         const sound = new THREE.Audio(listener);
         const audioLoader = new THREE.AudioLoader();
 
-        var songs = ['revelation', 'ethereal', 'letyoudown', 'ariamath'];
-        var songsint = [400, 500, 200, 200];
+        var songs = ['revelation', 'ethereal', 'ontheedge', 'ariamath'];
+        var songsint = [400, 500, 100, 200];
         var rand = Math.floor(Math.random() * songs.length);
 
         audioLoader.load(`/${songs[rand]}.ogg`, buffer => {
@@ -96,9 +96,6 @@ export default {
           this.load = `${xhr.loaded / xhr.total * 100}%`;
 	      });
       }
-    } else {
-      const warning = WebGL.getWebGLErrorMessage();
-      document.getElementById( 'container' ).appendChild( warning );
     }
   }
 }
