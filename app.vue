@@ -2,8 +2,8 @@
   <NuxtLayout name="default">
     <NuxtPage />
   </NuxtLayout>
-  <div v-if="load !== '100%'" style="width: 20%" id="__EIGHTEEN-LOAD" class="transition-all border-black dark:border-white border border-solid z-10 h-4 absolute lg:top-[50%] lg:right-32 right-4 bottom-4">
-    <div v-if="load !== '100%'" class="bg-white dark:bg-black" :style="`width: ${load}`" />
+  <div v-if="load !== '100%' && load !== '0%'" style="width: 20%" id="__EIGHTEEN-LOAD" class="transition-all md:block hidden border-black dark:border-white border border-solid z-10 h-4 absolute lg:top-[50%] lg:right-32 right-4 bottom-4">
+    <div v-if="load !== '100%' && load !== '0%'" class="bg-white dark:bg-black" :style="`width: ${load}`" />
   </div>
 </template>
 

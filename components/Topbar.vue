@@ -9,7 +9,7 @@
          </nuxt-link>
          <div class="list-none flex justify-end items-center gap-4 p-0 m-0">
             <nuxt-link v-for="li of lis" :key="li.link" :to="li.link" class="uppercase text-sm no-underline hover:underline">{{ li.text }}</nuxt-link>
-            <button v-if="mouseButton" class="bg-transparent outline-none ml-4 p-0 hidden md:flex dark:text-white rounded-full cursor-pointer" @click="enableCursor">
+            <button :alt="`${mouseButton ? 'Dis' : 'En'}able Mouse`" :aria-label="`${mouseButton ? 'Dis' : 'En'}able Mouse`"  class="bg-transparent outline-none ml-4 p-0 hidden md:flex dark:text-white rounded-full cursor-pointer" @click="enableCursor">
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 m-auto">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
                </svg>
@@ -39,7 +39,11 @@ export default {
    
          if (htmlElement.classList.contains('cursor-enabled')) {
             htmlElement.classList.remove('cursor-enabled');
-         } else htmlElement.classList.add('cursor-enabled');
+            this.mouseButton = false;
+         } else {
+            htmlElement.classList.add('cursor-enabled');
+            this.mouseButton = true;
+         }
       },
       darkModeChange () {
          var htmlElement = document.querySelector("html");
@@ -61,7 +65,7 @@ export default {
    data () {
       return {
          // activa esto en devtools si te apetece, a mí el mouse personalmente no me gusta
-         mouseButton: true,
+         mouseButton: false,
          date: new Date().toLocaleTimeString("en-US", {timeStyle: 'short', timeZone: "Europe/Madrid"}),
          darkMode: false,
          lis: [
