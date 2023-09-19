@@ -9,7 +9,7 @@
          </nuxt-link>
          <div class="list-none flex justify-end items-center gap-4 p-0 m-0">
             <nuxt-link v-for="li of lis" :key="li.link" :to="li.link" class="uppercase text-sm no-underline hover:underline">{{ li.text }}</nuxt-link>
-            <button :alt="`${mouseButton ? 'Dis' : 'En'}able Mouse`" :aria-label="`${mouseButton ? 'Dis' : 'En'}able Mouse`"  class="bg-transparent outline-none ml-4 p-0 hidden md:flex dark:text-white rounded-full cursor-pointer" @click="enableCursor">
+            <button v-if="mouseButton" :alt="`${mouseButton ? 'Dis' : 'En'}able Mouse`" :aria-label="`${mouseButton ? 'Dis' : 'En'}able Mouse`"  class="bg-transparent outline-none ml-4 p-0 hidden md:flex dark:text-white rounded-full cursor-pointer" @click="enableCursor">
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 m-auto">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" />
                </svg>
@@ -22,7 +22,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                </svg>
             </button>
-            <div class="rounded-lg hidden md:block bg-white/20 text-black dark:text-white dark:bg-white/10 md:px-4 px-2 py-1 border border-solid border-black/20 dark:border-white/20 hover:border-black/40 dark:hover:border-white/40 backdrop-blur-[2px] relative z-10 transition uppercase text-xs">
+            <div class="rounded-lg hidden md:block bg-white/20 text-black dark:text-white dark:bg-white/10 hover:dark:bg-white/20 md:px-4 px-2 py-1 border border-solid border-black/20 dark:border-white/20 hover:border-black/40 dark:hover:border-white/40 backdrop-blur-[2px] relative z-10 transition uppercase text-xs">
                {{ date }}
             </div>
          </div>

@@ -30,7 +30,7 @@
                <p v-else class="xl:text-lg w-fit">
                   <nuxt-link
                      to="/works"
-                     class="rounded-lg flex items-center bg-white/20 text-black w-fit dark:text-white dark:bg-white/10 md:px-4 px-2 py-1 border border-solid border-black/20 dark:border-white/20 hover:border-black/40 dark:hover:border-white/40 backdrop-blur-[2px] relative z-10 transition uppercase text-xs"
+                     class="rounded-lg flex items-center bg-white/20 text-black w-fit dark:text-white dark:bg-white/5 hover:dark:bg-white/10 md:px-4 px-2 py-1 border border-solid border-black/20 dark:border-white/20 hover:border-black/40 dark:hover:border-white/40 backdrop-blur-[2px] relative z-10 transition uppercase text-xs"
                   >
                      Wanna see my works?
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-black/50 dark:text-white/30 ml-1">

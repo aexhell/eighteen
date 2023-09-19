@@ -30,23 +30,21 @@ export default {
     }
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog( 0xcccccc, 1, 15 );
-    const mouse = new THREE.Vector2();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 5, 100);
     const renderer = new THREE.WebGLRenderer( { alpha: true } );
 
-    renderer.setSize(600, window.innerHeight);
+    renderer.setSize(800, window.innerHeight);
 
     const controls = new OrbitControls( camera, renderer.domElement );
     camera.position.set( 1, 5, 25 );
     controls.update();
 
-    const w = 600;
+    const w = 800;
     const h = 1080;
     const fullWidth = w * 3;
     const fullHeight = h * 2;
   
-    camera.setViewOffset( fullWidth, fullHeight, w * 0.5, h * 0.5, w, h );
+    camera.setViewOffset( fullWidth, fullHeight, w * 0.65, h * 0.5, w, h );
 
     window.mobileCheck = function() {
       let check = false;
@@ -57,7 +55,7 @@ export default {
     const geometry = new THREE.OctahedronGeometry( 10, 3, 100, 2 ); 
     const wireframe = new THREE.EdgesGeometry( geometry );
 
-    const line = new THREE.LineSegments( wireframe );
+    const line = new THREE.LineSegments( wireframe, new THREE.LineBasicMaterial({ color: 0xcccccc }));
     line.material.depthTest = true;
     line.material.opacity = 0;
     line.material.transparent = true;
@@ -73,8 +71,8 @@ export default {
         const sound = new THREE.Audio(listener);
         const audioLoader = new THREE.AudioLoader();
 
-        var songs = ['revelation', 'ethereal', 'ontheedge', 'ariamath'];
-        var songsint = [400, 500, 100, 200];
+        var songs = ['revelation', 'ethereal', 'excursions'];
+        var songsint = [400, 500, 3000];
         var rand = Math.floor(Math.random() * songs.length);
 
         audioLoader.load(`/${songs[rand]}.ogg`, buffer => {
@@ -83,8 +81,6 @@ export default {
           sound.setVolume(0.5);
           sound.play();
           animate();
-
-          console.log(this.load)
 
           let int = setInterval(() => {
             line.material.opacity += 0.1;

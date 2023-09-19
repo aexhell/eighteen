@@ -24,7 +24,7 @@ export default defineConfig({
    theme: {
       colors: {
          black: '#080808',
-         white: '#fcfcfc'
+         white: '#f3f3f3'
       }
    },
    presets: [
