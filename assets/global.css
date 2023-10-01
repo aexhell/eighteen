@@ -17,7 +17,7 @@ html, body, #__EIGHTEEN {
       opacity: 0;
       transform: translateX(-20px)
    }
-   50% {
+   30% {
       transform: translateX(0px);
       opacity: 1
    }
@@ -43,6 +43,10 @@ a {
 
 .__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-DETAILS {
    @apply opacity-100 right-5 duration-200
+}
+
+a.router-link-active {
+   @apply underline
 }
 
 a:active, button:active {

@@ -7,7 +7,7 @@ import presetWebFonts from '@unocss/preset-web-fonts'
 
 export default defineConfig({
    rules: [
-      ['animate-slide', { animation: 'slide-right 1s ease-in-out infinite normal' }],
+      ['animate-slide', { animation: 'slide-right 1.25s ease-in-out infinite normal' }],
       ['shadow-light', { filter: 'drop-shadow(0 0 3px #ffffff99)' }],
       ['clippy-xl', { 'clip-path': 'polygon(0 0, 85% 0%, 85% 100%, 0% 100%)'}],
       ['clippy-large', { 'clip-path': 'polygon(0 0, 65% 0%, 50% 100%, 0% 100%)'}],
