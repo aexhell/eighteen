@@ -2,12 +2,12 @@
    <div id="AXHL-CAROUSEL" class="w-full relative h-full">
       <div id="__EIGHTEEN-CAROUSEL-CONTROLLER" class="w-full h-full absolute bottom-0">
          <button id="__EIGHTEEN-CAROUSEL-RIGHT" class="right-[-40px] bottom-0 bg-transparent absolute h-full flex z-80" @click="forward">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 rounded-full flex text-black dark:text-white cursor-pointer m-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 rounded-full flex text-white cursor-pointer m-auto">
                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
          </button>
          <button id="__EIGHTEEN-CAROUSEL-LEFT" class="left-[-40px] bottom-0 bg-transparent absolute h-full flex my-auto z-80" @click="back">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 rounded-full flex text-black dark:text-white cursor-pointer m-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 rounded-full flex text-white cursor-pointer m-auto">
                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
          </button>

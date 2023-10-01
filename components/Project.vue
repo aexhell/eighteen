@@ -1,9 +1,9 @@
 <template>
-   <div :class="{ 'relative': column, 'absolute': !column }" class="__EIGHTEEN-PROJECT z-50 lg:py-32 py-24 w-full h-auto rounded-lg bg-black/50 dark:bg-black/50 md:backdrop-blur-[1px] hover:bg-black/40 dark:hover:bg-white/5 transition-all">
-      <img :alt="`${data.title} Image`" :class="{ 'object-top': data.code === 'moon'}" class="__EIGHTEEN-PROJECT-IMAGE pointer-events-none rounded-lg select-none opacity-60 absolute transition-all top-0 left-0 object-cover w-full h-full" :src="`/projects/${data.code}.webp`" />
-      <div class="__EIGHTEEN-PROJECT-TITLE absolute transition-all bottom-4 left-4 text-white">
+   <div :class="{ 'relative': column, 'absolute': !column }" class="__EIGHTEEN-PROJECT z-50 lg:py-42 py-24 w-full h-auto rounded-lg md:backdrop-blur-[1px] box-content border-solid border border-white/20 transition-all">
+      <img :alt="`${data.title} Image`" :class="{ 'object-top': data.code === 'moon'}" class="__EIGHTEEN-PROJECT-IMAGE pointer-events-none rounded-lg select-none grayscale absolute transition-all top-0 left-0 object-cover w-full h-full" :src="`/projects/${data.code}.webp`" />
+      <div class="__EIGHTEEN-PROJECT-TITLE absolute transition-all bottom-5 left-4 text-white">
          <p class="opacity-0 text-xs md:text-base transition" v-text="data.description" />
-         <h2 class="mt-0 mb-4 text-2xl transition-all" v-text="data.title" />
+         <h2 class="mt-0 mb-4 text-4xl transition-all" v-text="data.title" />
       </div>
       <div class="__EIGHTEEN-PROJECT-DETAILS absolute z-[-1] opacity-0 my-auto xl:bottom-10 lg:bottom-8 md:bottom-4 bottom-9 right-0 text-white">
          <div class="md:text-sm text-xs text-right">
@@ -46,6 +46,10 @@
 </template>
 
 <style>
+.__EIGHTEEN-PROJECT:hover img {
+   @apply grayscale-0
+}
+
 .__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-TITLE {
    @apply md:left-[40px] left-[30px]
 }
@@ -54,7 +58,7 @@
    opacity: 1
 }
 
-.__EIGHTEEN-PROJECT:hover h2 {
+.__EIGHTEEN-PROJECT h2 {
    filter: drop-shadow(0px 0px 8px black)
 }
 </style>
