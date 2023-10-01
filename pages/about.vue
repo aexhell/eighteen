@@ -1,18 +1,18 @@
 <template>
-   <div id="__EIGHTEEN-HOME" class="flex flex-col overflow-hidden md:w-1/2 w-full md:px-auto px-12 justify-start">
-         <h2 class="xl:text-7xl my-4 lg:text-6xl text-white text-5xl font-bold w-fit">__/__/\</h2>
-         <div id="__EIGHTEEN-CONTACT-CONTAINER" class="text-white">
-            <p class="xl:text-lg">
-               As Aexhell, I seek to develop new and unique web experiences for you. You may contact me using the following methods:
-            </p>
-            <ul class="list-none flex-wrap flex gap-4 px-0" id="__EIGHTEEN-CONTACT-METHODS">
-               <li v-for="method of methods" :key="method.code" class="flex items-center sm:w-fit text-white w-full bg-white/5 hover:bg-white/10 border border-solid border-white/20 hover:border-white/40 transition rounded-lg p-4">
-                  <div v-if="method.icon" v-html="method.icon"></div>
-                  <span v-if="!method.icon">{{ method.title }}: </span>
-                  <a v-if="method.href" :href="method.href">{{ method.content }}</a>
-               </li>
-            </ul>
-         </div>
+   <div id="__EIGHTEEN-ABOUT" class="flex flex-col overflow-hidden md:w-1/2 w-full md:px-auto px-12 justify-start">
+      <h2 class="xl:text-7xl my-4 lg:text-6xl text-white text-5xl font-bold w-fit">About me</h2>
+      <div id="__EIGHTEEN-ABOUT-CONTAINER">
+         <p class="xl:text-lg lg:text-md text-lg">
+            As Aexhell, I seek to develop new and unique web experiences for you. Please note that contact with me must be made after reviewing the <nuxt-link to="/coc">Code of Conduct</nuxt-link>. Please review it before you proceed to contact me. You may contact me using the following methods:
+         </p>
+         <ul class="list-none flex-wrap flex gap-4 px-0" id="__EIGHTEEN-CONTACT-METHODS">
+            <li v-for="method of methods" :key="method.code" class="flex items-center sm:w-fit text-white w-full bg-white/5 hover:bg-white/10 border border-solid border-white/20 hover:border-white/40 transition rounded-lg p-4">
+               <div v-if="method.icon" v-html="method.icon"></div>
+               <span v-if="!method.icon">{{ method.title }}: </span>
+               <a v-if="method.href" :href="method.href">{{ method.content }}</a>
+            </li>
+         </ul>
+      </div>
    </div>
 </template>
 

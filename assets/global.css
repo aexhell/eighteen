@@ -27,6 +27,10 @@ html, body, #__EIGHTEEN {
    }
 }
 
+hr {
+   @apply my-4 border-white/5
+}
+
 a {
    @apply underline;
    color: currentColor

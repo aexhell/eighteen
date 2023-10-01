@@ -1,5 +1,5 @@
 <template>
-   <div id="__EIGHTEEN-PROJECTS-CONTAINER" class="w-1/2 flex h-auto justify-center items-start">
+   <div id="__EIGHTEEN-PROJECTS-CONTAINER" class="md:w-1/2 w-full md:px-auto px-12 flex h-auto justify-center items-start">
       <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth md:hidden relative z-20 w-full md:pt-0 pt-8 md:justify-center transition-width lg:w-3/4 w-full h-auto flex flex-col gap-2 md:pb-0 pb-8">
          <Project v-for="proj of projects" :key="proj.code" :data="proj" :column="true" />
       </div>
