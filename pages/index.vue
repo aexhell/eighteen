@@ -31,7 +31,7 @@ export default {
 </script>
 
 <script setup>
-useSeoMeta({ title: 'Home ~ ' });
+useSeoMeta({ title: ' ' });
 </script>
 
 <style>

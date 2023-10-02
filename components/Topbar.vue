@@ -10,8 +10,8 @@
          <div class="list-none flex justify-end items-center gap-8 p-0 m-0">
             <nuxt-link v-for="li of lis" :key="li.link" :to="li.link" class="uppercase text-white text-xs no-underline hover:underline">{{ li.text }}</nuxt-link>
          </div>
-         <div style="background: conic-gradient(from 0.5turn at 50% 50%, #E0E0E0, #E0E0E000);padding: 1px" class="rounded-xl md:block hidden text-white backdrop-blur-[2px] relative z-10 transition uppercase text-xs">
-            <div class="px-4 py-1 bg-black rounded-xl">{{ date }}available</div>
+         <div :style="style" class="rounded-xl md:block hidden text-white backdrop-blur-[2px] relative z-10 transition uppercase text-xs`">
+            <div class="px-4 py-1 bg-black rounded-xl text-xs">{{ date }}available</div>
          </div>
       </nav>
    </header>
@@ -23,10 +23,12 @@ export default {
    created() {
       setInterval(() => {
          this.date = parseInt((new Date().toLocaleTimeString("en-US", {timeStyle: 'short', hour12: false, timeZone: "Europe/Madrid"})).split(':')[0]) < 14 ? 'un' : '';
+         this.style = `background: conic-gradient(from ${parseInt((new Date().toLocaleTimeString("en-US", {timeStyle: 'short', hour12: false, timeZone: "Europe/Madrid"})).split(':')[0]) / 24}turn at 50% 50%, #E0E0E000, #E0E0E0);padding: 1px`;
       }, 1000);
    },
    data () {
       return {
+         style: 'background: conic-gradient(from 0.5turn at 50% 50%, #E0E0E000, #E0E0E0);padding: 1px',
          date: parseInt((new Date().toLocaleTimeString("en-US", {timeStyle: 'short', timeZone: "Europe/Madrid"})).split(':')[0]) < 14 ? 'un' : '',
          lis: [
             {

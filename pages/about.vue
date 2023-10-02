@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-useSeoMeta({ title: 'About Us ~ ' });
+useSeoMeta({ title: 'About ~ ' });
 </script>
 
 <script>
