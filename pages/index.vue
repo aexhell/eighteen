@@ -15,7 +15,19 @@
       </nuxt-link>
       <div id="__EIGHTEEN-BLOGS-CONTAINER">
          <h3 class="xl:text-4xl mt-4 mb-8 lg:text-3xl text-white text-2xl font-bold w-fit">Latest blogs</h3>
-         <p class="xl:text-lg lg:text-md text-lg italic">No blogs currently available.</p>
+         <div id="__EIGHTEEN-BLOGS">
+            <p v-if="!blogs.length" class="text-base mb-0">
+               No data available.
+            </p>
+            <div v-for="blog of blogs" :key="blog.code" class="__EIGHTEEN-BLOG-CARD border border-solid border-white/25 rounded-lg px-12 py-10">
+               <h4 class="font-bold my-0 xl:text-2xl lg:text-xl md:text-lg" v-text="blog.title" />
+               <div class="flex items-center mt-2 mb-8 relative">
+                  <img class="w-6 rounded-full absolute opacity-50" :src="`/${blog.author}.png`">
+                  <span class="z-10 text-sm ml-4" v-text="`${blog.author}  •  ${blog.date}`" />
+               </div>
+               <p class="text-base mb-0" v-text="blog.description" />
+            </div>
+         </div>
       </div>
    </div>
 </template>
@@ -24,7 +36,15 @@
 export default {
    data () {
       return {
-         blogs: []
+         blogs: [
+            /*{
+               code: '1',
+               title: 'My thoughts on UI/UX',
+               author: 'aexhell',
+               date: 'October 1st, 2023',
+               description: 'What is the most important thing in an interface formula?'
+            }*/
+         ]
       }
    }
 }

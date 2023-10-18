@@ -8,10 +8,17 @@
             </svg>
          </nuxt-link>
          <div class="list-none flex justify-end items-center gap-8 p-0 m-0">
-            <nuxt-link v-for="li of lis" :key="li.link" :to="li.link" class="uppercase text-white text-xs no-underline hover:underline">{{ li.text }}</nuxt-link>
+            <nuxt-link v-for="li of lis" :key="li.link" :to="li.link" class="uppercase text-white text-xs no-underline hover:underline">
+               {{ li.text }}
+            </nuxt-link>
          </div>
          <div :style="style" class="rounded-xl md:block hidden text-white backdrop-blur-[2px] relative z-10 transition uppercase text-xs`">
-            <div class="px-4 py-1 bg-black rounded-xl text-xs">{{ date }}available</div>
+            <div class="px-4 py-1 bg-black rounded-xl text-xs flex">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+               </svg>
+               {{ date }}available
+            </div>
          </div>
       </nav>
    </header>
@@ -28,7 +35,7 @@ export default {
    },
    data () {
       return {
-         style: 'background: conic-gradient(from 0.5turn at 50% 50%, #E0E0E000, #E0E0E0);padding: 1px',
+         style: `background: conic-gradient(from ${parseInt((new Date().toLocaleTimeString("en-US", {timeStyle: 'short', hour12: false, timeZone: "Europe/Madrid"})).split(':')[0]) / 24}turn at 50% 50%, #E0E0E000, #E0E0E0);padding: 1px`,
          date: parseInt((new Date().toLocaleTimeString("en-US", {timeStyle: 'short', timeZone: "Europe/Madrid"})).split(':')[0]) < 14 ? 'un' : '',
          lis: [
             {
