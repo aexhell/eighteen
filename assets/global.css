@@ -5,7 +5,10 @@
 }
 
 html, body {
-   @apply m-0 bg-black text-white font-sans overflow-x-hidden overflow-y-auto
+   @apply m-0 bg-black text-white font-sans overflow-x-hidden overflow-y-auto;
+   background-image: url(/bg.jpg);
+   background-size: 100% 100%;
+   background-blend-mode: overlay
 }
 
 html, body, #__EIGHTEEN {
