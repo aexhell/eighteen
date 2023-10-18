@@ -4,7 +4,7 @@
          <template #default="{ doc }">
             <h2 class="xl:text-7xl my-4 lg:text-6xl text-white text-5xl font-bold w-fit" v-text="doc.titlePage" />
             <div class="flex items-center mt-2 w-full mb-8 relative">
-               <img class="w-6 rounded-full absolute opacity-50" src="/aexhell.png">
+               <img class="w-6 rounded-full absolute opacity-50" :src="`/${doc.author}.jpg`">
                <div class="flex w-full justify-between">
                   <span class="z-10 text-sm ml-4">{{ doc.author }}  •  {{ doc.date }}</span>
                   <div class="z-10 text-sm ml-4 flex items-center">

@@ -7,7 +7,7 @@
                <div class="mb-8 w-fit">
                   <h3 class="font-bold text-3xl mt-0 mb-2" v-text="blog.titlePage" />
                   <div class="flex items-center relative">
-                     <img class="w-6 rounded-full absolute opacity-50" :src="`/${blog.author}.png`">
+                     <img class="w-6 rounded-full absolute opacity-50" :src="`/${blog.author}.jpg`">
                      <span class="z-10 text-sm ml-4" v-text="`${blog.author}  •  ${blog.date}  •  ${blog.read_time} ${blog.read_type} read`" />
                   </div>
                </div>
