@@ -1,5 +1,5 @@
 <template>
-   <div id="__EIGHTEEN-HOME" class="flex flex-col overflow-x-hidden md:w-1/2 w-full h-full md:px-auto px-12 justify-start items-start">
+   <div id="__EIGHTEEN-HOME" class="flex flex-col md:w-1/2 w-full h-full md:px-auto px-12 justify-start items-start">
       <h2 class="xl:text-7xl mt-0 mb-4 lg:text-6xl text-white text-5xl font-bold w-full">Welcome</h2>
       <p class="xl:text-lg lg:text-md text-lg">
          I am Aexhell, a {{ new Date().getFullYear() - 2005 }}-yo web developer specialized on front-end and UI/UX designer.
@@ -13,10 +13,10 @@
             <path d="M12 5L19 12L12 19" stroke="#E0E0E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
          </svg>
       </nuxt-link>
-      <div id="__EIGHTEEN-BLOGS-CONTAINER" class="w-full xl:pb-0 h-full pb-8">
+      <div id="__EIGHTEEN-BLOGS-CONTAINER" class="w-full h-auto">
          <h3 class="xl:text-4xl mt-4 md:mb-8 mb-4 lg:text-3xl text-white text-2xl font-bold w-fit">Latest blogs</h3>
-         <div v-if="blogs.length" id="__EIGHTEEN-BLOGS" class="w-full flex-wrap flex gap-4 px-0">
-            <nuxt-link v-for="blog of blogs" :key="blog.code" :to="blog._path" class="text-white no-underline w-full h-full bg-white/5 hover:bg-white/10 border border-solid border-white/20 hover:border-white/40 transition rounded-lg px-8 md:py-8 py-6">
+         <div v-if="blogs.length" id="__EIGHTEEN-BLOGS" class="w-full flex-wrap flex gap-4 px-0 pb-8">
+            <nuxt-link v-for="blog of blogs" :key="blog.code" :to="blog._path" class="text-white no-underline w-full h-min bg-white/5 hover:bg-white/10 border border-solid border-white/20 hover:border-white/40 transition rounded-lg px-8 md:py-8 py-6">
                <div class="md:mb-8 mb-4 w-fit">
                   <h3 class="font-bold md:text-3xl text-lg mt-0 mb-2" v-text="blog.titlePage" />
                   <div class="flex items-center relative">
