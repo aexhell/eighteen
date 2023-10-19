@@ -3,16 +3,18 @@
       <h2 class="xl:text-7xl my-4 lg:text-6xl text-white text-5xl font-bold w-fit">Blogs</h2>
       <div id="__EIGHTEEN-BLOG-CONTAINER" class="text-white">
          <ul v-if="blogs.length" class="list-none flex-wrap flex gap-4 px-0" id="__EIGHTEEN-BLOGS">
-            <nuxt-link v-for="blog of blogs" :key="blog.code" :to="blog._path" class="text-white no-underline w-full bg-white/5 hover:bg-white/10 border border-solid border-white/20 hover:border-white/40 transition rounded-lg p-12">
-               <div class="mb-8 w-fit">
-                  <h3 class="font-bold text-3xl mt-0 mb-2" v-text="blog.titlePage" />
-                  <div class="flex items-center relative">
-                     <img class="w-6 rounded-full absolute opacity-50" :src="`/${blog.author}.jpg`">
-                     <span class="z-10 text-sm ml-4" v-text="`${blog.author}  •  ${blog.date}  •  ${blog.read_time} ${blog.read_type} read`" />
-                  </div>
-               </div>
-               <p class="m-0" v-if="blog.description">{{ blog.description }}</p>
-            </nuxt-link>
+            <BlogPost
+               v-for="blog of blogs"
+               :key="blog.code"
+               :author="blog.author"
+               :title="blog.titlePage"
+               :date="blog.date"
+               :link="blog._path"
+               :description="blog.description"
+               :enable_time="true"
+               :read_type="blog.read_type"
+               :read_time="blog.read_time"
+            />
          </ul>
          <ul v-else class="list-none flex-wrap flex gap-4 px-0" id="__EIGHTEEN-BLOGS">
             <nuxt-link v-for="index in 2" :key="index" to="#" class="text-white no-underline w-full bg-white/5 hover:bg-white/10 border border-solid border-white/20 hover:border-white/40 transition rounded-lg p-12">

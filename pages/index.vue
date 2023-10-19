@@ -6,7 +6,7 @@
          In 2018 I joined the <a href="https://fandom.com">Fandom</a> wiki platform, learning basic web stack (HTML, JS, CSS). By 2019-2020, I started using the <a href="https://vuejs.org">Vue.js</a> framework.
          In 2021 I started using <a href="https://nuxt.com">Nuxt</a>. In 2022-2023 I updated my tech stack, using technologies as React, Svelte and PHP.
       </p>
-      <nuxt-link class="mb-4 flex items-center" to="/about">
+      <nuxt-link class="xl:mb-8 lg:mb-6 mb-4 flex items-center" to="/about">
          Wanna know more about me?
          <svg class="ml-2 animate-slide" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -16,16 +16,16 @@
       <div id="__EIGHTEEN-BLOGS-CONTAINER" class="w-full h-auto">
          <h3 class="xl:text-4xl mt-4 md:mb-8 mb-4 lg:text-3xl text-white text-2xl font-bold w-fit">Latest blogs</h3>
          <div v-if="blogs.length" id="__EIGHTEEN-BLOGS" class="w-full flex-wrap flex gap-4 px-0 pb-8">
-            <nuxt-link v-for="blog of blogs" :key="blog.code" :to="blog._path" class="text-white no-underline w-full h-min bg-white/5 hover:bg-white/10 border border-solid border-white/20 hover:border-white/40 transition rounded-lg px-8 md:py-8 py-6">
-               <div class="md:mb-8 mb-4 w-fit">
-                  <h3 class="font-bold md:text-3xl text-lg mt-0 mb-2" v-text="blog.titlePage" />
-                  <div class="flex items-center relative">
-                     <img class="w-6 rounded-full absolute opacity-50" :src="`/${blog.author}.jpg`">
-                     <span class="z-10 text-sm ml-4" v-text="`${blog.author}  •  ${blog.date}`" />
-                  </div>
-               </div>
-               <p class="m-0" v-if="blog.description">{{ blog.description }}</p>
-            </nuxt-link>
+            <BlogPost
+               v-for="blog of blogs"
+               :key="blog.code"
+               :author="blog.author"
+               :title="blog.titlePage"
+               :date="blog.date"
+               :link="blog._path"
+               :description="blog.description"
+               :enable_time="false"
+            />
          </div>
          <div v-else class="w-full flex-wrap flex gap-4 px-0" id="__EIGHTEEN-BLOGS">
             <nuxt-link v-for="index in 2" :key="index" to="#" class="text-white no-underline w-full bg-white/5 hover:bg-white/10 border border-solid border-white/20 hover:border-white/40 transition rounded-lg px-12 py-8">

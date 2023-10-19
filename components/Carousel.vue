@@ -73,6 +73,15 @@ export default {
    mounted () {
       let size = document.getElementsByClassName('__EIGHTEEN-PROJECT-IMAGE');
       if (size.length) this.size = size[0].clientHeight;
+
+      document.addEventListener("keydown", (e) => {
+         if (e.keyCode === 37) {
+            this.back();
+         }
+         else if (e.keyCode === 39) {
+            this.forward();
+         }
+      }, false);
    },
    data () {
       return {
