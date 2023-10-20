@@ -3,16 +3,22 @@
       <div class="md:w-[70%] md:block hidden left-15% w-full h-full fixed border-x border-y-0 border border-solid border-black/15 top-0 z-[-10]"></div>
       <ContentDoc>
          <template #default="{ doc }">
-            <span v-for="sep of seps" :key="sep" class="line md:block hidden" :style="`left: calc(275px); top: calc(${sep.offsetTop}px + ${sep.clientHeight}px)`"></span>
+            <span v-for="sep in Math.floor(Math.random() * 15)" :key="sep" class="line transition-all md:block hidden" :style="`left: calc(275px); top: ${15 + sep * Math.floor(Math.random() * 25)}px;`"></span>
             <div style="height: calc(100vh - 92px)" class="w-full h-screen relative flex flex-col">
                <h2 class="separator xl:text-[12rem] text-9xl mx-auto xl:my-1/4 md:my-1/4 my-2/5 text-black font-bold w-fit" v-text="doc.titlePage" />
             </div>
             <div id="__EIGHTEEN-BLOG-CONTAINER" class="text-black backdrop-blur-md flex flex-col gap-2 p-8 pb-12 w-full">
                <div class="flex justify-between">
-                  <div class="w-1/2 my-4">{{ doc.stack }}</div>
-                  <div class="w-1/2 text-black/60">
+                  <div class="w-1/2">
                      <ContentRenderer :value="doc" />
                   </div>
+                  <div class="w-1/2 my-4 text-black/60 text-right">
+                     <p class="mt-0">{{ doc.stack }}</p>
+                     <p class="mb-0">{{ doc.date }}.</p>
+                  </div>
+               </div>
+               <div class="w-full h-1/4">
+                  <img :alt="`${doc.titlePage} Image`" :class="{ 'object-top': doc.code === 'moon'}" class="__EIGHTEEN-PROJECT-IMAGE rounded-xl pointer-events-none select-none transition-all object-cover w-full h-1/4" :src="`/projects/${doc.code}.webp`" />
                </div>
                <nuxt-link to="/" class="flex my-6">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
@@ -51,12 +57,5 @@
 
 <script setup>
 useSeoMeta({ title: 'Work ~ Aexhell' });
-var seps = ref([]);
-
-onMounted(() => {
-   setTimeout(() => {
-      seps.value = document.getElementsByClassName('separator');
-   }, 3000);
-});
 </script>
 
