@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/content'
   ],
   app: {
-    rootId: '__EIGHTEEN',
+    rootId: '__THEMILLIONCITIES',
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: {

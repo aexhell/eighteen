@@ -1,7 +1,7 @@
 <template>
    <div id="__EIGHTEEN-BLOG" class="flex flex-col overflow-hidden md:w-1/2 w-full md:px-auto px-12 justify-start">
-      <h2 class="xl:text-7xl my-4 lg:text-6xl text-white text-5xl font-bold w-fit">Blogs</h2>
-      <div id="__EIGHTEEN-BLOG-CONTAINER" class="text-white">
+      <h2 class="xl:text-7xl my-4 lg:text-6xl text-5xl font-bold w-fit">Blogs</h2>
+      <div id="__EIGHTEEN-BLOG-CONTAINER">
          <ul v-if="blogs.length" class="list-none flex-wrap flex gap-4 px-0" id="__EIGHTEEN-BLOGS">
             <BlogPost
                v-for="blog of blogs"

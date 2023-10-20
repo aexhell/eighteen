@@ -1,0 +1,75 @@
+<template>
+   <div id="__EIGHTEEN-CURSOR" class="top-0 left-0 z-50 pointer-events-none overflow-hidden md:block hidden select-none absolute">
+      <div class="cursor-container border-black bg-white/50 border border-solid transition-all rounded-full" :class="{ 'p-[16px]': !mousePressed, 'p-[8px]': mousePressed }">
+      </div>
+   </div>
+</template>
+
+<script setup>
+const route = useRouter();
+const mousePressed = ref(false);
+const mouseDown = ref(false);
+const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
+const pos = { x: 0, y: 0 }; // cursor's coordinates
+const speed = 0.4; // between 0 and 1
+
+onMounted(() => {
+   const cursor = document.querySelector('#__EIGHTEEN-CURSOR');
+   const main = document.getElementsByTagName('main')[0];
+   const selectors = 'button,h1,h2,h3,h4,h5,h6,a,p,li,span,.clock-time';
+   let button = document.querySelectorAll(selectors);
+
+   route.afterEach(() => {
+      setTimeout(() => {
+         button = document.querySelectorAll(selectors);
+
+         for (var i = 0; i < button.length; i++) {
+            button[i].addEventListener('mouseover', () => mousePressed.value = true);
+            button[i].addEventListener('mouseleave', () => mousePressed.value = false);
+         }
+      }, 500);
+   });
+
+   const updateCoordinates = e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+   }
+
+   const mouseOnDown = () => {
+      mouseDown.value = !mouseDown.value;
+   }
+
+   for (var i = 0; i < button.length; i++) {
+      button[i].addEventListener('mouseover', () => mousePressed.value = true);
+      button[i].addEventListener('mouseleave', () => mousePressed.value = false);
+   }
+
+   const updateCursor = () => {
+      const diffX = Math.round(mouse.x - pos.x);
+      const diffY = Math.round(mouse.y - pos.y);
+            
+      pos.x += diffX * speed;
+      pos.y += diffY * speed;
+         
+      const translate = 'translate(' + pos.x + 'px ,' + pos.y + 'px)';
+      cursor.style.transform = translate;
+   }
+
+   window.addEventListener('mousemove', updateCoordinates);
+   window.addEventListener('mouseup', mouseOnDown);
+   window.addEventListener('mousedown', mouseOnDown);
+   // main.onwheel = mouseOnScroll;
+
+   function loop() {
+      updateCursor();
+      requestAnimationFrame(loop);
+   }
+
+   function mouseOnScroll(e) {
+      console.log(e)
+      main.scrollBy(0, e.deltaY);
+   }
+
+   requestAnimationFrame(loop); 
+});
+</script>

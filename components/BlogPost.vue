@@ -1,5 +1,5 @@
 <template>
-   <component :is="componentToDisplay" :to="link" class="text-white no-underline w-full h-min bg-white/5 hover:bg-white/10 border border-solid border-white/20 hover:border-white/40 transition rounded-lg px-8 md:py-8 py-6">
+   <component :is="componentToDisplay" :to="link" class="no-underline w-full h-min bg-black/5 hover:bg-black/10 border border-solid border-white/20 hover:border-white/40 transition rounded-lg px-8 md:py-8 py-6">
       <div class="md:mb-8 mb-4 w-fit">
          <h3 class="font-bold md:text-3xl text-lg mt-0 mb-2" v-text="title" />
          <div class="flex items-center relative">
@@ -14,8 +14,6 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
-
 const props = defineProps({
   link: String,
   author: String,

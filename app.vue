@@ -13,4 +13,3 @@ useServerSeoMeta({
   twitterCard: 'summary_large_image'
 });
 </script>
-
