@@ -1,5 +1,5 @@
 <template>
-   <footer class="w-full fixed flex select-none justify-center z-20" id="__EIGHTEEN-FOOTER">
+   <footer class="w-full fixed bottom-0 flex select-none justify-center z-20" id="__EIGHTEEN-FOOTER">
       <nav role="navigation" class="py-8 w-full md:px-auto px-12 gap-4 flex items-center justify-between">
          <div class="md:flex hidden items-center gap-4 justify-between">
             <div class="flex items-center w-full">

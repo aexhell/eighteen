@@ -1,11 +1,20 @@
 <template>
-   <div id="__EIGHTEEN-HOME" class="flex flex-col w-full h-full md:px-auto justify-start items-center relative">
-      <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth relative z-20 w-full md:pt-0 gap-8 pt-8 md:justify-center transition-width xl:w-[60.6%] lg:w-3/4 w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
+   <div id="__EIGHTEEN-HOME" class="flex-col w-full h-full justify-start items-center relative">
+      <div style="height: calc(100vh - 92px)" class="w-full h-screen relative flex">
+         <h2 class="separator xl:text-[12rem] text-9xl mx-auto my-1/4 text-black font-bold w-fit">Aexhell</h2>
+      </div>
+      <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth relative z-20 w-full md:pt-0 gap-8 pt-8 md:justify-center transition-width w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
          <Project v-for="proj of projects" :key="proj.code" :data="proj" :column="true" :enabled="proj.enabled" :active="active === projects.indexOf(proj)" />
          <p class="text-center text-xl">Want to make yours?<br><nuxt-link to="/about">Let's speak.</nuxt-link></p>
       </div>
    </div>
 </template>
+
+<style>
+* {
+   
+}
+</style>
 
 <script>
 export default {

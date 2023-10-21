@@ -1,5 +1,5 @@
 <template>
-   <div id="__EIGHTEEN-ABOUT" class="flex flex-col overflow-hidden lg:w-[60.6%] w-full md:px-auto justify-start">
+   <div id="__EIGHTEEN-ABOUT" class="flex flex-col overflow-hidden w-full md:px-auto justify-start">
       <h2 class="xl:text-7xl my-4 lg:text-6xl text-5xl font-bold w-fit">About me</h2>
       <div id="__EIGHTEEN-ABOUT-CONTAINER">
          <div class="flex justify-between">

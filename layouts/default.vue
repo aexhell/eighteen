@@ -1,8 +1,8 @@
 <template>
-   <div class="w-full h-full overflow-x-hidden">
+   <div id="__AMILLIONCITIES-CONTENT" class="w-full h-full flex flex-col items-center overflow-x-hidden">
       <Topbar />
       <img alt="Gradient background" src="/gradient.svg" class="absolute opacity-75 object-cover top-0 left-0 w-full h-full pointer-events-none select-none">
-      <main role="main" class="w-full flex justify-center items-start h-full relative z-30">
+      <main role="main" class="xl:w-[60.6%] lg:w-3/4 w-full flex justify-center items-start h-full relative z-30">
          <slot />
       </main>
       <Footer />
@@ -16,6 +16,7 @@ import WebGL from 'three/addons/capabilities/WebGL.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 export default {
+   middleware: ['scroll'],
    mounted () {
       var topbar = document.getElementById('__EIGHTEEN-TOPBAR');
       var footer = document.getElementById('__EIGHTEEN-FOOTER');
@@ -32,17 +33,17 @@ export default {
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
-      const geometry = new THREE.TorusKnotGeometry(10, 3, 50, 16);
+      const geometry = new THREE.TorusKnotGeometry(10, 0.2673, 43, 9, 20, 3);
       const wireframe = new THREE.WireframeGeometry( geometry );
       const line = new THREE.LineSegments( wireframe );
       line.material.depthTest = false;
-      line.material.opacity = 0.075;
-      line.material.color = 0xff0000;
+      line.material.opacity = 0.025;
+      line.material.color = 0x000000;
       line.material.transparent = true;
       scene.add(line);
 
       camera.position.y = 1;
-      camera.position.z = 20;
+      camera.position.z = 5;
 
       window.mobileCheck = function() {
          let check = false;
@@ -51,22 +52,23 @@ export default {
       };
 
       function animate() {
-         requestAnimationFrame( animate );
+         requestAnimationFrame(animate);
 
-         line.rotation.x += 0.0015;
+         // line.rotation.x += 0.0015;
          line.rotation.y += 0.0015;
 
-         renderer.render( scene, camera );
+         renderer.render(scene, camera);
       }
 
       function onPointerMove( event ) {
-         line.rotation.x += 0.0005;
-         line.rotation.y += 0.0005;
+         console.log(line)
+         line.rotation.x = event.x / 5000;
+         // line.rotation.y = event.y / 1500;
       }
 
       if (WebGL.isWebGLAvailable() && !window.mobileCheck()) animate();
 
-      window.addEventListener('pointermove', onPointerMove);
+      // window.addEventListener('pointermove', onPointerMove);
    }
 }
 </script>

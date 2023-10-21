@@ -1,17 +1,16 @@
 <template>
-   <div id="__EIGHTEEN-WORK" class="flex flex-col overflow-hidden xl:w-[60.6%] w-full md:px-auto px-12 justify-start">
-      <div class="xl:w-[75%] xl:block hidden left-15% w-full h-full fixed border-x border-y-0 border border-solid border-black/15 top-0 z-[-10]"></div>
+   <div id="__EIGHTEEN-WORK" class="flex flex-col overflow-hidden w-full justify-center relative">
       <ContentDoc>
          <template #default="{ doc }">
             <div style="height: calc(100vh - 92px)" class="w-full h-screen relative flex flex-col">
                <h2 class="separator xl:text-[12rem] text-9xl mx-auto xl:mb-1/2 lg:my-1/4 md:my-1/4 my-2/5 text-black font-bold w-fit" v-text="doc.titlePage" />
             </div>
-            <div id="__EIGHTEEN-BLOG-CONTAINER" class="text-black backdrop-blur-md flex flex-col gap-2 p-8 pb-12 xl:w-full lg:w-[90%]">
-               <div class="flex lg:flex-row flex-col justify-between gap-8">
-                  <div class="w-1/2 text-left">
+            <div id="__EIGHTEEN-BLOG-CONTAINER" class="text-black backdrop-blur-md flex flex-col gap-2 pb-12 w-full">
+               <div class="flex lg:flex-row flex-col w-full justify-between">
+                  <div class="lg:w-1/2 w-full text-left">
                      <ContentRenderer :value="doc" />
                   </div>
-                  <div class="w-1/2 my-4 text-black/60 text-right">
+                  <div class="lg:w-1/2 w-full my-4 text-black/60 text-right">
                      <p class="mt-0">{{ doc.stack }}</p>
                      <p v-if="doc.position !== 'Founder'">{{ doc.date }}.</p>
                      <p class="mb-0">
