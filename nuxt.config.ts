@@ -4,8 +4,7 @@ export default defineNuxtConfig({
   plugins: ['~/plugins/scroll.ts'],
   modules: [
     '@unocss/nuxt',
-    '@nuxt/content',
-    '@pinia/nuxt'
+    '@nuxt/content'
   ],
   content: {
     contentHead: false
