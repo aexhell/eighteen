@@ -4,10 +4,14 @@ export default defineNuxtConfig({
   plugins: ['~/plugins/scroll.ts'],
   modules: [
     '@unocss/nuxt',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@pinia/nuxt'
   ],
+  content: {
+    contentHead: false
+  },
   app: {
-    rootId: '__THEMILLIONCITIES',
+    rootId: '__AMILLIONCITIES',
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: {

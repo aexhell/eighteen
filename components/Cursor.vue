@@ -1,5 +1,5 @@
 <template>
-   <div id="__EIGHTEEN-CURSOR" class="top-0 left-0 z-50 pointer-events-none overflow-hidden md:block hidden select-none absolute">
+   <div id="__EIGHTEEN-CURSOR" class="top-0 left-0 z-50 pointer-events-none overflow-hidden xl:block hidden select-none absolute">
       <div class="cursor-container border-black bg-white/50 border border-solid transition-all rounded-full" :class="{ 'p-[16px]': !mousePressed, 'p-[8px]': mousePressed }">
       </div>
    </div>

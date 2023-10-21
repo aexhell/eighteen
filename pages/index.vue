@@ -1,7 +1,8 @@
 <template>
    <div id="__EIGHTEEN-HOME" class="flex flex-col w-full h-full md:px-auto justify-start items-center relative">
-      <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth relative z-20 w-full md:pt-0 gap-8 pt-8 md:justify-center transition-width lg:w-[60.6%] w-full h-auto flex flex-col gap-2 md:pb-0 pb-8">
-         <Project v-for="proj of projects" :key="proj.code" :data="proj" :column="true" :active="active === projects.indexOf(proj)" />
+      <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth relative z-20 w-full md:pt-0 gap-8 pt-8 md:justify-center transition-width xl:w-[60.6%] lg:w-3/4 w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
+         <Project v-for="proj of projects" :key="proj.code" :data="proj" :column="true" :enabled="proj.enabled" :active="active === projects.indexOf(proj)" />
+         <p class="text-center text-xl">Want to make yours?<br><nuxt-link to="/about">Let's speak.</nuxt-link></p>
       </div>
    </div>
 </template>
@@ -19,7 +20,8 @@ export default {
                position: 'Founder',
                description: 'IRC prototype.',
                date: 'April 2021 / June 2021',
-               link: '#'
+               link: '#',
+               enabled: true
             },
             {
                code: 'puroto',
@@ -29,6 +31,7 @@ export default {
                description: 'Social media for furries.',
                date: 'Aug 2021 / Dic 2021',
                link: '#',
+               enabled: true
             },
             {
                code: 'mylium',
@@ -37,7 +40,8 @@ export default {
                position: 'Founder',
                description: 'Connecting people with you.',
                date: 'Feb 2023 / ----',
-               link: '/works/mylium'
+               link: '/works/mylium',
+               enabled: true
             },
             {
                code: 'nc',
@@ -45,7 +49,8 @@ export default {
                position: '----',
                title: 'Coming soon',
                date: 'TBR',
-               link: '#'
+               link: '#',
+               enabled: false
             }
          ],
          blogs: []

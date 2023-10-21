@@ -5,10 +5,10 @@
 }
 
 html, body {
-   @apply m-0 bg-white text-black font-sans cursor-none overflow-hidden
+   @apply m-0 bg-white dark:bg-black text-black dark:text-white font-sans cursor-none overflow-hidden
 }
 
-html, body, #__THEMILLIONCITIES {
+html, body, #__AMILLIONCITIES {
    @apply w-full h-full
 }
 
@@ -62,7 +62,7 @@ button {
 }
 
 * {
-   cursor: none !important
+   @apply xl:!cursor-none
 }
 
 canvas {

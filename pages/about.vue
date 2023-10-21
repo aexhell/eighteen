@@ -1,17 +1,25 @@
 <template>
-   <div id="__EIGHTEEN-ABOUT" class="flex flex-col overflow-hidden md:w-1/2 w-full md:px-auto px-12 justify-start">
+   <div id="__EIGHTEEN-ABOUT" class="flex flex-col overflow-hidden lg:w-[60.6%] w-full md:px-auto justify-start">
       <h2 class="xl:text-7xl my-4 lg:text-6xl text-5xl font-bold w-fit">About me</h2>
       <div id="__EIGHTEEN-ABOUT-CONTAINER">
-         <p class="xl:text-lg lg:text-md text-lg">
-            As Aexhell, I seek to develop new and unique web experiences for you. Please note that contact with me must be made after reviewing the <nuxt-link to="/coc">Code of Conduct</nuxt-link>. Please review it before you proceed to contact me. You may contact me using the following methods:
-         </p>
-         <ul class="list-none flex-wrap flex gap-4 px-0" id="__EIGHTEEN-CONTACT-METHODS">
-            <li v-for="method of methods" :key="method.code" class="flex items-center sm:w-fit w-full bg-black/1 hover:bg-transparent border border-solid border-black/40 hover:border-black/20 transition rounded-lg p-4">
-               <div v-if="method.icon" v-html="method.icon"></div>
-               <span v-if="!method.icon">{{ method.title }}: </span>
-               <a v-if="method.href" :href="method.href">{{ method.content }}</a>
-            </li>
-         </ul>
+         <div class="flex justify-between">
+            <div class="w-1/2">
+               <p class="xl:text-lg lg:text-md text-lg">
+                  As Aexhell, I seek to develop new and unique web experiences for you. Please note that contact with me must be made after reviewing the <nuxt-link to="/coc">Code of Conduct</nuxt-link>. Please review it before you proceed to contact me. You may contact me using the following methods:
+               </p>
+               <ul class="list-none flex-wrap flex gap-4 px-0" id="__EIGHTEEN-CONTACT-METHODS">
+                  <li v-for="method of methods" :key="method.code" class="flex items-center sm:w-fit w-full bg-black/1 hover:bg-transparent border border-solid border-black/40 hover:border-black/20 transition rounded-lg p-4">
+                     <div v-if="method.icon" v-html="method.icon"></div>
+                     <span v-if="!method.icon">{{ method.title }}: </span>
+                     <a v-if="method.href" :href="method.href">{{ method.content }}</a>
+                  </li>
+               </ul>
+            </div>
+            <svg class="w-1/4 h-1/2" width="180" height="208" viewBox="0 0 180 208" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M0 0H53L89 58.24L127 0H180L164 24.96H127L91 83.2H89L53 24.96H16L0 0Z" fill="currentColor"/>
+               <path d="M16 49.92H54L89 108.16H91L127 49.92H164L129 104L180 183.04H164L129 128.96L121 141.44L164 208H127L91 149.76H89L52 208H16L59 141.44L51 128.96L16 183.04H0L51 104L16 49.92Z" fill="currentColor"/>
+            </svg>
+         </div>
       </div>
    </div>
 </template>
