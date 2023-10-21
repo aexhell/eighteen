@@ -16,19 +16,8 @@ const speed = 0.4; // between 0 and 1
 onMounted(() => {
    const cursor = document.querySelector('#__EIGHTEEN-CURSOR');
    const main = document.getElementsByTagName('main')[0];
-   const selectors = 'button,h1,h2,h3,h4,h5,h6,a,p,li,span,.clock-time';
+   const selectors = 'button,h1,h2,h3,h4,h5,h6,a,p,li,span,.clock-time,.__EIGHTEEN-PROJECT';
    let button = document.querySelectorAll(selectors);
-
-   route.afterEach(() => {
-      setTimeout(() => {
-         button = document.querySelectorAll(selectors);
-
-         for (var i = 0; i < button.length; i++) {
-            button[i].addEventListener('mouseover', () => mousePressed.value = true);
-            button[i].addEventListener('mouseleave', () => mousePressed.value = false);
-         }
-      }, 500);
-   });
 
    const updateCoordinates = e => {
       mouse.x = e.clientX;
@@ -53,6 +42,15 @@ onMounted(() => {
          
       const translate = 'translate(' + pos.x + 'px ,' + pos.y + 'px)';
       cursor.style.transform = translate;
+
+      if (button !== document.querySelectorAll(selectors)) {
+         button = document.querySelectorAll(selectors);
+
+         for (var i = 0; i < button.length; i++) {
+            button[i].addEventListener('mouseover', () => mousePressed.value = true);
+            button[i].addEventListener('mouseleave', () => mousePressed.value = false);
+         }
+      }
    }
 
    window.addEventListener('mousemove', updateCoordinates);

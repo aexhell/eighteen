@@ -32,7 +32,7 @@
 const props = defineProps({
   active: Boolean,
   column: Boolean,
-  data: String,
+  data: Object,
   enabled: Boolean
 });
 

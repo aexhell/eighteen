@@ -9,8 +9,8 @@
                </svg>
             </nuxt-link>
             <div>
-               <nuxt-link to="/" alt="Aexhell name" aria-label="Aexhell name" class="font-bold no-underline uppercase">
-                  <span :class="{ 'opacity-0': route.currentRoute.value.name !== 'index'}" class="transition delay-500">Aexhell<span class="font-light">©2023</span></span>
+               <nuxt-link :class="{ 'opacity-0 pointer-events-none select-none': route.currentRoute.value.name !== 'index' }" to="/" alt="Aexhell name" aria-label="Aexhell name" class="font-bold no-underline uppercase transition delay-500">
+                  <span>Aexhell<span class="font-light">©2023</span></span>
                </nuxt-link>
             </div>
          </div>
