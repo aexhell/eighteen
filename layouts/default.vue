@@ -43,7 +43,7 @@ export default {
       scene.add(line);
 
       camera.position.y = 1;
-      camera.position.z = 5;
+      camera.position.z = 10;
 
       window.mobileCheck = function() {
          let check = false;
@@ -54,7 +54,7 @@ export default {
       function animate() {
          requestAnimationFrame(animate);
 
-         // line.rotation.x += 0.0015;
+         line.rotation.x += 0.0015;
          line.rotation.y += 0.0015;
 
          renderer.render(scene, camera);

@@ -27,7 +27,8 @@
          </div>
       </nav>
       <audio loop>
-         <source src="/excursions.mp3" type="audio/mp3">
+         <source src="/ethereal.mp3" type="audio/mp3">
+         <source src="/ethereal.ogg" type="audio/ogg">
       </audio>
    </footer>
 </template>
