@@ -2,15 +2,15 @@
    <div id="__EIGHTEEN-WORK" class="flex flex-col overflow-hidden w-full justify-center relative">
       <ContentDoc>
          <template #default="{ doc }">
-            <div style="height: calc(100vh - 92px)" class="w-full h-screen relative flex flex-col">
-               <h2 class="separator xl:text-[12rem] text-9xl mx-auto xl:mb-1/2 lg:my-1/4 md:my-1/4 my-2/5 text-black font-bold w-fit" v-text="doc.titlePage" />
+            <div style="height: calc(100vh - 235px)" class="w-full h-screen relative flex flex-col">
+               <h2 class="separator xl:text-[12rem] text-9xl m-auto text-black font-bold w-fit" v-text="doc.titlePage" />
             </div>
-            <div id="__EIGHTEEN-BLOG-CONTAINER" class="text-black backdrop-blur-md flex flex-col gap-2 pb-12 w-full">
+            <div id="__EIGHTEEN-BLOG-CONTAINER" class="text-black backdrop-blur-[4px] flex flex-col gap-2 mt-36 pb-12 w-full">
                <div class="flex lg:flex-row flex-col w-full justify-between">
-                  <div class="lg:w-1/2 w-full text-left">
+                  <div class="lg:w-1/2 w-full pl-8 py-8 text-left">
                      <ContentRenderer :value="doc" />
                   </div>
-                  <div class="lg:w-1/2 w-full my-4 text-black/60 text-right">
+                  <div class="lg:w-1/2 w-full my-4 pr-8 py-8 text-black/60 text-right">
                      <p class="mt-0">{{ doc.stack }}</p>
                      <p v-if="doc.position !== 'Founder'">{{ doc.date }}.</p>
                      <p class="mb-0">
@@ -18,10 +18,10 @@
                      </p>
                   </div>
                </div>
-               <div class="w-full mt-12 h-1/4">
+               <div class="w-fit mt-12 px-8 h-1/4">
                   <img :alt="`${doc.titlePage} Image`" :class="{ 'object-top': doc.code === 'moon'}" class="__EIGHTEEN-PROJECT-IMAGE rounded-xl pointer-events-none select-none transition-all object-cover w-full h-1/4" :src="`/projects/${doc.code}.webp`" />
                </div>
-               <nuxt-link to="/" class="flex my-6">
+               <nuxt-link to="/" class="flex pl-8 my-6">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                   </svg>

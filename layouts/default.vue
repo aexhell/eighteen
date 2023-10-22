@@ -24,7 +24,7 @@ export default {
 
       topbar.classList.add('fixed');
       main.style.paddingTop = `${topbar.clientHeight}px`;
-      main.style.height = `calc(100% - ${topbar.clientHeight}px - ${footer.clientHeight}px)`;
+      main.style.height = `calc(100% - (${topbar.clientHeight}px + ${footer.clientHeight}px))`;
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 2000 );
@@ -33,7 +33,7 @@ export default {
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
-      const geometry = new THREE.TorusKnotGeometry(10, 0.2673, 43, 9, 20, 3);
+      const geometry = new THREE.TorusKnotGeometry(10, 0.2, 58, 20, 16, 25);
       const wireframe = new THREE.WireframeGeometry( geometry );
       const line = new THREE.LineSegments( wireframe );
       line.material.depthTest = false;
