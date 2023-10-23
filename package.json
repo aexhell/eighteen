@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@nuxt/content": "^2.5.1",
+    "@pinia/nuxt": "^0.5.1",
+    "pinia": "^2.1.7",
     "three": "^0.154.0"
   }
 }

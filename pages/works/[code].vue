@@ -1,25 +1,25 @@
 <template>
    <div id="__EIGHTEEN-WORK" class="flex flex-col overflow-hidden w-full justify-center relative">
-      <ContentDoc>
-         <template #default="{ doc }">
+      <ContentQuery :path="$route.path" find="one">
+         <template #default="{ data }">
             <div style="height: calc(100vh - 235px)" class="w-full h-screen relative flex flex-col">
-               <h2 class="separator xl:text-[12rem] text-9xl m-auto text-black font-bold w-fit" v-text="doc.titlePage" />
+               <h2 class="separator xl:text-[12rem] text-9xl m-auto text-black font-bold w-fit" v-text="data.titlePage" />
             </div>
-            <div id="__EIGHTEEN-BLOG-CONTAINER" class="text-black backdrop-blur-[4px] flex flex-col gap-2 mt-36 pb-12 w-full">
+            <div id="__EIGHTEEN-BLOG-CONTAINER" class="text-black backdrop-blur-[8px] flex flex-col gap-2 mt-36 pb-12 w-full">
                <div class="flex lg:flex-row flex-col w-full justify-between">
                   <div class="lg:w-1/2 w-full pl-8 py-8 text-left">
-                     <ContentRenderer :value="doc" />
+                     <ContentRenderer :value="data" />
                   </div>
                   <div class="lg:w-1/2 w-full my-4 pr-8 py-8 text-black/60 text-right">
-                     <p class="mt-0">{{ doc.stack }}</p>
-                     <p v-if="doc.position !== 'Founder'">{{ doc.date }}.</p>
+                     <p class="mt-0">{{ data.stack }}</p>
+                     <p v-if="data.position !== 'Founder'">{{ data.date }}.</p>
                      <p class="mb-0">
-                        I <span v-if="doc.position === 'Founder'">founded this project on <b v-text="doc.date"></b></span><span v-else>worked on this project as a <b v-text="doc.position" /></span>.
+                        I <span v-if="data.position === 'Founder'">founded this project on <b v-text="data.date"></b></span><span v-else>worked on this project as a <b v-text="data.position" /></span>.
                      </p>
                   </div>
                </div>
                <div class="w-fit mt-12 px-8 h-1/4">
-                  <img :alt="`${doc.titlePage} Image`" :class="{ 'object-top': doc.code === 'moon'}" class="__EIGHTEEN-PROJECT-IMAGE rounded-xl pointer-events-none select-none transition-all object-cover w-full h-1/4" :src="`/projects/${doc.code}.webp`" />
+                  <img :alt="`${data.titlePage} Image`" :class="{ 'object-top': data.code === 'moon' }" class="__EIGHTEEN-PROJECT-IMAGE rounded-xl pointer-events-none select-none transition-all object-cover w-full h-1/4" :src="`/projects/${data.code}.webp`" />
                </div>
                <nuxt-link to="/" class="flex pl-8 my-6">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
@@ -42,7 +42,7 @@
                </nuxt-link>
             </div>
          </template>
-      </ContentDoc>
+      </ContentQuery>
    </div>
 </template>
 

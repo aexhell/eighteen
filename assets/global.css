@@ -40,6 +40,10 @@ a {
    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%)
 }
 
+div[data-content-id="content:coc.md"] {
+   scroll-behavior: smooth;
+}
+
 .__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-IMAGE {
    /* @apply md:clippy sm:clippy-large clippy-xl; */
    opacity: 100;

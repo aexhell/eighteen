@@ -14,10 +14,13 @@
 import * as THREE from 'three';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { useMainStore } from '@/store/index';
 
 export default {
    middleware: ['scroll'],
    mounted () {
+      const store = useMainStore();
+   
       var topbar = document.getElementById('__EIGHTEEN-TOPBAR');
       var footer = document.getElementById('__EIGHTEEN-FOOTER');
       var main = document.getElementsByTagName('main')[0];
@@ -26,6 +29,8 @@ export default {
       topbar.classList.add('fixed');
       main.style.paddingTop = `${topbar.clientHeight}px`;
       main.style.height = `calc(100% - (${topbar.clientHeight}px + ${footer.clientHeight}px))`;
+
+      store.increment(`calc(100% - (${topbar.clientHeight}px + ${footer.clientHeight}px))`, `${topbar.clientHeight}px`);
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 2000 );
@@ -69,8 +74,8 @@ export default {
       }
 
       function onPointerMove( event ) {
-         camera.rotation.x = event.x / 100000;
-         camera.rotation.y = event.y / 100000;
+         camera.rotation.y = -event.x / 50000;
+         camera.rotation.x = -event.y / 50000;
       }
 
       if (WebGL.isWebGLAvailable() && !window.mobileCheck()) animate();
