@@ -16,7 +16,7 @@ const speed = 0.35; // between 0 and 1
 onMounted(() => {
    const cursor = document.querySelector('#__EIGHTEEN-CURSOR');
    const main = document.getElementsByTagName('main')[0];
-   const selectors = 'button,h1,h2,h3,h4,h5,h6,a,p,li,span,.clock-time,.__EIGHTEEN-PROJECT';
+   const selectors = 'button,h1,h2,h3,h4,h5,h6,a,p,li,span,.clock-time,.__EIGHTEEN-PROJECT,svg';
    let button = document.querySelectorAll(selectors);
 
    const updateCoordinates = e => {

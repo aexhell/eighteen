@@ -34,7 +34,7 @@ export default {
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
-      const geometry = new THREE.TorusKnotGeometry(10, 0.2, 58, 20, 16, 25);
+      const geometry = new THREE.TorusKnotGeometry(8, 0.2, 58, 20, 16, 25);
       const wireframe = new THREE.WireframeGeometry( geometry );
       const line = new THREE.LineSegments( wireframe );
       line.material.depthTest = false;

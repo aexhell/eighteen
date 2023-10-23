@@ -1,7 +1,13 @@
 <template>
    <div id="__EIGHTEEN-HOME" class="flex-col w-full h-full justify-start items-center relative">
       <div style="height: calc(100vh - 235px)" class="w-full h-screen relative flex">
-         <h2 class="separator transition xl:text-[12rem] text-9xl m-auto text-black font-bold w-fit">Aexhell</h2>
+         <div class="w-full h-full m-auto flex flex-col items-center justify-center">
+            <svg class="w-1/4 h-1/2" width="180" height="208" viewBox="0 0 180 208" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M0 0H53L89 58.24L127 0H180L164 24.96H127L91 83.2H89L53 24.96H16L0 0Z" fill="currentColor"/>
+               <path d="M16 49.92H54L89 108.16H91L127 49.92H164L129 104L180 183.04H164L129 128.96L121 141.44L164 208H127L91 149.76H89L52 208H16L59 141.44L51 128.96L16 183.04H0L51 104L16 49.92Z" fill="currentColor"/>
+            </svg>
+            <span class="uppercase font-bold mt-8">Scroll down</span>
+         </div>
       </div>
       <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth relative z-20 w-full md:pt-0 gap-8 pt-8 mt-36 md:justify-center transition-width w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
          <Project v-for="proj of projects" :key="proj.code" :data="proj" :column="true" :enabled="proj.enabled" :active="active === projects.indexOf(proj)" />
