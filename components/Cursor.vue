@@ -9,9 +9,9 @@
 const route = useRouter();
 const mousePressed = ref(false);
 const mouseDown = ref(false);
-const mouse = { x: -100, y: -100 }; // mouse pointer's coordinates
+const mouse = { x: 0, y: 0 }; // mouse pointer's coordinates
 const pos = { x: 0, y: 0 }; // cursor's coordinates
-const speed = 0.4; // between 0 and 1
+const speed = 0.35; // between 0 and 1
 
 onMounted(() => {
    const cursor = document.querySelector('#__EIGHTEEN-CURSOR');
@@ -20,8 +20,8 @@ onMounted(() => {
    let button = document.querySelectorAll(selectors);
 
    const updateCoordinates = e => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+      mouse.x = e.clientX - 15;
+      mouse.y = e.clientY - 15;
    }
 
    const mouseOnDown = () => {
@@ -34,8 +34,8 @@ onMounted(() => {
    }
 
    const updateCursor = () => {
-      const diffX = Math.round(mouse.x - pos.x);
-      const diffY = Math.round(mouse.y - pos.y);
+      const diffX = Math.floor(mouse.x - pos.x);
+      const diffY = Math.floor(mouse.y - pos.y);
             
       pos.x += diffX * speed;
       pos.y += diffY * speed;

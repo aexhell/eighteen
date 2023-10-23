@@ -21,6 +21,7 @@ export default {
       var topbar = document.getElementById('__EIGHTEEN-TOPBAR');
       var footer = document.getElementById('__EIGHTEEN-FOOTER');
       var main = document.getElementsByTagName('main')[0];
+      var direction = 0;
 
       topbar.classList.add('fixed');
       main.style.paddingTop = `${topbar.clientHeight}px`;
@@ -37,13 +38,13 @@ export default {
       const wireframe = new THREE.WireframeGeometry( geometry );
       const line = new THREE.LineSegments( wireframe );
       line.material.depthTest = false;
-      line.material.opacity = 0.025;
+      line.material.opacity = 0;
       line.material.color = 0x000000;
       line.material.transparent = true;
       scene.add(line);
 
       camera.position.y = 1;
-      camera.position.z = 10;
+      camera.position.z = 0;
 
       window.mobileCheck = function() {
          let check = false;
@@ -57,18 +58,24 @@ export default {
          line.rotation.x += 0.0015;
          line.rotation.y += 0.0015;
 
+         if (line.material.opacity < 0.025) line.material.opacity += 0.001;
+         if (direction === 0 && Math.floor(camera.position.z) < 15) camera.position.z += 0.01;
+         else if (direction === 1 && Math.floor(camera.position.z) > 0) camera.position.z -= 0.01;
+
+         if (direction === 0 && Math.floor(camera.position.z) >= 15) direction = 1;
+         else if (direction === 1 && Math.floor(camera.position.z) <= 0) direction = 0;
+
          renderer.render(scene, camera);
       }
 
       function onPointerMove( event ) {
-         console.log(line)
-         line.rotation.x = event.x / 5000;
-         // line.rotation.y = event.y / 1500;
+         camera.rotation.x = event.x / 100000;
+         camera.rotation.y = event.y / 100000;
       }
 
       if (WebGL.isWebGLAvailable() && !window.mobileCheck()) animate();
 
-      // window.addEventListener('pointermove', onPointerMove);
+      window.addEventListener('pointermove', onPointerMove);
    }
 }
 </script>
