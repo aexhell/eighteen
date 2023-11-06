@@ -39,7 +39,8 @@ export default {
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
-      const geometry = new THREE.TorusKnotGeometry(8, 0.2, 58, 20, 16, 25);
+      // const geometry = new THREE.TorusKnotGeometry(8, 0.2, 58, 20, 16, 25);
+      const geometry = new THREE.OctahedronGeometry(8, 0);
       const wireframe = new THREE.WireframeGeometry( geometry );
       const line = new THREE.LineSegments( wireframe );
       line.material.depthTest = false;
@@ -49,7 +50,8 @@ export default {
       scene.add(line);
 
       camera.position.y = 1;
-      camera.position.z = 0;
+      camera.position.z = 15;
+      line.rotation.x = 0.15;
 
       window.mobileCheck = function() {
          let check = false;
@@ -60,15 +62,10 @@ export default {
       function animate() {
          requestAnimationFrame(animate);
 
-         line.rotation.x += 0.0015;
+         // line.rotation.x += 0.0015;
          line.rotation.y += 0.0015;
 
-         if (line.material.opacity < 0.025) line.material.opacity += 0.001;
-         if (direction === 0 && Math.floor(camera.position.z) < 15) camera.position.z += 0.01;
-         else if (direction === 1 && Math.floor(camera.position.z) > 0) camera.position.z -= 0.01;
-
-         if (direction === 0 && Math.floor(camera.position.z) >= 15) direction = 1;
-         else if (direction === 1 && Math.floor(camera.position.z) <= 0) direction = 0;
+         if (line.material.opacity < 0.15) line.material.opacity += 0.001;
 
          renderer.render(scene, camera);
       }

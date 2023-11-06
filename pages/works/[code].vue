@@ -3,7 +3,7 @@
       <ContentQuery :path="$route.path" find="one">
          <template #default="{ data }">
             <div style="height: calc(100vh - 235px)" class="w-full h-screen relative flex flex-col">
-               <h2 class="separator xl:text-[12rem] text-9xl m-auto text-black font-bold w-fit" v-text="data.titlePage" />
+               <h2 class="separator xl:text-[12rem] lg:text-9xl md:text-8xl text-6xl m-auto text-black font-bold w-fit" v-text="data.titlePage" />
             </div>
             <div id="__EIGHTEEN-BLOG-CONTAINER" class="text-black backdrop-blur-[8px] flex flex-col gap-2 mt-36 pb-12 w-full">
                <div class="flex lg:flex-row flex-col w-full justify-between">

@@ -9,7 +9,7 @@
             <span class="uppercase font-bold">Scroll down</span>
          </div>
       </div>
-      <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth relative z-20 w-full md:pt-0 gap-8 pt-8 mt-48 md:justify-center transition-width w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
+      <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth relative z-20 md:pt-0 gap-8 pt-8 md:px-0 px-12 mt-48 md:justify-center transition-width w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
          <Project v-for="proj of projects" :key="proj.code" :data="proj" :column="true" :enabled="proj.enabled" :active="active === projects.indexOf(proj)" />
          <p class="text-center text-xl">Want to make yours?<br><nuxt-link to="/about">Let's speak.</nuxt-link></p>
       </div>
