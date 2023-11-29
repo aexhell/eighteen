@@ -44,9 +44,9 @@ export default {
       const wireframe = new THREE.WireframeGeometry( geometry );
       const line = new THREE.LineSegments( wireframe );
       line.material.depthTest = false;
-      line.material.opacity = 0;
-      line.material.color = 0x000000;
-      line.material.transparent = true;
+      line.material.opacity = 1;
+      line.material.color = 0xffffff;
+      line.material.transparent = false;
       scene.add(line);
 
       camera.position.y = 1;
@@ -77,7 +77,7 @@ export default {
 
       if (WebGL.isWebGLAvailable() && !window.mobileCheck()) animate();
 
-      window.addEventListener('pointermove', onPointerMove);
+      // window.addEventListener('pointermove', onPointerMove);
    }
 }
 </script>

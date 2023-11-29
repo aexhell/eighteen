@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: {
+        class: '',
         lang: 'en'
       },
       titleTemplate: '%s Aexhell',
