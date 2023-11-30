@@ -39,14 +39,14 @@ export default {
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
-      // const geometry = new THREE.TorusKnotGeometry(8, 0.2, 58, 20, 16, 25);
-      const geometry = new THREE.OctahedronGeometry(8, 0);
+      const geometry = new THREE.TorusKnotGeometry(8, 0.2, 58, 20, 16, 25);
+      // const geometry = new THREE.OctahedronGeometry(8, 0);
       const wireframe = new THREE.WireframeGeometry( geometry );
       const line = new THREE.LineSegments( wireframe );
       line.material.depthTest = false;
-      line.material.opacity = 1;
-      line.material.color = 0xffffff;
-      line.material.transparent = false;
+      line.material.opacity = 0.03;
+      line.material.color = 0x000000;
+      line.material.transparent = true;
       scene.add(line);
 
       camera.position.y = 1;
@@ -62,7 +62,7 @@ export default {
       function animate() {
          requestAnimationFrame(animate);
 
-         // line.rotation.x += 0.0015;
+         line.rotation.x += 0.0015;
          line.rotation.y += 0.0015;
 
          if (line.material.opacity < 0.15) line.material.opacity += 0.001;
@@ -75,9 +75,24 @@ export default {
          camera.rotation.x = -event.y / 50000;
       }
 
-      if (WebGL.isWebGLAvailable() && !window.mobileCheck()) animate();
+      if (WebGL.isWebGLAvailable() && !window.mobileCheck()) {
+         animate();
 
-      // window.addEventListener('pointermove', onPointerMove);
+         const listener = new THREE.AudioListener();
+         camera.add(listener);
+
+         const sound = new THREE.Audio(listener);
+         const audioLoader = new THREE.AudioLoader();
+         audioLoader.load('/ethereal.ogg', buffer => {
+            sound.setBuffer(buffer);
+            sound.setLoop(true);
+            sound.setVolume(0.5);
+            sound.play();
+            animate();
+         });
+      }
+
+      window.addEventListener('pointermove', onPointerMove);
    }
 }
 </script>

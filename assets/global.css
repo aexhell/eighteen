@@ -70,7 +70,7 @@ button {
 }
 
 canvas {
-   @apply absolute top-0 right-0 select-none pointer-events-none dark:opacity-[0.1] dark:invert opacity-70 md:block hidden
+   @apply absolute top-0 right-0 select-none pointer-events-none dark:invert md:block hidden
 }
 
 /* width */

@@ -8,11 +8,6 @@
                   <path d="M16 49.92H54L89 108.16H91L127 49.92H164L129 104L180 183.04H164L129 128.96L121 141.44L164 208H127L91 149.76H89L52 208H16L59 141.44L51 128.96L16 183.04H0L51 104L16 49.92Z" fill="currentColor"/>
                </svg>
             </nuxt-link>
-            <div>
-               <nuxt-link :class="{ 'opacity-0 pointer-events-none select-none': route.currentRoute.value.name !== 'index' }" to="/" alt="Aexhell name" aria-label="Aexhell name" class="font-bold no-underline uppercase transition delay-500">
-                  <span>Aexhell<span class="font-light">©2023</span></span>
-               </nuxt-link>
-            </div>
          </div>
          <div :style="style" class="rounded-xl md:block hidden backdrop-blur-[2px] clock-time cursor-pointer w-fit relative z-10 transition uppercase text-xs`">
             <div class="px-4 py-1 bg-white dark:bg-black rounded-xl text-xs">
