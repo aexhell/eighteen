@@ -1,6 +1,6 @@
 <template>
    <div id="__EIGHTEEN-HOME" class="flex-col w-full h-full justify-start items-center relative">
-      <div :class="{ 'opacity-100': loaded }" id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth transition-opacity opacity-0 relative z-20 md:pt-0 gap-8 pt-8 md:px-0 px-12 mt-12 md:justify-center transition-width w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
+      <div :class="{ 'opacity-100': loaded }" id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth transition-op-w delay-1000 transition duration-700 opacity-0 relative z-20 md:pt-0 gap-8 pt-8 md:px-0 px-12 mt-12 md:justify-center w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
          <Project v-for="proj of projects" :key="proj.code" :data="proj" :column="true" :enabled="proj.enabled" :active="active === projects.indexOf(proj)" />
          <p class="text-center text-xl">Want to make yours?<br><nuxt-link to="/about">Let's speak.</nuxt-link></p>
       </div>
@@ -19,6 +19,12 @@ onMounted(async () => {
    loaded.value = true;
 });
 </script>
+
+<style>
+.transition-op-w {
+   transition-property: width, opacity;
+}
+</style>
 
 <script>
 export default {
