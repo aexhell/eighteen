@@ -3,7 +3,12 @@
       <ContentQuery :path="$route.path" find="one">
          <template #default="{ data }">
             <div style="height: calc(100vh - 235px)" class="w-full h-screen relative flex flex-col">
-               <h2 class="separator xl:text-[12rem] lg:text-9xl md:text-8xl text-6xl m-auto text-black dark:text-white font-bold w-fit" v-text="data.titlePage" />
+               <div class="m-auto flex flex-col items-center">
+                  <h2 class="separator xl:text-[12rem] lg:text-9xl md:text-8xl text-6xl m-auto text-black dark:text-white font-bold w-fit" v-text="data.titlePage" />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 animate-bounce mt-4">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+               </div>
             </div>
             <div id="__EIGHTEEN-BLOG-CONTAINER" class="text-black backdrop-blur-[8px] flex flex-col gap-2 mt-36 pb-12 w-full">
                <div class="flex lg:flex-row flex-col w-full justify-between">
