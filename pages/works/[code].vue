@@ -57,8 +57,6 @@
 
 <script setup>
 const route = useRouter();
-const contentQuery = queryContent('works', route.currentRoute.value.params.code).findOne();
-
-useSeoMeta({ title: `Work: ${contentQuery.title} ~` });
+const contentQuery = queryContent('works', route.currentRoute.value.params.code).findOne().then(c => useSeoMeta({ title: `Work: ${c.titlePage} ~` }));
 </script>
 

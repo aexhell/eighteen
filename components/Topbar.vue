@@ -1,6 +1,6 @@
 <template>
    <header role="banner" class="w-full flex justify-center z-40" id="__EIGHTEEN-TOPBAR">
-      <nav role="navigation" class="py-8 w-full md:px-auto px-12 gap-4 flex items-center justify-between">
+      <nav :class="{ 'opacity-100': loaded }"  role="navigation" class="py-8 opacity-0 w-full md:px-auto px-12 gap-4 flex items-center justify-between">
          <div class="flex items-center xl:w-1/4 lg:w-[20.6%] gap-4 justify-between">
             <nuxt-link to="/" alt="Aexhell logo" aria-label="Aexhell logo" class="font-bold no-underline uppercase">
                <svg class="w-6 h-6" width="180" height="208" viewBox="0 0 180 208" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,8 +24,17 @@
 </template>
 
 <script setup>
+import { useMainStore } from '@/store/index';
+
 const route = useRouter();
 const name = ref('');
+const loaded = ref(false);
+
+onMounted(async () => {
+   const store = useMainStore();
+
+   loaded.value = true;
+});
 
 switch (route.currentRoute.value.name) {
    case 'works-code':

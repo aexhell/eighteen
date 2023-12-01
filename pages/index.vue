@@ -6,7 +6,7 @@
                <path d="M0 0H53L89 58.24L127 0H180L164 24.96H127L91 83.2H89L53 24.96H16L0 0Z" fill="currentColor"/>
                <path d="M16 49.92H54L89 108.16H91L127 49.92H164L129 104L180 183.04H164L129 128.96L121 141.44L164 208H127L91 149.76H89L52 208H16L59 141.44L51 128.96L16 183.04H0L51 104L16 49.92Z" fill="currentColor"/>
             </svg>
-            <span class="uppercase font-bold">Scroll down</span>
+            <span class="uppercase font-bold text-xl">Scroll down</span>
          </div>
       </div>
       <div id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth relative z-20 md:pt-0 gap-8 pt-8 md:px-0 px-12 mt-48 md:justify-center transition-width w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
@@ -24,7 +24,6 @@ const loaded = ref(false);
 
 onMounted(async () => {
    const store = useMainStore();
-   console.log(store);
 
    loaded.value = true;
 });

@@ -3,7 +3,7 @@
       <nav role="navigation" class="py-8 w-full md:px-auto px-12 gap-4 flex items-center justify-between">
          <div class="md:flex hidden items-center gap-4 justify-between">
             <div class="flex items-center w-full">
-               <button class="text-black dark:text-white mr-2" @click="play">
+               <button v-if="false"  class="text-black dark:text-white mr-2" @click="play">
                   <svg v-if="!playing" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />

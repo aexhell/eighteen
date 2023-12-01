@@ -5,7 +5,7 @@
 }
 
 html, body {
-   @apply m-0 bg-white dark:bg-black text-black dark:text-white font-sans cursor-none overflow-hidden
+   @apply m-0 bg-white dark:bg-black text-black dark:text-white font-sans overflow-hidden
 }
 
 html, body, #__AMILLIONCITIES {
@@ -65,12 +65,8 @@ button {
    @apply bg-transparent font-sans text-base m-0 p-0 cursor-pointer outline-none border-none
 }
 
-* {
-   @apply xl:!cursor-none
-}
-
 canvas {
-   @apply absolute top-0 right-0 select-none pointer-events-none dark:invert md:block hidden
+   @apply absolute top-0 right-0 select-none pointer-events-none opacity-15 dark:invert md:block hidden
 }
 
 /* width */
