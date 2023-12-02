@@ -1,8 +1,8 @@
 <template>
    <div id="__EIGHTEEN-HOME" class="flex-col w-full h-full justify-start items-center relative">
-      <div :class="{ 'opacity-100': loaded }" id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth transition-op-w delay-1000 transition duration-700 opacity-0 relative z-20 md:pt-0 gap-8 pt-8 md:px-0 px-12 mt-12 md:justify-center w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
+      <div :class="{ 'opacity-100': loaded }" id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth transition-op-w delay-1000 transition duration-700 opacity-0 relative z-20 md:pt-0 gap-8 pt-8 px-0  mt-8 md:justify-center w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
          <Project v-for="proj of projects" :key="proj.code" :data="proj" :column="true" :enabled="proj.enabled" :active="active === projects.indexOf(proj)" />
-         <p class="text-center text-xl">Want to make yours?<br><nuxt-link to="/about">Let's speak.</nuxt-link></p>
+         <p v-if="false" class="text-center text-xl">Want to make yours?<br><nuxt-link to="/about">Let's speak.</nuxt-link></p>
       </div>
    </div>
 </template>
@@ -34,49 +34,41 @@ export default {
          projects: [
             {
                code: 'moon',
-               stack: 'Electron/Socket.io',
                title: 'Moon',
                position: 'Founder',
                description: 'IRC prototype.',
-               date: 'April 2021 / June 2021',
-               link: '#',
+               link: '/works/moon',
+               customtext: false,
                enabled: true
             },
             {
                code: 'puroto',
-               stack: 'Nuxt/Go',
                title: 'Puroto',
                position: 'Front-end',
                description: 'Social media for furries.',
-               date: 'Aug 2021 / Dic 2021',
-               link: '#',
+               link: '/works/puroto',
+               customtext: false,
                enabled: true
             },
             {
                code: 'mylium',
-               stack: 'Nuxt/PHP',
                title: 'Mylium',
                position: 'Founder',
                description: 'Connecting people with you.',
-               date: 'Feb 2023 / ----',
                link: '/works/mylium',
+               customtext: false,
                enabled: true
             },
             {
                code: 'nc',
-               stack: 'Nuxt',
                position: '----',
-               title: 'Coming soon',
-               date: 'TBR',
-               link: '#',
-               enabled: false
+               title: 'Want to make yours?',
+               link: '/about',
+               customtext: true,
+               enabled: true
             }
-         ],
-         blogs: []
+         ]
       }
-   },
-   async created () {
-      this.blogs = await queryContent('works').find();
    }
 }
 </script>

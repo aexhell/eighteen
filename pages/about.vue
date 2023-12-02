@@ -8,7 +8,7 @@
                   As Aexhell, I seek to develop new and unique web experiences for you. Please note that contact with me must be made after reviewing the <nuxt-link to="/coc">Code of Conduct</nuxt-link>. Please review it before you proceed to contact me. You may contact me using the following methods:
                </p>
                <ul class="list-none flex-wrap flex gap-4 px-0" id="__EIGHTEEN-CONTACT-METHODS">
-                  <li v-for="method of methods" :key="method.code" class="flex items-center sm:w-fit w-full bg-black/1 hover:bg-transparent border border-solid border-black/40 hover:border-black/20 transition rounded-lg p-4">
+                  <li v-for="method of methods" :key="method.code" class="flex items-center backdrop-blur-[8px] sm:w-fit w-full bg-black/1 hover:bg-transparent border border-solid border-black/40 hover:border-black/20 transition rounded-lg p-4">
                      <div v-if="method.icon" v-html="method.icon"></div>
                      <span v-if="!method.icon">{{ method.title }}: </span>
                      <a v-if="method.href" :href="method.href">{{ method.content }}</a>
