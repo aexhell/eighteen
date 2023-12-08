@@ -12,6 +12,10 @@ html, body, #__AMILLIONCITIES {
    @apply w-full h-full
 }
 
+header nav {
+   background: linear-gradient(0deg, #e0e0e000, #e0e0e087, #E0E0E0)
+}
+
 @keyframes slide-right {
    0% {
       opacity: 0;

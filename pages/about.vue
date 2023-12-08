@@ -1,9 +1,9 @@
 <template>
    <div id="__EIGHTEEN-ABOUT" class="flex flex-col overflow-hidden w-full md:px-auto justify-start">
-      <h2 class="xl:text-7xl my-4 lg:text-6xl text-5xl font-bold w-fit">About me</h2>
+      <h2 class="xl:text-7xl my-4 text-6xl lg:px-0 px-12 font-bold w-fit">About me</h2>
       <div id="__EIGHTEEN-ABOUT-CONTAINER">
          <div class="flex justify-between">
-            <div class="w-1/2">
+            <div class="md:w-1/2 w-full lg:px-0 px-12">
                <p class="xl:text-lg lg:text-md text-lg">
                   As Aexhell, I seek to develop new and unique web experiences for you. Please note that contact with me must be made after reviewing the <nuxt-link to="/coc">Code of Conduct</nuxt-link>. Please review it before you proceed to contact me. You may contact me using the following methods:
                </p>
@@ -15,7 +15,7 @@
                   </li>
                </ul>
             </div>
-            <svg class="w-1/4 h-1/2" width="180" height="208" viewBox="0 0 180 208" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-1/4 h-1/2 md:block hidden lg:pr-0 pr-12" width="180" height="208" viewBox="0 0 180 208" fill="none" xmlns="http://www.w3.org/2000/svg">
                <path d="M0 0H53L89 58.24L127 0H180L164 24.96H127L91 83.2H89L53 24.96H16L0 0Z" fill="currentColor"/>
                <path d="M16 49.92H54L89 108.16H91L127 49.92H164L129 104L180 183.04H164L129 128.96L121 141.44L164 208H127L91 149.76H89L52 208H16L59 141.44L51 128.96L16 183.04H0L51 104L16 49.92Z" fill="currentColor"/>
             </svg>

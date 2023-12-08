@@ -2,7 +2,7 @@
    <div id="__AMILLIONCITIES-CONTENT" class="w-full h-full flex flex-col items-center overflow-x-hidden">
       <Topbar />
       <img alt="Gradient background" src="/gradient.svg" class="absolute opacity-75 object-cover top-0 left-0 w-full h-full pointer-events-none select-none">
-      <main role="main" class="xl:w-[60.6%] lg:w-3/4 w-full flex justify-center items-start h-full relative z-30">
+      <main role="main" class="lg:w-1/2 w-full flex justify-center items-start h-full relative z-30">
          <slot />
       </main>
       <Footer />
@@ -71,15 +71,14 @@ export default {
 
       if (WebGL.isWebGLAvailable() && !window.mobileCheck()) {
          animate();
-
-         audioLoader.load('/ethereal.ogg', buffer => {
-            sound.setBuffer(buffer);
-            sound.setLoop(true);
-            sound.setVolume(0.5);
-            sound.play();
-            animate();
-         });
       }
+
+      audioLoader.load('/ethereal.ogg', buffer => {
+         sound.setBuffer(buffer);
+         sound.setLoop(true);
+         sound.setVolume(0.5);
+         sound.play();
+      });
 
       function animate() {
          requestAnimationFrame(animate);

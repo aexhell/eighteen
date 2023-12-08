@@ -1,6 +1,6 @@
 <template>
-   <div id="__EIGHTEEN-HOME" class="flex-col w-full h-full justify-start items-center relative">
-      <div :class="{ 'opacity-100': loaded }" id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth transition-op-w delay-1000 transition duration-700 opacity-0 relative z-20 md:pt-0 gap-8 pt-8 px-0  mt-8 md:justify-center w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
+   <div id="__EIGHTEEN-HOME" class="flex-col w-full md:px-0 px-6 h-full justify-start items-center relative">
+      <div :class="{ 'opacity-100': loaded }" id="__EIGHTEEN_PROJECTS_LIST" class="scroll-smooth transition-op-w delay-1000 transition duration-700 opacity-0 relative z-20 md:pt-0 gap-8 pt-8 px-0 md:mt-8 md:justify-center w-full h-auto flex flex-col gap-2 md:pb-24 pb-12">
          <Project v-for="proj of projects" :key="proj.code" :data="proj" :column="true" :enabled="proj.enabled" :active="active === projects.indexOf(proj)" />
          <p v-if="false" class="text-center text-xl">Want to make yours?<br><nuxt-link to="/about">Let's speak.</nuxt-link></p>
       </div>
@@ -32,6 +32,16 @@ export default {
       return {
          active: 0,
          projects: [
+         {
+               code: 'aexhell',
+               title: 'Aexhell',
+               position: 'Founder',
+               description: 'IRC prototype.',
+               link: '/works/moon',
+               customtext: false,
+               enabled: false,
+               landing: true
+            },
             {
                code: 'moon',
                title: 'Moon',
@@ -62,7 +72,8 @@ export default {
             {
                code: 'nc',
                position: '----',
-               title: 'Want to make yours?',
+               title: 'And more.',
+               description: 'Want to make your own project?',
                link: '/about',
                customtext: true,
                enabled: true

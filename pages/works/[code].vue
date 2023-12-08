@@ -63,7 +63,6 @@
 
 <script setup>
 const route = useRouter();
-const { data } = await useAsyncData('page-data', () => queryContent('works', route.currentRoute.value.params.code).findOne());
-useSeoMeta({ title: `Work: ${data.value.titlePage} ~` });
+const { data } = useAsyncData('page-data', () => queryContent('works', route.currentRoute.value.params.code).findOne());
 </script>
 

@@ -9,9 +9,12 @@
                </svg>
             </nuxt-link>
          </div>
-         <div :style="style" class="rounded-xl md:block hidden backdrop-blur-[2px] clock-time cursor-pointer w-fit relative z-10 transition uppercase text-xs`">
+         <div :style="style" class="rounded-xl backdrop-blur-[2px] clock-time cursor-pointer w-fit relative z-10 transition text-xs`">
+            <div class="tooltiptext">
+               {{ date === 'un' ? `${date}a` : 'A' }}vailable for chatting / {{ hour }}
+            </div>
             <div class="px-4 py-1 bg-white dark:bg-black rounded-xl text-xs">
-               <span :title="`Currently ${date}available for chatting / ${hour}`" class="flex items-center text-black dark:text-white select-none">
+               <span class="flex items-center text-black uppercase dark:text-white select-none">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1">
                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
@@ -22,6 +25,38 @@
       </nav>
    </header>
 </template>
+
+<style>
+.clock-time .tooltiptext {
+  visibility: hidden;
+  background-color: #e0e0e0;
+  color: #000000;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 0%;
+  margin-left: -60px
+}
+
+.clock-time .tooltiptext::before {
+  content: " ";
+  position: absolute;
+  top: -20%; /* At the bottom of the tooltip */
+  left: 90%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.clock-time:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
 
 <script setup>
 import { useMainStore } from '@/store/index';
