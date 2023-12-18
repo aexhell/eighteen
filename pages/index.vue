@@ -70,8 +70,17 @@ export default {
                enabled: true
             },
             {
+               code: 'quartermuseum',
+               title: 'Quarter Museum',
+               position: 'Founder',
+               description: 'IRC that encourages the user\'s cosmetic comfort.',
+               link: '/works/qm',
+               customtext: false,
+               enabled: true
+            },
+            {
                code: 'nc',
-               position: '----',
+               position: 'Coming soon',
                title: 'And more.',
                description: 'Want to make your own project?',
                link: '/about',
