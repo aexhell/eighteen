@@ -38,6 +38,7 @@ const props = defineProps({
 const { enabled, data } = toRefs(props);
 const componentToDisplay = computed(() => enabled.value ? resolveComponent('NuxtLink') : 'div');
 
+/*
 onMounted(() => {
    const testElements = document.getElementsByClassName('__EIGHTEEN-PROJECT');
 
@@ -52,5 +53,5 @@ onMounted(() => {
          current.addEventListener('mouseleave', () => current.style.transform = ``);
       }
    } 
-});
+});*/
 </script>

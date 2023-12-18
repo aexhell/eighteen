@@ -4,7 +4,7 @@ titlePage: 'Quarter Museum'
 code: 'quartermuseum'
 stack: 'Nuxt 3. Socket.io. Supabase.'
 position: 'Founder'
-description: 'IRC that encourages the user\'s cosmetic comfort.'
+description: "IRC that encourages the user's cosmetic comfort."
 date: 'December 2023'
 ---
 I've returned to the IRC project format. This beauty was made on a [Discord](https://discord.com) outage, so the idea of a new IRC came up between me and my friends.
