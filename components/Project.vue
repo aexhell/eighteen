@@ -3,7 +3,7 @@
       <img :alt="`${data.title} Image`" :class="{ 'object-top': data.code === 'moon'}" class="__EIGHTEEN-PROJECT-IMAGE pointer-events-none select-none absolute transition-all top-0 left-0 object-cover w-full h-full" :src="`/projects/${data.code}.webp`" />
       <div v-if="!data.landing" class="__EIGHTEEN-PROJECT-TITLE opacity-0 absolute transition-all top-5 left-4 text-black">
          <p class="mt-0 mb-px pt-4 mt-2 w-fit border-t border-x-0 border-b-0 border-solid border-black text-xs uppercase">[ {{ data.position }} ]</p>
-         <h2 class="my-0 lg:text-8xl md:text-6xl text-lg" v-text="data.title" />
+         <h2 class="my-0 lg:text-7xl md:text-6xl text-lg" v-text="data.title" />
          <p class="text-xs md:text-base md:block hidden" v-text="data.description" />
          <button class="border-black px-4 py-2 border-solid border mt-2 uppercase text-xs hover:bg-black hover:text-white transition text-black">
             {{ !data.customtext ? 'See more' : 'Let\'s speak' }}
