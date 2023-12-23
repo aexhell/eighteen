@@ -12,8 +12,14 @@ html, body, #__AMILLIONCITIES {
    @apply w-full h-full
 }
 
-header nav {
-   background: linear-gradient(0deg, #e0e0e000, #e0e0e087, #E0E0E0)
+body:after {
+   content: "";
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: linear-gradient(90deg, #E0E0E0, #e0e0e0, #e0e0e000)
 }
 
 @keyframes slide-right {
@@ -70,7 +76,11 @@ button {
 }
 
 canvas {
-   @apply absolute top-0 right-0 select-none pointer-events-none opacity-15 dark:invert md:block hidden
+   @apply absolute top-0 right-0 select-none pointer-events-none opacity-25 dark:invert md:block hidden
+}
+
+* {
+   @apply cursor-none !important
 }
 
 /* width */

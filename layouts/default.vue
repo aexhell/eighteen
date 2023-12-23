@@ -1,12 +1,11 @@
 <template>
    <div id="__AMILLIONCITIES-CONTENT" class="w-full h-full flex flex-col items-center overflow-x-hidden">
       <Topbar />
-      <img alt="Gradient background" src="/gradient.svg" class="absolute opacity-75 object-cover top-0 left-0 w-full h-full pointer-events-none select-none">
-      <main role="main" class="lg:w-1/2 w-full flex justify-center items-start h-full relative z-30">
+      <img style="z-index: 1" alt="Gradient background" src="/gradient.svg" class="absolute opacity-75 object-cover top-0 left-0 w-full h-full pointer-events-none select-none">
+      <main role="main" class="w-full flex justify-center items-start h-full relative z-30">
          <slot />
       </main>
-      <Footer />
-      <Cursor v-if="false" />
+      <Cursor />
    </div>
 </template>
 
@@ -22,15 +21,14 @@ export default {
       const store = useMainStore();
    
       var topbar = document.getElementById('__EIGHTEEN-TOPBAR');
-      var footer = document.getElementById('__EIGHTEEN-FOOTER');
       var main = document.getElementsByTagName('main')[0];
       var direction = 0;
 
       topbar.classList.add('fixed');
       main.style.paddingTop = `${topbar.clientHeight}px`;
-      main.style.height = `calc(100% - (${topbar.clientHeight}px + ${footer.clientHeight}px))`;
+      main.style.height = `calc(100% - (${topbar.clientHeight}px))`;
 
-      store.increment(`calc(100% - (${topbar.clientHeight}px + ${footer.clientHeight}px))`, `${topbar.clientHeight}px`);
+      store.increment(`calc(100% - (${topbar.clientHeight}px))`, `${topbar.clientHeight}px`);
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 2000 );
@@ -57,6 +55,7 @@ export default {
       camera.position.y = 1;
       camera.position.z = 5;
       line.rotation.x = 0.15;
+      line.position.x = 7;
 
       window.mobileCheck = function() {
          let check = false;
@@ -73,7 +72,7 @@ export default {
          animate();
       }
 
-      audioLoader.load('/ethereal.ogg', buffer => {
+      audioLoader.load('/springofdeception.ogg', buffer => {
          sound.setBuffer(buffer);
          sound.setLoop(true);
          sound.setVolume(0.5);
@@ -91,6 +90,15 @@ export default {
          renderer.render(scene, camera);
       }
 
+      function onWindowResize() {
+         camera.aspect = window.innerWidth / window.innerHeight;
+         camera.updateProjectionMatrix();
+
+         renderer.setSize( window.innerWidth, window.innerHeight );
+         
+      }
+
+      window.addEventListener('resize', onWindowResize);
       window.addEventListener('pointermove', onPointerMove);
    }
 }

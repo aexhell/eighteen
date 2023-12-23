@@ -10,7 +10,7 @@
             </nuxt-link>
          </div>
          <div :style="style" class="rounded-xl backdrop-blur-[2px] clock-time cursor-pointer w-fit relative z-10 transition text-xs`">
-            <div class="px-4 py-1 rounded-xl text-xs">
+            <div class="px-4 py-1 bg-white rounded-xl text-xs">
                <span class="flex items-center text-black uppercase dark:text-white select-none">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1">
                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
