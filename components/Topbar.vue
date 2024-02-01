@@ -32,7 +32,7 @@
          </div>
       </nav>
       <audio id="__ENDLESSVALLEY-AUDIO" loop>
-         <source src="ebb.mp3" type="audio/mpeg">
+         <source src="/ebb.mp3" type="audio/mpeg">
       </audio>
    </header>
 </template>
