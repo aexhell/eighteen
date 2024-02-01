@@ -1,12 +1,15 @@
 <template>
    <div id="__EIGHTEEN-CURSOR" class="top-0 left-0 z-50 pointer-events-none overflow-hidden xl:block hidden select-none absolute">
-      <div class="cursor-container border-black dark:bg-black/50 dark:border-white bg-white/50 border border-solid transition-all rounded-full" :class="{ 'p-[16px]': !mousePressed, 'p-[8px]': mousePressed }">
+      <div class="cursor-container bg-black/50 border p-[10px] border-solid transition-all" :class="{ 'animate-pulse border-white rounded-b-full rounded-r-full': mousePressed, 'border-white/50 rounded-full': !mousePressed }">
       </div>
    </div>
 </template>
 
 <script setup>
+import { useMainStore } from '@/store/index';
+
 const route = useRouter();
+const store = useMainStore();
 const mousePressed = ref(false);
 const mouseDown = ref(false);
 const mouse = { x: 0, y: 0 }; // mouse pointer's coordinates
@@ -16,12 +19,14 @@ const speed = 0.35; // between 0 and 1
 onMounted(() => {
    const cursor = document.querySelector('#__EIGHTEEN-CURSOR');
    const main = document.getElementsByTagName('main')[0];
-   const selectors = 'button,h1,h2,h3,h4,h5,h6,a,p,li,span,.clock-time,.__EIGHTEEN-PROJECT,svg';
+   const selectors = 'button,h2,h3,h4,h5,h6,a,p,li,span,.clock-time,.__EIGHTEEN-PROJECT,svg,.__ENDLESS-VALLEY-TITLE';
    let button = document.querySelectorAll(selectors);
 
    const updateCoordinates = e => {
-      mouse.x = e.clientX - 15;
-      mouse.y = e.clientY - 15;
+      mouse.x = e.clientX - 0;
+      mouse.y = e.clientY - 0;
+
+      store.updateCursor(mouse.x, mouse.y);
    }
 
    const mouseOnDown = () => {

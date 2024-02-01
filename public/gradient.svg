@@ -1,19 +1,26 @@
 <svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.35" clip-path="url(#clip0_2294_5)" filter="url(#filter0_f_2294_5)">
-<circle cx="1849" cy="993" r="385" fill="#FF94F4"/>
-<circle cx="-74" cy="252" r="385" fill="url(#paint0_angular_2294_5)"/>
+<g clip-path="url(#clip0_63_20)">
+<mask id="mask0_63_20" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+<path d="M1920 0H0V1080H1920V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_63_20)">
+<g opacity="0.75" filter="url(#filter0_f_63_20)">
+<path d="M1849 1378C2061.63 1378 2234 1205.63 2234 993C2234 780.37 2061.63 608 1849 608C1636.37 608 1464 780.37 1464 993C1464 1205.63 1636.37 1378 1849 1378Z" fill="#FFD28D"/>
+<path d="M-74 637C138.63 637 311 464.63 311 252C311 39.3704 138.63 -133 -74 -133C-286.63 -133 -459 39.3704 -459 252C-459 464.63 -286.63 637 -74 637Z" fill="url(#paint0_radial_63_20)"/>
+</g>
+</g>
 </g>
 <defs>
-<filter id="filter0_f_2294_5" x="-500" y="-500" width="2920" height="2080" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_63_20" x="-959" y="-633" width="3693" height="2511" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur_2294_5"/>
+<feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur_63_20"/>
 </filter>
-<radialGradient id="paint0_angular_2294_5" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-74 252) rotate(90) scale(385)">
-<stop offset="0.420438" stop-color="#5770C6"/>
-<stop offset="1" stop-color="#75FFCD"/>
+<radialGradient id="paint0_radial_63_20" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-74 252) rotate(90) scale(385)">
+<stop offset="0.420438" stop-color="#D9D8B6" stop-opacity="0"/>
+<stop offset="1" stop-color="#B0AF73"/>
 </radialGradient>
-<clipPath id="clip0_2294_5">
+<clipPath id="clip0_63_20">
 <rect width="1920" height="1080" fill="white"/>
 </clipPath>
 </defs>

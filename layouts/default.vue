@@ -1,13 +1,22 @@
 <template>
-   <div id="__AMILLIONCITIES-CONTENT" class="w-full h-full flex flex-col items-center overflow-x-hidden">
+   <div id="__AEXHELL-CONTENT" class="w-full h-full flex flex-col items-center overflow-x-hidden">
       <Topbar />
-      <img style="z-index: 1" alt="Gradient background" src="/gradient.svg" class="absolute opacity-75 object-cover top-0 left-0 w-full h-full pointer-events-none select-none">
+      <div>
+         <div class="absolute bottom-6 left-6 text-xs" id="cursorX">{{ store.cursorX }}</div>
+      </div>
+      <img style="z-index: 1" alt="Gradient background" src="/gradient.svg" class="absolute animate-pulse-slow object-cover top-0 left-0 w-full h-full pointer-events-none select-none">
       <main role="main" class="w-full flex justify-center items-start h-full relative z-30">
          <slot />
       </main>
       <Cursor />
    </div>
 </template>
+
+<script setup>
+import { useMainStore } from '@/store/index';
+
+const store = useMainStore();
+</script>
 
 <script>
 import * as THREE from 'three';
@@ -19,8 +28,8 @@ export default {
    middleware: ['scroll'],
    mounted () {
       const store = useMainStore();
-   
-      var topbar = document.getElementById('__EIGHTEEN-TOPBAR');
+
+      var topbar = document.getElementById('__ENDLESSVALLEY-TOPBAR');
       var main = document.getElementsByTagName('main')[0];
       var direction = 0;
 
@@ -29,6 +38,8 @@ export default {
       main.style.height = `calc(100% - (${topbar.clientHeight}px))`;
 
       store.increment(`calc(100% - (${topbar.clientHeight}px))`, `${topbar.clientHeight}px`);
+
+      console.log(store);
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 2000 );
@@ -42,7 +53,7 @@ export default {
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 
-      const geometry = new THREE.TorusKnotGeometry(8, 0.2, 58, 20, 16, 25);
+      const geometry = new THREE.TorusKnotGeometry(8, 0.2, 58, 20, 18, 25);
       // const geometry = new THREE.OctahedronGeometry(8, 0);
       const wireframe = new THREE.WireframeGeometry( geometry );
       const line = new THREE.LineSegments( wireframe );
@@ -72,12 +83,12 @@ export default {
          animate();
       }
 
-      audioLoader.load('/springofdeception.ogg', buffer => {
+      /*audioLoader.load('/springofdeception.ogg', buffer => {
          sound.setBuffer(buffer);
          sound.setLoop(true);
          sound.setVolume(0.5);
          sound.play();
-      });
+      });*/
 
       function animate() {
          requestAnimationFrame(animate);
@@ -85,7 +96,7 @@ export default {
          line.rotation.x += 0.0015;
          line.rotation.y += 0.0015;
 
-         if (sound.isPlaying && line.material.opacity < 0.15) line.material.opacity += 0.00015;
+         if (line.material.opacity < 0.05) line.material.opacity += 0.0005;
 
          renderer.render(scene, camera);
       }
@@ -94,8 +105,7 @@ export default {
          camera.aspect = window.innerWidth / window.innerHeight;
          camera.updateProjectionMatrix();
 
-         renderer.setSize( window.innerWidth, window.innerHeight );
-         
+         renderer.setSize(window.innerWidth, window.innerHeight);
       }
 
       window.addEventListener('resize', onWindowResize);

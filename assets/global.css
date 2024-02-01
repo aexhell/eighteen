@@ -5,7 +5,7 @@
 }
 
 html, body {
-   @apply m-0 bg-white dark:bg-black text-black dark:text-white font-sans overflow-hidden
+   @apply m-0 bg-black text-white font-sans overflow-hidden;
 }
 
 html, body, #__AMILLIONCITIES {
@@ -18,8 +18,11 @@ body:after {
    height: 100%;
    position: absolute;
    top: 0;
-   left: 0;
-   background: linear-gradient(90deg, #E0E0E0, #e0e0e0, #e0e0e000)
+   left: 0
+}
+
+.animate-pulse-slow {
+   animation: pulse 10s cubic-bezier(0.67, 0.02, 0.84, 0.93) infinite
 }
 
 @keyframes slide-right {
@@ -46,7 +49,7 @@ a {
    color: currentColor
 }
 
-.__EIGHTEEN-PROJECT-IMAGE {
+.__ENDLESSVALLEY-PROJECT-IMAGE {
    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%)
 }
 
@@ -54,12 +57,12 @@ div[data-content-id="content:coc.md"] {
    scroll-behavior: smooth;
 }
 
-.__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-IMAGE {
+.__ENDLESSVALLEY-PROJECT:hover .__ENDLESSVALLEY-PROJECT-IMAGE {
    /* @apply md:clippy sm:clippy-large clippy-xl; */
    opacity: 100;
 }
 
-.__EIGHTEEN-PROJECT:hover .__EIGHTEEN-PROJECT-DETAILS {
+.__ENDLESSVALLEY-PROJECT:hover .__ENDLESSVALLEY-PROJECT-DETAILS {
    @apply opacity-100 md:right-5 right-3 duration-200
 }
 
@@ -72,15 +75,15 @@ a.topbar-link:active, button:active {
 }
 
 button {
-   @apply bg-transparent font-sans text-base m-0 p-0 cursor-pointer outline-none border-none
+   @apply bg-transparent m-0 p-0 cursor-pointer border-none
 }
 
 canvas {
-   @apply absolute top-0 right-0 select-none pointer-events-none opacity-25 dark:invert md:block hidden
+   @apply absolute top-0 right-0 select-none pointer-events-none opacity-25 invert md:block hidden
 }
 
 * {
-   @apply cursor-none !important
+   @apply xl:cursor-none !important
 }
 
 /* width */

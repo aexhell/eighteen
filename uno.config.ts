@@ -18,8 +18,9 @@ export default defineConfig({
    shortcuts: [],
    theme: {
       colors: {
-         black: '#090909',
-         white: '#E0E0E0'
+         black: 'rgb(7 7 7)',
+         white: 'rgb(220 215 200)',
+         currentColor: 'currentColor'
       }
    },
    presets: [
@@ -30,8 +31,17 @@ export default defineConfig({
       presetWebFonts({
          provider: 'bunny',
          fonts: {
-            sans: 'Inter',
-            mono: ['Fira Code', 'Fira Mono:400,700'],
+            sans: [
+               {
+                 name: 'Inter',
+                 weights: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+                 italic: true,
+               },
+               {
+                 name: 'sans-serif',
+                 provider: 'none',
+               },
+             ],
          },
       }),
    ],
