@@ -1,13 +1,13 @@
 <template>
-   <component :is="componentToDisplay" :to="`${data.link}`" :data-code="data.code" :class="{ 'no-landing-project': !data.landing, 'relative': column, 'absolute': !column }" class="__ENDLESSVALLEY-PROJECT z-50 lg:py-42 py-24 w-full h-auto transition-all">
-      <img :alt="`${data.title} Image`" :class="{ 'object-top': data.code === 'moon'}" class="__ENDLESSVALLEY-PROJECT-IMAGE pointer-events-none select-none absolute transition-all top-0 left-0 object-cover w-full h-full" :src="`/projects/${data.code}.webp`" />
-      <div v-if="!data.landing" class="__ENDLESSVALLEY-PROJECT-TITLE opacity-0 absolute transition-all top-5 left-4 text-black">
-         <p class="mt-0 mb-px pt-4 mt-2 w-fit border-t border-x-0 border-b-0 border-solid border-black text-xs uppercase">[ {{ data.position }} ]</p>
-         <h2 class="my-0 lg:text-7xl md:text-6xl text-lg" v-text="data.title" />
-         <p class="text-xs md:text-base md:block hidden" v-text="data.description" />
-         <button class="border-black px-4 py-2 border-solid border mt-2 uppercase text-xs hover:bg-black hover:text-white transition text-black">
-            {{ !data.customtext ? 'See more' : 'Let\'s speak' }}
-         </button>
+   <component :is="componentToDisplay" :to="props.link" :class="{ 'text-xs': !props.width }" class="w-full AEXHELL-INTERACTION-COMPONENT active:mt-px bg-black/50 backdrop-blur uppercase px-6 py-2 rounded-xl border-white/25 hover:border-white transition border border-solid no-underline">
+      <div class="relative z-20">
+         <div class="flex items-center mt-4 mb-0">
+            <h3 class="text-xl my-0" v-text="data.title" /> <span class="ml-2 text-white/75">[ {{ data.position }} ]</span>
+         </div>
+         <p v-text="data.description" />
+      </div>
+      <div class="AEXHELL-INTERACTION-GRADIENT">
+         <img class="w-1/2 h-full absolute object-cover z-10 top-0 right-0 rounded-tr-xl pointer-events-none select-none rounded-br-xl" :src="`/projects/${data.code}.webp`">
       </div>
    </component>
 </template>

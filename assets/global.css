@@ -12,8 +12,26 @@ html, body, #__AMILLIONCITIES {
    @apply w-full h-full
 }
 
-body:after {
+body:before {
+   z-index: 0;
    content: "";
+   background: linear-gradient(90deg, rgb(7 7 7), rgba(7, 7, 7, 0));
+   background-size: 100%;
+   mix-blend-mode: soft-light;
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0
+}
+
+body:after {
+   z-index: 0;
+   content: "";
+   background: url(/noise.png);
+   opacity: 0.1;
+   background-size: 36px;
+   mix-blend-mode: soft-light;
    width: 100%;
    height: 100%;
    position: absolute;
@@ -41,7 +59,7 @@ body:after {
 }
 
 hr {
-   @apply my-4 border-black/25
+   @apply my-4 border-white/25
 }
 
 a {
@@ -67,7 +85,7 @@ div[data-content-id="content:coc.md"] {
 }
 
 a.topbar-link.router-link-active {
-   @apply underline
+   @apply underline bg-white text-black
 }
 
 a.topbar-link:active, button:active {
@@ -75,15 +93,30 @@ a.topbar-link:active, button:active {
 }
 
 button {
-   @apply bg-transparent m-0 p-0 cursor-pointer border-none
+   @apply bg-transparent m-0 p-0 border-none
 }
 
 canvas {
-   @apply absolute top-0 right-0 select-none pointer-events-none opacity-25 invert md:block hidden
+   @apply absolute top-0 right-0 select-none pointer-events-none opacity-25 z-10 invert md:block hidden
+}
+
+div.AEXHELL-INTERACTION-GRADIENT:before {
+   background: linear-gradient(90deg, #0000, #000000, #000000ee, #0000);
+   width: 100%;
+   height: 100%;
+   content: "";
+   z-index: 15;
+   position: absolute;
+   left: 0;
+   top: 0
+}
+
+h1,h2,h3,h4,h5,h6,.AEXHELL-INTERACTION-COMPONENT,.AEXHELL-DECORATION, a svg, p {
+   text-shadow: 0px 0px 35px color-mix(in srgb, currentColor 50%, transparent)
 }
 
 * {
-   @apply xl:cursor-none !important
+   @apply cursor-none !important;
 }
 
 /* width */

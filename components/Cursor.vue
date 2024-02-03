@@ -1,6 +1,6 @@
 <template>
    <div id="__EIGHTEEN-CURSOR" class="top-0 left-0 z-50 pointer-events-none overflow-hidden xl:block hidden select-none absolute">
-      <div class="cursor-container bg-black/50 border p-[10px] border-solid transition-all" :class="{ 'animate-pulse border-white rounded-b-full rounded-r-full': mousePressed, 'border-white/50 rounded-full': !mousePressed }">
+      <div class="cursor-container bg-black/20 border p-[10px] border-solid transition-all" :class="{ 'animate-pulse border-white rounded-b-full rounded-r-full': mousePressed, 'border-white/50 rounded-full': !mousePressed }">
       </div>
    </div>
 </template>
@@ -19,7 +19,7 @@ const speed = 0.35; // between 0 and 1
 onMounted(() => {
    const cursor = document.querySelector('#__EIGHTEEN-CURSOR');
    const main = document.getElementsByTagName('main')[0];
-   const selectors = 'button,h2,h3,h4,h5,h6,a,p,li,span,.clock-time,.__EIGHTEEN-PROJECT,svg,.__ENDLESS-VALLEY-TITLE';
+   const selectors = 'button,h1,h2,h3,h4,h5,h6,a,p,li,span,.clock-time,.__EIGHTEEN-PROJECT,svg,.__ENDLESS-VALLEY-TITLE,.AEXHELL-INTERACTION-COMPONENT';
    let button = document.querySelectorAll(selectors);
 
    const updateCoordinates = e => {

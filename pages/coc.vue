@@ -1,5 +1,5 @@
 <template>
-   <div id="__EIGHTEEN-COC" class="flex flex-col overflow-hidden w-full md:px-auto justify-start scroll-smooth">
+   <div id="__EIGHTEEN-COC" class="flex flex-col overflow-hidden w-full md:px-24 justify-start scroll-smooth">
       <h2 class="xl:text-7xl my-4 lg:text-6xl text-5xl font-bold w-fit">Code of Conduct</h2>
       <ContentDoc path="/coc" />
       <div id="__EIGHTEEN-COC-CONTAINER" class="flex flex-col gap-2 pb-12 w-full">

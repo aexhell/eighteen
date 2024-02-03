@@ -1,8 +1,9 @@
 <template>
-   <div id="__AEXHELL-CONTENT" class="w-full h-full flex flex-col items-center overflow-x-hidden">
+   <div id="AEXHELL-CONTENT" class="w-full h-full flex flex-col items-center overflow-x-hidden">
       <Topbar />
-      <div>
-         <div class="absolute bottom-6 left-6 text-xs" id="cursorX">{{ store.cursorX }}</div>
+      <div class="AEXHELL-DECORATION">
+         <div :style="`left: ${store.cursorX}px`" :class="{ 'opacity-0': store.cursorY <= 150 }" class="transition-opacity absolute top-2 text-xs" id="cursorX">{{ store.cursorX }}</div>
+         <div :style="`top: ${store.cursorY}px`" :class="{ 'opacity-0': store.cursorX <= 50 }" class="transition-opacity absolute left-4 text-xs" id="cursorY">{{ store.cursorY }}</div>
       </div>
       <img style="z-index: 1" alt="Gradient background" src="/gradient.svg" class="absolute animate-pulse-slow object-cover top-0 left-0 w-full h-full pointer-events-none select-none">
       <main role="main" class="w-full flex justify-center items-start h-full relative z-30">
@@ -43,13 +44,7 @@ export default {
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 2000 );
-
       const renderer = new THREE.WebGLRenderer({ alpha: true });
-      const listener = new THREE.AudioListener();
-      camera.add(listener);
-
-      const sound = new THREE.Audio(listener);
-      const audioLoader = new THREE.AudioLoader();
       renderer.setSize( window.innerWidth, window.innerHeight );
       document.body.appendChild( renderer.domElement );
 

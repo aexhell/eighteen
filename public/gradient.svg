@@ -1,26 +1,31 @@
 <svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_63_20)">
-<mask id="mask0_63_20" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+<g clip-path="url(#clip0_14_34)">
+<mask id="mask0_14_34" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
 <path d="M1920 0H0V1080H1920V0Z" fill="white"/>
 </mask>
-<g mask="url(#mask0_63_20)">
-<g opacity="0.75" filter="url(#filter0_f_63_20)">
-<path d="M1849 1378C2061.63 1378 2234 1205.63 2234 993C2234 780.37 2061.63 608 1849 608C1636.37 608 1464 780.37 1464 993C1464 1205.63 1636.37 1378 1849 1378Z" fill="#FFD28D"/>
-<path d="M-74 637C138.63 637 311 464.63 311 252C311 39.3704 138.63 -133 -74 -133C-286.63 -133 -459 39.3704 -459 252C-459 464.63 -286.63 637 -74 637Z" fill="url(#paint0_radial_63_20)"/>
+<g mask="url(#mask0_14_34)">
+<mask id="mask1_14_34" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+<path d="M1920 0H0V1080H1920V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_14_34)">
+<g opacity="0.75" filter="url(#filter0_f_14_34)">
+<path d="M1834 1549C2046.63 1549 2219 1376.63 2219 1164C2219 951.37 2046.63 779 1834 779C1621.37 779 1449 951.37 1449 1164C1449 1376.63 1621.37 1549 1834 1549Z" fill="#FFD28D"/>
+<path d="M1754 488C1966.63 488 2139 315.63 2139 103C2139 -109.63 1966.63 -282 1754 -282C1541.37 -282 1369 -109.63 1369 103C1369 315.63 1541.37 488 1754 488Z" fill="url(#paint0_radial_14_34)"/>
+</g>
 </g>
 </g>
 </g>
 <defs>
-<filter id="filter0_f_63_20" x="-959" y="-633" width="3693" height="2511" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_14_34" x="869" y="-782" width="1850" height="2831" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur_63_20"/>
+<feGaussianBlur stdDeviation="250" result="effect1_foregroundBlur_14_34"/>
 </filter>
-<radialGradient id="paint0_radial_63_20" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-74 252) rotate(90) scale(385)">
+<radialGradient id="paint0_radial_14_34" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1754 103) rotate(90) scale(385)">
 <stop offset="0.420438" stop-color="#D9D8B6" stop-opacity="0"/>
 <stop offset="1" stop-color="#B0AF73"/>
 </radialGradient>
-<clipPath id="clip0_63_20">
+<clipPath id="clip0_14_34">
 <rect width="1920" height="1080" fill="white"/>
 </clipPath>
 </defs>
