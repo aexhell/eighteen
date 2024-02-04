@@ -6,9 +6,9 @@
          </nuxt-link>
       </div>
       <img style="z-index: 1" alt="Gradient background" src="/gradient.svg" class="fixed animate-pulse-slow object-cover top-0 left-0 w-full h-full pointer-events-none select-none">
-      <main role="main" :class="{ 'opacity-100': loaded }" class="w-full xl:overflow-clip overflow-y-auto opacity-0 duration-700 transition-opacity md:border md:flex-row flex-col flex items-center border-solid border-black h-full relative z-30">
+      <main role="main" :class="{ 'opacity-100': loaded }" class="w-full xl:overflow-clip overflow-y-auto opacity-0 duration-700 transition-opacity md:border md:flex-row flex-col flex md:items-center items-start border-solid border-black h-full relative z-30">
          <Transition name="slide-fade" mode="out-in">
-            <h1 :key="currentRoute" :style="`font-size: ${styling.fontSize}; width: ${styling.width};`" id="AEXHELL-TITLE" class="pointer-events-none select-none font-regular uppercase absolute left-[-3rem]">
+            <h1 :key="currentRoute" :style="`font-size: ${styling.fontSize}; width: ${styling.width};`" id="AEXHELL-TITLE" class="pointer-events-none xl:block hidden select-none font-regular uppercase absolute left-[-3rem]">
                {{ currentRoute }}
             </h1>
          </Transition>
