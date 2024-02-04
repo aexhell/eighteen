@@ -10,7 +10,7 @@
             </nuxt-link>
          </div>
          <div :class="{ 'opacity-100': date !== null }" class="opacity-0 flex items-center transition justify-center">
-            <button class="flex mr-2 text-white" @click="playAudio">
+            <button class="flex mr-4 text-black cursor-pointer" @click="playAudio">
                <svg v-if="paused" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.25" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
@@ -19,9 +19,9 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9v6m-4.5 0V9M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                </svg>
             </button>
-            <div :style="style" class="rounded-xl clock-time cursor-pointer backdrop-blur-[2px] w-fit relative z-10 transition text-xs`">
-               <div class="px-4 py-1 bg-black rounded-xl text-xs">
-                  <span class="flex items-center uppercase text-white select-none">
+            <div class="rounded-xl clock-time backdrop-blur-[2px] w-fit relative z-10 transition text-xs`">
+               <div class="rounded-xl text-xs">
+                  <span class="flex items-center uppercase text-black select-none">
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                      </svg>

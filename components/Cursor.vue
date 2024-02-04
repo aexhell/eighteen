@@ -1,6 +1,6 @@
 <template>
    <div id="__EIGHTEEN-CURSOR" class="top-0 left-0 z-50 pointer-events-none overflow-hidden md:block hidden select-none absolute">
-      <div class="cursor-container bg-black/20 border p-[10px] border-solid transition-all" :class="{ 'animate-pulse border-white rounded-b-full rounded-r-full': mousePressed, 'border-white/50 rounded-full': !mousePressed }">
+      <div class="cursor-container bg-white/20 border p-[10px] border-solid transition-all rounded-full" :class="{ 'animate-pulse border-black': mousePressed, 'border-black/50': !mousePressed }">
       </div>
    </div>
 </template>
@@ -8,7 +8,6 @@
 <script setup>
 import { useMainStore } from '@/store/index';
 
-const route = useRouter();
 const store = useMainStore();
 const mousePressed = ref(false);
 const mouseDown = ref(false);
@@ -23,8 +22,8 @@ onMounted(() => {
    let button = document.querySelectorAll(selectors);
 
    const updateCoordinates = e => {
-      mouse.x = e.clientX - 0;
-      mouse.y = e.clientY - 0;
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
 
       store.updateCursor(mouse.x, mouse.y);
    }
@@ -45,7 +44,7 @@ onMounted(() => {
       pos.x += diffX * speed;
       pos.y += diffY * speed;
          
-      const translate = 'translate(' + pos.x + 'px ,' + pos.y + 'px)';
+      const translate = 'translate(' + (pos.x - 8) + 'px ,' + (pos.y - 7.5) + 'px)';
       cursor.style.transform = translate;
 
       if (button !== document.querySelectorAll(selectors)) {

@@ -447,6 +447,13 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
+"@capsizecss/core@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@capsizecss/core/-/core-3.1.1.tgz#16d607345c6c2728195b614137f7362a02989921"
+  integrity sha512-1YxfErFXdxcyDyc8peDwH2hiJF5U8sBY5i5HX0f/tpvabbu40w9r8VHYMOOw9Fox5O/+kf2gAhyfVe+sLnaaBA==
+  dependencies:
+    csstype "^3.1.1"
+
 "@cloudflare/kv-asset-handler@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@cloudflare/kv-asset-handler/-/kv-asset-handler-0.3.0.tgz#11f0af0749a400ddadcca16dcd6f4696d7036991"

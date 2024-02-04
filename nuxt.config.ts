@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     contentHead: false
   },
   app: {
-    rootId: '__AMILLIONCITIES',
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       htmlAttrs: {
@@ -24,7 +23,8 @@ export default defineNuxtConfig({
       ],
       script: [],
       link: [
-        { rel: 'icon', href: '/icon.png', type: 'image/png' }
+        { rel: 'icon', href: '/icon-white.png', type: 'image/png', media: '(prefers-color-scheme: dark)' },
+        { rel: 'icon', href: '/icon.png', type: 'image/png', media: '(prefers-color-scheme: light)' }
       ],
       style: [],
       noscript: [

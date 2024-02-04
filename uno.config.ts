@@ -18,8 +18,8 @@ export default defineConfig({
    shortcuts: [],
    theme: {
       colors: {
-         black: 'rgb(7 7 7)',
-         white: 'rgb(220 215 200)',
+         black: 'rgb(54 52 49)',
+         white: 'rgb(204 201 196)',
          currentColor: 'currentColor'
       }
    },

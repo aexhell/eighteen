@@ -19,6 +19,7 @@
     "unstorage": "1.4.1"
   },
   "dependencies": {
+    "@capsizecss/core": "^3.1.1",
     "@nuxt/content": "^2.5.1",
     "@pinia/nuxt": "^0.5.1",
     "pinia": "^2.1.7",
