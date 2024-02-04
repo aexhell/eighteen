@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  routeRules: {
+    'https://fonts.bunny.net/**': { headers: { 'cache-control': 's-maxage=86400' } },
+    '/_nuxt/**': { headers: { 'cache-control': 's-maxage=86400' } },
+  },
   plugins: [],
   modules: [
     '@unocss/nuxt',
