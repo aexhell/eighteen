@@ -1,6 +1,6 @@
 <template>
    <div id="__AEXHELL-HOME" class="w-full h-full relative flex">
-      <img class="w-2/5 h-2/5 m-auto" src="/logo.svg">
+      <img alt="Aexhell (isotype)" class="w-2/5 h-2/5 m-auto" src="/logo.svg">
    </div>
 </template>
 

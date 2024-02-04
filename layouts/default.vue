@@ -1,8 +1,8 @@
 <template>
    <div id="AEXHELL-CONTENT" class="w-full h-full box-border md:p-10 relative overflow-hidden">
       <div class="absolute xl:flex hidden left-0 px-0 top-0 w-12 h-full justify-center items-start py-[0.7rem]">
-         <nuxt-link to="/">
-            <img class="w-5 h-5" src="/logo.svg">
+         <nuxt-link to="/" aria-label="Go to Index page">
+            <img alt="Aexhell (isotype)" class="w-5 h-5" src="/logo.svg">
          </nuxt-link>
       </div>
       <img style="z-index: 1" alt="Gradient background" src="/gradient.svg" class="fixed animate-pulse-slow object-cover top-0 left-0 w-full h-full pointer-events-none select-none">
@@ -24,7 +24,7 @@
             </p>
             <div class="mt-4">
                <div class="mb-2" v-for="item of menu" :key="item.link">
-                  <nuxt-link class="font-serif font-medium uppercase text-4xl" :to="item.link">{{ item.text }}</nuxt-link>
+                  <nuxt-link :aria-label="`Go to ${item.text} page`" class="font-serif font-medium uppercase text-4xl" :to="item.link">{{ item.text }}</nuxt-link>
                </div>
             </div>
          </div>
@@ -101,10 +101,10 @@ onMounted(() => {
    const main = document.getElementsByTagName("main");
 
    h1.style.width = `${main[0].clientHeight}px`;
-   h1.style.fontSize = `${main[0].clientHeight / 4.5}px`;
+   h1.style.fontSize = `${main[0].clientHeight / 4.9}px`;
 
    styling.value.width = `${main[0].clientHeight}px`;
-   styling.value.fontSize = `${main[0].clientHeight / 4.5}px`;
+   styling.value.fontSize = `${main[0].clientHeight / 4.9}px`;
 
    /* Pa otra ocasión tal vez
    const scene = new THREE.Scene();
@@ -155,10 +155,10 @@ onMounted(() => {
       const h1 = document.getElementById("AEXHELL-TITLE");
       const main = document.getElementsByTagName("main");
       h1.style.width = `${main[0].clientHeight}px`;
-      h1.style.fontSize = `${main[0].clientHeight / 4.5}px`;
+      h1.style.fontSize = `${main[0].clientHeight / 4.9}px`;
 
       styling.value.width = `${main[0].clientHeight}px`;
-      styling.value.fontSize = `${main[0].clientHeight / 4.5}px`;
+      styling.value.fontSize = `${main[0].clientHeight / 4.9}px`;
 
       // renderer.setSize(window.innerWidth, window.innerHeight);
    }
