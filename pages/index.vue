@@ -1,5 +1,5 @@
 <template>
-   <div id="__ENDLESSVALLEY-HOME" class="w-full h-full relative flex">
+   <div id="__AEXHELL-HOME" class="w-full h-full relative flex">
       <img class="w-2/5 h-2/5 m-auto" src="/logo.svg">
    </div>
 </template>

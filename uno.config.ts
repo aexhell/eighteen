@@ -57,7 +57,7 @@ export default defineConfig({
                {
                   name: 'Noto Serif',
                   weights: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-                  italic: true,
+                  italic: false,
                },
                {
                   name: 'serif',

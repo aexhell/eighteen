@@ -7,7 +7,7 @@
 <script setup>
 const details = ref({
   name: 'Aexhell',
-  description: 'Front-end Developer & UX Designer'
+  description: 'Digital architect weaving the virtual tapestry of the internet, fabricating immersive online experiences.'
 })
 
 useServerSeoMeta({

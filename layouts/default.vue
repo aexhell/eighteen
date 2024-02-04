@@ -1,13 +1,19 @@
 <template>
    <div id="AEXHELL-CONTENT" class="w-full h-full box-border md:p-10 relative overflow-hidden">
-      <div class="absolute left-0 top-0 w-12 h-full hidden justify-center items-start py-3">
-         <img class="w-5 h-5" src="/logo.svg">
+      <div class="absolute xl:flex hidden left-0 px-0 top-0 w-12 h-full justify-center items-start py-[0.7rem]">
+         <nuxt-link to="/">
+            <img class="w-5 h-5" src="/logo.svg">
+         </nuxt-link>
       </div>
       <img style="z-index: 1" alt="Gradient background" src="/gradient.svg" class="fixed animate-pulse-slow object-cover top-0 left-0 w-full h-full pointer-events-none select-none">
-      <main role="main" :class="{ 'opacity-100': loaded }" class="w-full overflow-x-clip opacity-0 duration-700 transition-opacity md:border md:flex-row flex-col flex items-center border-solid border-black h-full relative z-30">
-         <h1 id="AEXHELL-TITLE" :class="{ 'opacity-100': loaded }" class="opacity-0 duration-700 transition-opacity pointer-events-none select-none lg:block hidden font-regular uppercase absolute">Aexhell</h1>
-         <div class="xl:w-1/2 xl:p-24 p-8">
-            <h1 class="lg:hidden uppercase font-regular lg:text-8xl sm:text-6xl text-4xl mt-0 mb-4">Aexhell</h1>
+      <main role="main" :class="{ 'opacity-100': loaded }" class="w-full xl:overflow-clip overflow-y-auto opacity-0 duration-700 transition-opacity md:border md:flex-row flex-col flex items-center border-solid border-black h-full relative z-30">
+         <Transition>
+            <h1 id="AEXHELL-TITLE" :class="{ 'opacity-100': loaded }" class="opacity-0 duration-700 transition-opacity pointer-events-none select-none xl:block hidden font-regular uppercase absolute left-[-3rem]" v-text="currentRoute" />
+         </Transition>
+         <div class="xl:w-1/2 xl:px-48 xl:py-24 p-8">
+            <h2 class="xl:hidden uppercase font-regular lg:text-8xl sm:text-6xl text-4xl mt-0 mb-4">
+               Aexhell
+            </h2>
             <p class="uppercase font-bold">
                Web Developer & UX Designer
             </p>
@@ -15,34 +21,83 @@
                Digital architect weaving the virtual tapestry of the internet, fabricating immersive online experiences.
             </p>
             <div class="mt-4">
-               <div v-for="item of menu" :key="item.link">
-                  <nuxt-link :to="item.link">{{ item.text }}</nuxt-link>
+               <div class="mb-2" v-for="item of menu" :key="item.link">
+                  <nuxt-link class="font-serif font-medium uppercase text-4xl" :to="item.link">{{ item.text }}</nuxt-link>
                </div>
             </div>
          </div>
-         <slot />
+         <div class="xl:w-full w-auto lg:pr-12 px-8">
+            <slot />
+         </div>
       </main>
-      <Cursor />
    </div>
 </template>
+
+<style>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
 
 <script setup>
 import * as THREE from 'three';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 
 const loaded = ref(false);
+const route = useRoute();
+const currentRoute = ref('');
 const menu = ref([
    {
-      text: "Hola",
-      link: "#"
-   }
-])
+      text: "About",
+      link: "/about"
+   },
+   {
+      text: "Works",
+      link: "/works"
+   },
+]);
+
+watch(() => route.fullPath, () => {
+   switch(route.fullPath) {
+      case "/works":
+         currentRoute.value = "Works";
+         break;
+      case "/about":
+         currentRoute.value = "About";
+         break;
+      default:
+         currentRoute.value = "Aexhell";
+         break;
+      }
+   },
+);
 
 onMounted(() => {
+   switch(route.fullPath) {
+      case "/works":
+         currentRoute.value = "Works";
+         break;
+      case "/about":
+         currentRoute.value = "About";
+         break;
+      default:
+         currentRoute.value = "Aexhell";
+         break;
+   }
+
    const h1 = document.getElementById("AEXHELL-TITLE");
    const main = document.getElementsByTagName("main");
+
+   h1.style.width = `${main[0].clientHeight}px`;
    h1.style.fontSize = `${main[0].clientHeight / 4.5}px`;
 
+   /* Pa otra ocasión tal vez
    const scene = new THREE.Scene();
    const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 2000 );
    const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -69,11 +124,9 @@ onMounted(() => {
       return check;
    };
 
-   if (/*WebGL.isWebGLAvailable() && !window.mobileCheck()*/ false) {
+   if (WebGL.isWebGLAvailable() && !window.mobileCheck() false) {
       animate();
    }
-
-   loaded.value = true;
 
    function animate() {
       requestAnimationFrame(animate);
@@ -84,15 +137,21 @@ onMounted(() => {
       if (line.material.opacity < 0.05) line.material.opacity += 0.0005;
 
       renderer.render(scene, camera);
-   }
+   }*/
 
    function onWindowResize() {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
+      // camera.aspect = window.innerWidth / window.innerHeight;
+      // camera.updateProjectionMatrix();
 
-      renderer.setSize(window.innerWidth, window.innerHeight);
+      const h1 = document.getElementById("AEXHELL-TITLE");
+      const main = document.getElementsByTagName("main");
+      h1.style.width = `${main[0].clientHeight}px`;
+      h1.style.fontSize = `${main[0].clientHeight / 4.5}px`;
+
+      // renderer.setSize(window.innerWidth, window.innerHeight);
    }
 
    window.addEventListener('resize', onWindowResize);
+   loaded.value = true;
 });
 </script>
