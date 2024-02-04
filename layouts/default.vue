@@ -7,8 +7,10 @@
       </div>
       <img style="z-index: 1" alt="Gradient background" src="/gradient.svg" class="fixed animate-pulse-slow object-cover top-0 left-0 w-full h-full pointer-events-none select-none">
       <main role="main" :class="{ 'opacity-100': loaded }" class="w-full xl:overflow-clip overflow-y-auto opacity-0 duration-700 transition-opacity md:border md:flex-row flex-col flex items-center border-solid border-black h-full relative z-30">
-         <Transition>
-            <h1 id="AEXHELL-TITLE" :class="{ 'opacity-100': loaded }" class="opacity-0 duration-700 transition-opacity pointer-events-none select-none xl:block hidden font-regular uppercase absolute left-[-3rem]" v-text="currentRoute" />
+         <Transition name="slide-fade" mode="out-in">
+            <h1 :key="currentRoute" :style="`font-size: ${styling.fontSize}; width: ${styling.width};`" id="AEXHELL-TITLE" class="pointer-events-none select-none font-regular uppercase absolute left-[-3rem]">
+               {{ currentRoute }}
+            </h1>
          </Transition>
          <div class="xl:w-1/2 xl:px-48 xl:py-24 p-8">
             <h2 class="xl:hidden uppercase font-regular lg:text-8xl sm:text-6xl text-4xl mt-0 mb-4">
@@ -34,14 +36,14 @@
 </template>
 
 <style>
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
+.slide-fade-enter-active,
+.slide-fade-active {
+  transition: all 0.5s ease-in-out
 }
 
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+   opacity: 0
 }
 </style>
 
@@ -52,6 +54,10 @@ import WebGL from 'three/addons/capabilities/WebGL.js';
 const loaded = ref(false);
 const route = useRoute();
 const currentRoute = ref('');
+const styling = ref({
+   width: '',
+   fontSize: ''
+});
 const menu = ref([
    {
       text: "About",
@@ -96,6 +102,9 @@ onMounted(() => {
 
    h1.style.width = `${main[0].clientHeight}px`;
    h1.style.fontSize = `${main[0].clientHeight / 4.5}px`;
+
+   styling.value.width = `${main[0].clientHeight}px`;
+   styling.value.fontSize = `${main[0].clientHeight / 4.5}px`;
 
    /* Pa otra ocasión tal vez
    const scene = new THREE.Scene();
@@ -147,6 +156,9 @@ onMounted(() => {
       const main = document.getElementsByTagName("main");
       h1.style.width = `${main[0].clientHeight}px`;
       h1.style.fontSize = `${main[0].clientHeight / 4.5}px`;
+
+      styling.value.width = `${main[0].clientHeight}px`;
+      styling.value.fontSize = `${main[0].clientHeight / 4.5}px`;
 
       // renderer.setSize(window.innerWidth, window.innerHeight);
    }
