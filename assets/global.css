@@ -111,8 +111,8 @@ div.AEXHELL-INTERACTION-GRADIENT:before {
    top: 0
 }
 
-h1,h2,h3,h4,h5,h6,.AEXHELL-INTERACTION-COMPONENT,.AEXHELL-DECORATION, a svg, p {
-   text-shadow: 0px 0px 35px color-mix(in srgb, currentColor 50%, transparent)
+h1,h2,h3,h4,h5,h6 {
+   @apply font-display font-light
 }
 
 * {

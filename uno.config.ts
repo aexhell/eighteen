@@ -41,7 +41,29 @@ export default defineConfig({
                  name: 'sans-serif',
                  provider: 'none',
                },
-             ],
+            ],
+            display: [
+               {
+                  name: 'Noto Serif Display',
+                  weights: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+                  italic: false,
+               },
+               {
+                  name: 'serif',
+                  provider: 'none',
+                },
+            ],
+            serif: [
+               {
+                  name: 'Noto Serif',
+                  weights: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+                  italic: true,
+               },
+               {
+                  name: 'serif',
+                  provider: 'none',
+                },
+            ]
          },
       }),
    ],

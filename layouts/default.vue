@@ -26,7 +26,6 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { useMainStore } from '@/store/index';
 
 export default {
-   middleware: ['scroll'],
    mounted () {
       const store = useMainStore();
 
